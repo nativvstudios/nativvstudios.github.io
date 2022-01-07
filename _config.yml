@@ -2,7 +2,7 @@ title: Nativv Studios
 markdown: kramdown
 domain: nativvstudios.github.io
 url: https://nativvstudios.github.io
-baseurl: "/nativvstudios/"
+baseurl: "/blog"
 
 # for atom feed
 author:
