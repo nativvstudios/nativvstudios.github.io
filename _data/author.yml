@@ -1,0 +1,21 @@
+name: Nativv Studios
+dp: https://avatars.githubusercontent.com/u/26895364?v=4
+description: "
+  <p>
+    Nativv Studios is an Indie Game Dev Studio based out of New Brunswick, Canada!
+  </p>
+  <br/>
+  <p>
+    You should check out our <a href='https://nativvstudios.com/forum' target='_blank'>Forums!</a>
+  </P>
+"
+email: whyherro@nativvstudios.com
+contact:
+  - title: github
+    url: https://github.com/nativvstudios
+  - title: twitter
+    url: https://twitter.com/whyherro1
+  - title: dev
+    url: https://dev.to/nativvstudios
+  - title: email
+    url: mailto:whyherro@nativvstudios.com
