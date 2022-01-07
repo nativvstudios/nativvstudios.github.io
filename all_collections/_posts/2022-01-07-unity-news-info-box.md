@@ -111,7 +111,7 @@ Now we could just do `textMeshPro.text = www.downloadHander.text;` and you could
 This post is made with Markdown infact! So I found this asset [https://github.com/JimmyCushnie/FancyTextRendering](https://github.com/JimmyCushnie/FancyTextRendering) and now you can use Markdown in Unity!
 
 So if you noticed above we have `GetComponent<MarkdownRenderer>.Source = www.downloadHandler.text;`
-Well, if you just add the `MarkdownRenderer` component from the new asset to the text that this current component is added on the downloaded text will render Markdown!
+Well, if you just add the `MarkdownRenderer` component from the new asset to the text that this current component is added on the downloaded text will render Markdown *and* Richtext!
 
 So for example you could do something like
 
