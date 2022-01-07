@@ -1,7 +1,7 @@
 title: Nativv Studios
 markdown: kramdown
-url: ""
-baseurl: "nativvstudios.github.io"
+url: "nativvstudios.github.io"
+baseurl: ""
 
 # for atom feed
 author:
