@@ -1,15 +1,14 @@
 title: Nativv Studios
 markdown: kramdown
-domain: nativvstudios.github.io
-url: https://nativvstudios.github.io
-baseurl: "/blog"
+url: ""
+baseurl: "nativvstudios.github.io"
 
 # for atom feed
 author:
   name: Whyherro
   email: whyherro@nativvstudios.com
 
-gems:
+plugins:
   - jemoji
   - jekyll-seo-tag
   - jekyll-sitemap
