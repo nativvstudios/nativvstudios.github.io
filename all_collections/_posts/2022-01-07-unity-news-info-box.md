@@ -3,6 +3,7 @@ layout: post
 title: How to make a simple (but powerful!) news bulletin box in Unity!
 date: 2022-01-07
 categories: ["Unity"]
+comments: true
 ---
 
 ## Hey there!
