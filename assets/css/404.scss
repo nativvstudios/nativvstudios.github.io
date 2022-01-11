@@ -13,7 +13,7 @@
 .pagenotfound {
   html, body {
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
   }
 
@@ -34,6 +34,7 @@
 
 .center {
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +74,7 @@
   height: 11.4rem;
   
   border-radius: 50%;
-  background-color: #293b49;
+  background-color: var(--gray-2);
 
   &:hover {
     background-color: #01ac88;
@@ -212,9 +213,10 @@
 
 .button {
   margin-top: 4rem;
+  border-radius: 14px;
   padding: 1.2rem 3rem;
   color: white;
-  background-color: #293b49;
+  background-color: var(--gray-2);
 
   &:hover {
     background-color: #01ac88;
