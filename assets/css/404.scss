@@ -6,11 +6,14 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300;1,400;1,800&display=swap");
 
 /* fork of https://codepen.io/joaosousa/pen/ZEEKWmv */
+:root {
+  --size-diviser: 2;
+}
 
 .pagenotfound {
   html, body {
     height: 100%;
-    max-width: 100%;
+    width: 100%;
     overflow-x: hidden;
   }
 
@@ -45,6 +48,7 @@
 }
 
 .number {
+
   font-weight: 900;
   font-size: 15rem;
   line-height: 1;
@@ -67,6 +71,7 @@
   left: 0;
   width: 12.2rem;
   height: 11.4rem;
+  
   border-radius: 50%;
   background-color: #293b49;
 
@@ -196,6 +201,7 @@
 
 .text {
   font-family: "JetBrains Mono";
+
   text-align: center;
   text-transform: uppercase;
   text-shadow: 2px 2px #293b49;
