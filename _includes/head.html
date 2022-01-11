@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/blog.css" />
   {%endif%}
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/common.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/404.css" />
+
+  {% if page.layout == "404" %}
+  {% endif %}
   <script src="{{site.baseurl}}/assets/js/categories.js"></script>
   {% if page.layout == "post" %}
   <script defer src="{{site.baseurl}}/assets/js/lbox.js"></script>

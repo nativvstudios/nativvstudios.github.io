@@ -8,7 +8,7 @@ comments: true
 
 ## Hey there!
 
-Thanks for checking out this post! In this post we're going to show how to make something like this!
+#### Thanks for checking out this post! In this post we're going to show how to make something like this!
 
 ![infobox]({{ site.baseurl }}/assets/uploads/hV2AIBi.png)
 
@@ -16,13 +16,14 @@ Alright, so before we get started I just have to say that I am making use of a w
 This is totally not needed, but you'll see why I'm doing this once we're done!
 
 
-#### Step 1: Unity Docs
+#### Unity Docs
 
 Head to the [Unity docs here](https://docs.unity3d.com/Manual/UnityWebRequest-RetrievingTextBinaryData.html)
 
 In the docs we're going to use this snippet at the bottom of the page
 
 ```cs
+
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
@@ -53,7 +54,9 @@ public class MyBehaviour : MonoBehaviour {
 Alright, so what this does is it makes a webrequest to where ever you aim it and if the webrequest can't connect it will result in an error otherwise it will display the webrequests data. But we're going to make some changes
 
 
+#### Changes to the script
 ```cs
+
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
@@ -74,7 +77,6 @@ public class MyBehaviour : MonoBehaviour {
         if(timer <= 0)
         {
             timer = 60.0f;
-
             StartCoroutine(GetText());
         }
     }
@@ -95,26 +97,28 @@ public class MyBehaviour : MonoBehaviour {
             GetComponent<MarkdownRenderer>().Source = www.downloadHandler.text;
             // Or retrieve results as binary data
             byte[] results = www.downloadHandler.data;
-
         }
     }
 }
 ```
 
 So it's very similar, the only difference is that we added a few variables and a new function.
-Now, what are the changes?
-The `textMeshpro` variable is a TextMeshPro Object that we will use to render the downloaded text.
-The `timer` variable is a timer that we will use to make sure we dont spam the host with webrequests.
-`Update` is a function that is called every frame which is why we are using the timer. If we didn't use the timer we would be grabbing the data from the url every frame resulting in your webhost blocking your IP! No bueno! Here we are using `Update` to run everyframe, but to Call the `GetText` Coroutine every 60 seconds.
 
-In the `GetText` coroutine we changed a few more things first the `www` variable is just aiming to a text document which has some text.
-Now we could just do `textMeshPro.text = www.downloadHander.text;` and you could stop there and use rich text that TextMeshPro supports and you can format and color your text. Now , Richtext can get super messy super quickly which is why I love markdown. 
-This post is made with Markdown infact! So I found this asset [https://github.com/JimmyCushnie/FancyTextRendering](https://github.com/JimmyCushnie/FancyTextRendering) and now you can use Markdown in Unity!
+Now, what are the changes?
+The `textMeshpro` variable is a TextMeshPro Object that we will use to render the downloaded text.<br>
+The `timer` variable is a float that we will use to make a timer so that we dont spam the host with webrequests. The value is seconds.<br>
+`Update` is a function that is called every frame which is why we are using the timer. If we didn't use the timer we would be grabbing the data from the url every frame resulting in your webhost blocking your IP! No bueno! <br>
+In `Update` we are subtracting 1 from `timer` every second and once `timer` reaches less than or equal to 0 it will set `timer` back to 60 and call our Coroutine.
+
+In the `GetText` coroutine we changed a few more things, first the `www` variable is just aiming to a text document which has some text. You can point this to any url that has a public text document.
+Now we could just do `textMeshPro.text = www.downloadHander.text;` and you could stop there and use [rich text](https://docs.unity3d.com/462/Documentation/Manual/StyledText.html) to format and color your text. Now, Richtext is awesome and all but it can get super messy super quickly which is why I love [Markdown](https://www.markdownguide.org/cheat-sheet/). 
+This post is made with Markdown infact!
+ So I found this asset [https://github.com/JimmyCushnie/FancyTextRendering](https://github.com/JimmyCushnie/FancyTextRendering) and now you can use Markdown in Unity (mostly)!
 
 So if you noticed above we have `GetComponent<MarkdownRenderer>.Source = www.downloadHandler.text;`
 Well, if you just add the `MarkdownRenderer` component from the new asset to the text that this current component is added on the downloaded text will render Markdown *and* Richtext!
 
-So for example you could do something like
+So for example in the text document you could do something like
 
 ```markdown
 # Patch notes!
@@ -143,14 +147,21 @@ So for example you could do something like
 <color="green"> - Apple Increased to +25hp</color>
 ```
 
-And that would render as ![infobox]({{ site.baseurl }}/assets/uploads/hV2AIBi.png).
+And that would render as <br>
+![infobox]({{ site.baseurl }}/assets/uploads/hV2AIBi.png)
 
-The cool thing is that this is all using **one** TextMeshPro object **AND** and you can change the text at runtime!
+The cool thing is that this is all using **one** TextMeshPro object **AND** you can change the text at runtime!
 So if you were to change the text document from out of the game, out of the Unity editor the changes would show in game!
 
-Well, I hope that helped someone have a good day!
+### Voila! Now you have a news bulletin!
+<br>
+<br>
+
+
+
 
 ---
-> Written by: [{{site.data.author.name}}](https://www.nativvstudios.com/blog/) &nbsp;&middot;&nbsp;
-> GitHub [Nativvstudios](https://github.com/nativvstudios) &nbsp;&middot;&nbsp;
-> Twitter [@Whyherro1](https://twitter.com.com/whyherro1)
+>Written by: [{{site.data.author.name}}](https://www.nativvstudios.com/blog/)
+>GitHub [Nativvstudios](https://github.com/nativvstudios)
+>Twitter [@Whyherro1](https://twitter.com.com/whyherro1)
+
