@@ -90,6 +90,17 @@ main {
       transform: scale(1.2);
     }
   }
+    
+  .navbarItems  {
+    font-size: 1em;
+
+    display: inline;
+    float: right;
+
+    .navbaritems > li:last-child {
+        
+    }
+  }
 }
 
 /* article section */
