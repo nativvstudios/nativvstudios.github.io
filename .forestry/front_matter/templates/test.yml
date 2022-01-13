@@ -1,6 +1,11 @@
 ---
 label: Test
 hide_body: true
-fields: []
+fields:
+- name: nativv_studios
+  type: text
+  config:
+    required: false
+  label: Nativv Studios
 pages:
 - _posts/1995-05-24-My-birthday.md
