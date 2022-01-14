@@ -1,4 +1,11 @@
 ---
 label: Test
 hide_body: true
-fields: []
+fields:
+- name: nativv_studios
+  type: text
+  config:
+    required: false
+  description: 'layout: posttitle: How to make a simple (but powerful!) news bulletin
+    box in Unity!date: 2022-01-07categories: ["tutorials","unity"]comments: true'
+  label: Nativv Studios
