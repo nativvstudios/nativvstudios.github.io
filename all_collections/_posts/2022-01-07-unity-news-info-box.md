@@ -8,12 +8,12 @@ comments: true
 
 ## Hey there!
 
-#### Thanks for checking out this post! In this post we're going to show how to make something like this!
+#### Thanks for checking out this post! In this post I'm going to show how to make something similar to this!
 
 ![infobox]({{ site.baseurl }}/assets/uploads/hV2AIBi.png)
 
-Alright, so before we get started I just have to say that I am making use of a webhosting provider. 
-This is totally not needed, but you'll see why I'm doing this once we're done!
+So before I get started I just have to say that I am making use of a webhosting provider. 
+It's not required, but you'll see why I'm doing this once we're done!
 
 
 #### Unity Docs
@@ -51,7 +51,7 @@ public class MyBehaviour : MonoBehaviour {
 }
 ```
 
-Alright, so what this does is it makes a webrequest to where ever you aim it and if the webrequest can't connect it will result in an error otherwise it will display the webrequests data. But we're going to make some changes
+Alright, so what this does is it makes a webrequest to where ever you aim it and if the webrequest can't connect it will throw in an error otherwise it will display the webrequests data. But we're going to make some changes
 
 
 #### Changes to the script
@@ -102,18 +102,20 @@ public class MyBehaviour : MonoBehaviour {
 }
 ```
 
-So it's very similar, the only difference is that we added a few variables and a new function.
+So it's very similar, the only difference is that we've added a few variables and a new function.
 
 Now, what are the changes?
+
 The `textMeshpro` variable is a TextMeshPro Object that we will use to render the downloaded text.<br>
 The `timer` variable is a float that we will use to make a timer so that we dont spam the host with webrequests. The value is seconds.<br>
-`Update` is a function that is called every frame which is why we are using the timer. If we didn't use the timer we would be grabbing the data from the url every frame resulting in your webhost blocking your IP! No bueno! <br>
-In `Update` we are subtracting 1 from `timer` every second and once `timer` reaches less than or equal to 0 it will set `timer` back to 60 and call our Coroutine.
+`Update` is a function that is called every frame which is why we are using the timer. If we didn't use the timer we would be grabbing the data from the url every frame resulting in your webhost blocking your IP, Not good! <br>
+In `Update` we  subtract 1 from `timer` every second and once `timer` reaches a value less than or equal to 0 it will reset `timer` back to 60 and call our Coroutine.
 
-In the `GetText` coroutine we changed a few more things, first the `www` variable is just aiming to a text document which has some text. You can point this to any url that has a public text document.
-Now we could just do `textMeshPro.text = www.downloadHander.text;` and you could stop there and use [rich text](https://docs.unity3d.com/462/Documentation/Manual/StyledText.html) to format and color your text. Now, Richtext is awesome and all but it can get super messy super quickly which is why I love [Markdown](https://www.markdownguide.org/cheat-sheet/). 
+We changed a few other things in the `GetText` coroutine, firstly the `www` variable is just aiming to a text document which has some text in it. You can point this to any url that has a public text document.
+
+Now we could just do `textMeshPro.text = www.downloadHander.text;` and you could stop there and use [rich text](https://docs.unity3d.com/462/Documentation/Manual/StyledText.html) to format and color your text. Well, Richtext is great but it can get messy super quickly which is why I love [Markdown](https://www.markdownguide.org/cheat-sheet/). 
 This post is made with Markdown infact!
- So I found this asset [https://github.com/JimmyCushnie/FancyTextRendering](https://github.com/JimmyCushnie/FancyTextRendering) and now you can use Markdown in Unity (mostly)!
+So I found this asset [https://github.com/JimmyCushnie/FancyTextRendering](https://github.com/JimmyCushnie/FancyTextRendering) and now you can use Markdown in Unity (mostly)!
 
 So if you noticed above we have `GetComponent<MarkdownRenderer>.Source = www.downloadHandler.text;`
 Well, if you just add the `MarkdownRenderer` component from the new asset to the text that this current component is added on the downloaded text will render Markdown *and* Richtext!
