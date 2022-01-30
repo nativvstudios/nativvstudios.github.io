@@ -134,12 +134,14 @@ So for example in the text document you could do something like
 <color="green">
  - Brand new UI!
  - Stats display for each item
- - Consumables show how much they heal</color>
+ - Consumables show how much they heal
+</color>
 
 ### AI
 <color="green">
  - AI now wanders around
- - AI only attacks if player is in range and is at the end of it's destination</color>
+ - AI only attacks if player is in range and is at the end of it's destination
+</color>
  
 ### Item Changes
 <color="red"> - Decreased Axe to 5 damage</color>

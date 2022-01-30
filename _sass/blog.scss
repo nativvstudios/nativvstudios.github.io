@@ -37,6 +37,9 @@ header {
   padding: 2rem 0 4rem 0;
 
   .site-title {
+    background: linear-gradient(to right, #eeeeee 30%, #a9abb3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 4rem;
     font-weight: bolder;
     line-height: 110%;
