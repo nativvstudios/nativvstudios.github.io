@@ -110,7 +110,7 @@ main {
 /* markdown content */
 
 .content {
-  background-color: var(--gray-6);
+  background-color: var(--gray-3);
   padding: 1em 1em 0 1em;
   border-radius: 25px 25px 0px 0px;
 
@@ -221,7 +221,7 @@ main {
   }
 
   pre {
-    background: var(--gray-3) !important;
+    background: var(--gray-6) !important;
     padding: 1rem 2rem;
     margin-bottom: 1.75rem;
   }
@@ -231,7 +231,7 @@ main {
     padding: 3px 5px;
     color: var(--white-2);
     white-space: pre;
-    background-color: var(--gray-3);
+    background-color: var(--gray-6);
   }
 
   img {
@@ -240,9 +240,9 @@ main {
 }
 
 .contentComments {
-  background-color: var(--gray-6);
+  background-color: var(--gray-3);
   padding: 1em 1em 0 1em;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 25px 25px;
 
   * {
     line-height: 180%;
