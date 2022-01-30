@@ -4,6 +4,8 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: heading
+  label: test
 - type: jekyll-posts
   label: Posts
   create: all
@@ -11,7 +13,7 @@ sections:
   label: Pages
   create: all
 upload_dir: uploads
-public_path: "/uploads"
+public_path: assets/uploads
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
@@ -24,4 +26,4 @@ build:
   mount_path: "/srv"
   working_dir: "/srv"
   instant_preview_command: bundle exec jekyll serve --drafts --unpublished --future
-    -d _site
+    --port 8080 --host 0.0.0.0 -d _site
