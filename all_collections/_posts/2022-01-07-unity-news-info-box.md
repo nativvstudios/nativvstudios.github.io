@@ -6,17 +6,22 @@ categories: ["tutorials","unity"]
 comments: true
 ---
 
-## Hey there!
+Hey there!
 
-#### Thanks for checking out this post! In this post I'm going to show how to make something similar to this!
+Thanks for checking out this post! In this post I'm going to show how to make something similar to this!
 
 ![infobox]({{ site.baseurl }}/assets/uploads/hV2AIBi.png)
 
-So before I get started I just have to say that I am making use of a webhosting provider. 
-It's not required, but you'll see why I'm doing this once we're done!
+**So before I get started I just have to say that I am making use of a webhosting provider. 
+It's not required, but you'll see why I'm doing this once we're done!**
 
+
+#### In Editor
+
+To begin with, Let's open a new scene and add in a TextMeshPro Object and attach a new script.
 
 #### Unity Docs
+
 
 Head to the [Unity docs here](https://docs.unity3d.com/Manual/UnityWebRequest-RetrievingTextBinaryData.html)
 
@@ -51,10 +56,11 @@ public class MyBehaviour : MonoBehaviour {
 }
 ```
 
-Alright, so what this does is it makes a webrequest to where ever you aim it and if the webrequest can't connect it will throw in an error otherwise it will display the webrequests data. But we're going to make some changes
+Alright, so what this does is it makes a webrequest to where ever you aim it and if the webrequest can't connect it will throw an error otherwise it will display the webrequests data, But we're going to make some changes.
 
 
 #### Changes to the script
+
 ```cs
 
 using UnityEngine;
