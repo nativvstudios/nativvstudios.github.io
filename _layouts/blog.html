@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
+  <div id="gradient">
+
   <body>
     <main>
       {% include header.html %} {% include bio.html %}
       {% include navbar.html%}
       <section class="articles">
+        
+
         {% for post in site.posts %}
-        <article class="article">
+        <article class="article" id="article">
+
           <a href="{{site.baseurl}}{{post.url}}" class="article-area"></a>
           <h2 class="article-title">
             <a href="{{site.baseurl}}{{post.url}}"> {{post.title | markdownify}} </a>
@@ -20,11 +25,18 @@
             >
             {% endfor %}
           </div>
+
+
         </article>
         {%endfor%}
+
       </section>
+
       {% include footer.html %}
     </main>
     {% include category-modal.html%}
+
   </body>
+</div>
+
 </html>
