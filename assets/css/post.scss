@@ -129,6 +129,7 @@ main {
 
 .content {
   padding: 1em 1em 0 1em;
+  border-radius: 0px 0px 25px 25px;
 
   * {
     line-height: 180%;
@@ -257,7 +258,9 @@ main {
 
 .contentComments {
   background-color: #2c303a;
-  padding: 1em 1em 0 1em;
+  padding: 1em 1em 1em 1em;
+  border-radius: 0px 0px 25px 25px;
+
 
   * {
     line-height: 180%;
