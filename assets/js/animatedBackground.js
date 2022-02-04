@@ -42,6 +42,10 @@ var colors = new Array(
      background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
       background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
     
+      $('html').css({
+        background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
+         background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+         
     step += gradientSpeed;
     if ( step >= 1 )
     {
