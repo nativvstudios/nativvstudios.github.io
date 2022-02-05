@@ -10,10 +10,13 @@ Hey there!
 
 Thanks for checking out this post! In this post I'm going to show how to make something similar to this!
 
-![infobox]({{ site.baseurl }}/assets/uploads/hV2AIBi.png)
 
-**So before I get started I just have to say that I am making use of a webhosting provider. 
-It's not required, but you'll see why I'm doing this once we're done!**
+
+![infobox]({{ site.baseurl }}/assets/uploads/hV2AIBi.png)
+>Before we get started I just have to say that I am making use of a webhosting provider. 
+>It's not required, but you'll see why I'm doing this once we're done!
+
+
 
 
 #### In Editor
