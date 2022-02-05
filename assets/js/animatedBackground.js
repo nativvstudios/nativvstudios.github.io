@@ -45,7 +45,16 @@ var colors = new Array(
       $('html').css({
         background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
          background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
-         
+
+      $('a.PageNotFoundButton').css({
+        background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
+         background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+
+         $('.circle').css({
+          background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
+           background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+
+
     step += gradientSpeed;
     if ( step >= 1 )
     {

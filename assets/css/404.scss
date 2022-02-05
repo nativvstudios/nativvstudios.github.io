@@ -65,23 +65,26 @@
   margin: 0 2.1rem;
 
   &:hover .circle {
-    background-color: #01ac88;
+    border: 1px solid #555d6d;
   }
 }
 
 .circle {
+  box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+
   max-width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 12.2rem;
   height: 11.4rem;
-  
+  border: 1px solid #282C34;
+
   border-radius: 50%;
   background-color: var(--gray-2);
 
   &:hover {
-    background-color: #01ac88;
+    border: 1px solid #555d6d;
   }
 }
 
@@ -114,9 +117,7 @@
     right: -0.7rem;
     width: 1.4rem;
     height: 1rem;
-    background-color: #151618;
-    border-bottom: 0.3rem solid #293b49;
-    transform: rotate(45deg);
+
   }
 }
 
@@ -215,15 +216,16 @@
   color: aliceblue;
 }
 
-.button {
+.PageNotFoundButton {
   margin-top: 4rem;
   border-radius: 14px;
   padding: 1.2rem 3rem;
+  box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
   color: white;
-  background-color: var(--gray-2);
-
+  border: 1px solid #282C34;
   &:hover {
-    background-color: #01ac88;
+    border: 1px solid #555d6d;
+
   }
 }
 
@@ -317,15 +319,7 @@
     border-radius: 50%;
   
     &::before {
-      content: "";
-      position: absolute;
-      top: -0.7rem;
-      right: -0.7rem;
-      width: 1.4rem;
-      height: 1rem;
-      background-color: #151618;
-      border-bottom: 0rem solid #293b49;
-      transform: rotate(45deg);
+
     }
 
      &:hover {
