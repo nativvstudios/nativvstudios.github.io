@@ -163,7 +163,7 @@ So for example in the text document you could do something like
 And that would render as <br>
 ![infobox]({{ site.baseurl }}/assets/uploads/hV2AIBi.png)
 
-The cool thing is that this is all using **one** TextMeshPro object **AND** you can change the text at runtime! So since we're using our webserver to host the text file, I could change the text from my phone or any device and the chanegs would show in game!
+The cool thing is that this is all using **one** TextMeshPro object **AND** you can change the text at runtime! So since we're using our webserver to host the text file, I could change the text from my phone or any device and the changes would show in game!
 
 
 ### Voila! Now you have a news bulletin!
@@ -176,5 +176,5 @@ The cool thing is that this is all using **one** TextMeshPro object **AND** you 
 ---
 >Written by: [{{site.data.author.name}}](https://www.nativvstudios.com/blog/)
 >GitHub [Nativvstudios](https://github.com/nativvstudios)
->Twitter [@Whyherro1](https://twitter.com.com/whyherro1)
+>Twitter [@Whyherro1](https://twitter.com/whyherro1)
 

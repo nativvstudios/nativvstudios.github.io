@@ -51,9 +51,42 @@ body:before {
 
 
 .content a {
+  text-decoration: none;
   color: cyan;
+  text-align: center;
+  position: relative;
+  flex-grow: 1;
   border-bottom: 1px solid cyan;
+
+  padding: 1px;
+  cursor: pointer;
 }
+.content a:before {
+  content: "";
+  position: absolute;
+  border-bottom: 0px solid cyan;
+
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: calc(2px/-1);
+  left: calc(2px/-1);
+  background: linear-gradient(to right, cyan 0%, cyan 100%), linear-gradient(to top, cyan 50%, transparent 50%), linear-gradient(to top, cyan 50%, transparent 50%), linear-gradient(to right, cyan 0%, cyan 100%), linear-gradient(to left, cyan 0%, cyan 100%);
+  background-size: 100% 2px, 2px 200%, 2px 200%, 0% 2px, 0% 2px;
+  background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+  background-repeat: no-repeat, no-repeat;
+  transition: transform 0.2s ease-in-out, background-position 0.2s ease-in-out, background-size 0.2s ease-in-out;
+  transform: scaleX(0) rotate(0deg);
+  transition-delay: 0.2s, 0.2s, 0s;
+}
+.content a:hover:before {
+  background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
+  background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+  transform: scaleX(1) rotate(0deg);
+  transition-delay: 0s, 0.2s, 0.2s;
+  border-bottom: 0px;
+
+}
+
 
 header {
   padding: 2rem 0 4rem 0;
