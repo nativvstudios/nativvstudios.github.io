@@ -150,14 +150,6 @@ So for example in the text document you could do something like
 <color="red"> - Decreased Axe to 5 damage</color>
 <color="green"> - Increased Bow to 3 damage</color>
 <color="green"> - Apple Increased to +25hp</color>
-### Item Changes
-<color="red"> - Decreased Axe to 5 damage</color>
-<color="green"> - Increased Bow to 3 damage</color>
-<color="green"> - Apple Increased to +25hp</color>
-### Item Changes
-<color="red"> - Decreased Axe to 5 damage</color>
-<color="green"> - Increased Bow to 3 damage</color>
-<color="green"> - Apple Increased to +25hp</color>
 ```
 
 And that would render as <br>
