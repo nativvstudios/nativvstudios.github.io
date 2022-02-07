@@ -6,7 +6,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -19,24 +22,25 @@
   gtag('config', 'G-V10883YNNL');
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4337441322032509"
-     crossorigin="anonymous"></script>
 
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=5" />
   <meta name="HandheldFriendly" content="true">
+  <meta name="description" content="Nativv Studios">
+  <meta name="theme-color" content="#282C34">
+
+
   <title>{{site.title}} | {{page.title}}</title>
   {% if page.layout == "post" %}
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/post.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
   {% else %}
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
+  <script src="{{site.baseurl}}/assets/js/animatedBackground.js"></script>
   {%endif%}
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/common.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/404.css" />
-
-  <script src="{{site.baseurl}}/assets/js/animatedBackground.js"></script>
 
   {% if page.layout == "404" %}
   <script src="{{site.baseurl}}/assets/js/animatedBackground.js"></script>
@@ -46,7 +50,4 @@
   {% if page.layout == "post" %}
   <script defer src="{{site.baseurl}}/assets/js/lbox.js"></script>
   {% endif %}
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
 </head>

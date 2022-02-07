@@ -25,6 +25,17 @@ collections:
   posts:
     output: true
 
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      layout: post
+      categories:
+      comments: true
+    posts:
+      layout: post
+      categories:
+      comments: true
+
 defaults:
   - scope:
       path: "_posts"
@@ -32,3 +43,4 @@ defaults:
       layout: "post"
       permalink: /posts/:title/
 exclude: ["sitemap.xml", "feed.xml", "LICENSE", "README.md"]
+

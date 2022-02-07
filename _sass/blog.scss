@@ -211,6 +211,7 @@ main {
       justify-content: flex-start;
 
       .category {
+        z-index: 2;
         margin: 0 0.5rem 0.3rem 0;
         display: block;
         color: var(--gray-4);
@@ -220,7 +221,9 @@ main {
         padding: 0 0.8rem;
         line-height: 1.3rem;
         cursor: pointer;
+
       }
+
     }
   }
 }
