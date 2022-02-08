@@ -12,9 +12,9 @@
       {%endfor%}
     </div>
     <div id="text-wrapper">
-      <a href="{{ base.url }}/life.html">Life</a>
-      <a href="{{ base.url }}/tutorials.html">Tutorials</a>
-      <a href="{{ base.url }}/rangers.html">Rangers</a>
+      {% for link in site.navigation %}
+      <a href="{{ link.url }}">{{link.text}}</a>
+      {%endfor%}
     </div>
   </section>
 </section>

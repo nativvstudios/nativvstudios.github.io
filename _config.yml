@@ -6,6 +6,14 @@ repository: nativvstudios/nativvstudios.github.io
 
 sitehome: "/index.html"
 
+navigation:
+- text: Life
+  url: "/life.html"
+- text: Tutorials
+  url: "/tutorials.html"   
+- text: Rangers
+  url: "/rangers.html"
+
 # for atom feed
 author:
   name: "Whyherro"
