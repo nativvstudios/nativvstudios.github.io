@@ -26,8 +26,7 @@ To begin with, Let's open a new scene and add in a TextMeshPro Object and attach
 #### Unity Docs
 
 
-Head to the [Unity docs here](https://docs.unity3d.com/Manual/UnityWebRequest-RetrievingTextBinaryData.html)
-
+Head to the [Unity docs here](https://docs.unity3d.com/Manual/UnityWebRequest-RetrievingTextBinaryData.html) <br>
 In the docs we're going to use this snippet at the bottom of the page
 
 ```cs
