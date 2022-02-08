@@ -4,6 +4,8 @@ url: "nativvstudios.github.io"
 baseurl: ""
 repository: nativvstudios/nativvstudios.github.io
 
+sitehome: "/index.html"
+
 # for atom feed
 author:
   name: "Whyherro"

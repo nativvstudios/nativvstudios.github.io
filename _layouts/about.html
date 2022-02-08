@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <div id="gradient">
+
   {% include head.html %}
+
   <body>
     <main>
-      {% include header.html %}
-      <section class="article">
-        <div class="article-header">
-          <h2 class="article-title">About</h2>
-          <small class="date">{{page.date | date_to_string}}</small>
-          <div class="categories">
-            {% for c in page.categories %}
-            <a href="#!" class="category">{{c}}</a>
-            {% endfor %}
-          </div>
-        </div>
-        <div class="content">{{content}}</div>
-        
-        <div class="contentComments"> 
-          {% include comments.html %}
+      {% include header.html %} {% include bio.html %}
+      {% include navbar.html%}
+      <section class="articles">
+        <article class="article">
+          <a href="{{site.sitehome}}" class="article-area"></a>
+          <h2 class="article-title is-centered">
+            <a href="{{site.sitehome}}"> About Us! </a>
+          </h2>
+          <!-- <a href="#!" data-base-url="{{site.baseurl}}" class="category"></a> -->
 
-        </div>
-
+          <h2 class="article-title is-centered"> THIS PAGE IS UNDER CONSTRUCTION <BR>
+            CHECK BACK SOON :)
+          </h2>
+          <img src="/assets/uploads/nativvsplash.png" alt="" />
+        </article>
       </section>
       {% include footer.html %}
     </main>
     {% include category-modal.html%}
   </body>
+  </div>
 </html>
