@@ -3,6 +3,7 @@
 ---
 
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300;1,400;1,800&display=swap"), url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
 
 
 :root {
@@ -33,7 +34,7 @@
 
 html, body {
   color: var(--white-2);
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Oxygen Mono", monospace;
   line-height: 2rem;
   background: linear-gradient(to bottom, #131417, #191a1f, #1e1f26, #212328, #2c303a);
   background-size: 100%;

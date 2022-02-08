@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300;1,400;1,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
 
 :root {
   --gray-1:#3f3f3f;
@@ -37,7 +39,7 @@ html {
 body {
   color: var(--white-2);
   background-color: var(--gray-6);
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'JetBrains Mono', monospace;
   line-height: 2rem;
   background-color: var(--gray-5);
 
@@ -53,7 +55,7 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 4rem;
-    font-weight: bolder;
+    font-weight: 900;
     line-height: 110%;
     color: var(--white-1);
   }
@@ -90,9 +92,9 @@ main {
 
 
 #text-wrapper {
-  line-height: 1.2rem;
+  line-height: 1.4rem;
   font-weight: 300;
-
+  max-width: 100%;
   a {
     text-decoration: none;
     color: cyan;
@@ -100,7 +102,7 @@ main {
     position: relative;
     flex-grow: 1;
     border-bottom: 1px solid cyan;
-
+    overflow: hidden;
     padding: 1px;
     cursor: pointer;
   }
@@ -250,7 +252,16 @@ main {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 380px) {
+  #text-wrapper {
+    width: auto;
+    line-height: 1.4rem;
+    font-size: .85rem;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
   #img-wrapper img {
     max-width: 50px;
   }
