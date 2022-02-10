@@ -180,6 +180,7 @@ main {
 
 .content {
   padding: 1em 0em 0 0em;
+
   * {
     line-height: 180%;
   }
@@ -415,10 +416,10 @@ main {
     overflow-x: auto !important;
 
     pre {
-      overflow: auto !important;
+      overflow-x: auto !important;
 
       code {
-        overflow: auto !important;
+        overflow-x: auto !important;
       }
     }
   }
@@ -455,12 +456,22 @@ main {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
+
   display: none;
+
 
   &.active {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeIn .5s;
+    -webkit-animation: fadeIn .5s;
+    -moz-animation: fadeIn .5s;
+    -o-animation: fadeIn .5s;
+    -ms-animation: fadeIn .5s;
+
+
+
   }
 
   img {
@@ -468,8 +479,88 @@ main {
     max-height: 80%;
     padding: 4px;
     background-color: black;
-    border: 2px solid white;
+    box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
   }
+
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+   @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+
+
+
+  @keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+
 }
 
 @media screen and (max-width: 550px) {
