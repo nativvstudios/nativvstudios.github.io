@@ -3,6 +3,10 @@
 ---
 
 :root {
+  --gray-blue1:#2c303a;
+  --gray-blue2:#282c34;
+  --gray-blue2-hover:#383E4A;
+
   --gray-1: #3f3f3f;
   --gray-2: #32353a;
   --gray-3: #25282c;
@@ -30,12 +34,13 @@
   border-radius: 1rem;
   padding: 1rem;
   margin: auto;
-  background: #2c303a;
+  background: var(--gray-blue2);
   display: none;
   visibility: hidden;
   line-height: 140%;
 }
 #category-modal-content {
+  border-radius: 15px;
   display: relative;
   max-height: calc(100% - 5rem);
   overflow: auto;
@@ -58,6 +63,7 @@
   color: var(--white-2);
 }
 .modal-article {
+  border-radius: 1rem;
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
   transition: all 0.2s ease-in-out;
@@ -65,7 +71,10 @@
 .modal-article-date {
   font-size: 0.8rem;
 }
+
+
 .modal-article:hover {
-  background: #23262c;
-  border-radius: 15px;
+  background: var(--gray-blue2-hover);
+  border-radius: 1rem;
 }
+
