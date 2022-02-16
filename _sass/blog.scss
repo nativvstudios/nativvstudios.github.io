@@ -63,49 +63,6 @@ main {
   max-width: 650px;
   padding: 3rem 0;
 }
-
-
-[data-tooltip] {
-	position: relative;
-	z-index: 2;
-	cursor: pointer;
-}
-[data-tooltip]:before,
-[data-tooltip]:after {
-	visibility: hidden;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	opacity: 0;
-	pointer-events: none;
-}
-[data-tooltip]:before {
-	position: absolute;
-	bottom: 150%;
-	left: 50%;
-	margin-bottom: 5px;
-	margin-left: -6.25em;
-	padding: 7px;
-	width: 160px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	background-color: #000;
-	background-color: hsla(0, 0%, 20%, 0.9);
-	color: #fff;
-	content: attr(data-tooltip);
-	text-align: center;
-	font-size: 14px;
-	line-height: 1.2;
-}
-
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after {
-	visibility: visible;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	opacity: 1;
-}
-
 /* header */
 
 #bio {
@@ -136,6 +93,48 @@ main {
 #bio-wrapper {
   margin-left: 1rem;
 }
+
+[data-tooltip] {
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+[data-tooltip]:before,
+[data-tooltip]:after {
+	visibility: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	opacity: 0;
+	pointer-events: none;
+}
+[data-tooltip]:before {
+	position: absolute;
+  bottom: 0;
+	left: 50%;
+	margin-left: -6.15em;
+	padding: 7px;
+	width: 160px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #000;
+	background-color: hsla(0, 0%, 20%, 0.9);
+	color: #fff;
+	content: attr(data-tooltip);
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+	visibility: visible;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	opacity: 1;
+}
+
+
 
 #text-wrapper {
   line-height: 1.8rem;
