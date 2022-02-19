@@ -6,10 +6,7 @@
   <body>
     <main>
       {% include header.html %} {% include bio.html %}
-      {% include navbar.html%}
       <section class="articles">
-        
-
         {% for post in site.posts %}
         <article class="article" id="article">
 
@@ -24,20 +21,14 @@
             {% endfor %}
             <a href="{{site.baseurl}}{{post.url}}" class="article-area"></a>
           </div>
-
-
         </article>
         {%endfor%}
-
       </section>
-
       {% include footer.html %}
       <br>
       <br>
     </main>
     {% include category-modal.html%}
-
   </body>
 </div>
-
 </html>

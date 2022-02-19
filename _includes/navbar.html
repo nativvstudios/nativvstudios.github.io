@@ -1,6 +1,11 @@
 <nav>
 
 <div class="navbar">
-
+    <div id="text-wrapper">
+        <a href="{{ site.url }}">Home</a>
+        {% for link in site.navigation %}
+        <a href="{{ link.url }}">{{link.text}}</a>
+        {%endfor%}
+      </div>
 </div>
 </nav>

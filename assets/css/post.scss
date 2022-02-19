@@ -57,18 +57,18 @@ body:before {
 }
 
 
-.content a {
+.content a, .navbar a {
   text-decoration: none;
   color: cyan;
   text-align: center;
   position: relative;
   flex-grow: 1;
-  border-bottom: 1px solid cyan;
+  border-bottom: 2px solid cyan;
 
   padding: 1px;
   cursor: pointer;
 }
-.content a:before {
+.content a:before, .navbar a:before  {
   content: "";
   position: absolute;
   border-bottom: 0px solid cyan;
@@ -85,7 +85,7 @@ body:before {
   transform: scaleX(0) rotate(0deg);
   transition-delay: 0.2s, 0.2s, 0s;
 }
-.content a:hover:before {
+.content a:hover:before, .navbar a:hover:before  {
   background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
   background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
   transform: scaleX(1) rotate(0deg);
@@ -106,7 +106,7 @@ header {
   background: linear-gradient(to right, #eeeeee 0%, #a9abb3 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-  font-size: clamp(4rem, 5vw + 1, 5rem);
+  font-size: clamp(4rem, 5vw + 1, 6rem);
   font-display: to-upper-case($string: "");
   font-weight: bolder;
   text-align: center;
@@ -118,6 +118,13 @@ header {
   }
 
 }
+
+.navbar {
+  text-align: center;
+  font-size: clamp(.5rem, 5vw + 1, 1.25rem);
+  margin-bottom: .5rem;
+}
+
 
 main {
   
