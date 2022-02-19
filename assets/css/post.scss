@@ -96,7 +96,7 @@ body:before {
 
 
 header {
-  padding: 2rem 0 4rem 0;
+  padding: 2rem 0 2rem 0;
 }
 
 .site-title {
@@ -106,11 +106,11 @@ header {
   background: linear-gradient(to right, #eeeeee 0%, #a9abb3 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-  font-size: 5rem;
+  font-size: clamp(4rem, 5vw + 1, 5rem);
   font-display: to-upper-case($string: "");
   font-weight: bolder;
   text-align: center;
-  line-height: 110%;
+  line-height: 100%;
   color: var(--white-1);
   max-width: 100%;
   a {
@@ -623,7 +623,6 @@ main {
 
 @media screen and (max-width: 370px) {
   .site-title{
-    font-size: 4.5rem;
     padding-left:auto;
     max-width: 100%;
   }
