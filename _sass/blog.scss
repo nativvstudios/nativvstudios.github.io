@@ -276,6 +276,214 @@ main {
   }
 }
 
+/* portfolio section */
+
+.items {
+  display: grid;
+  row-gap: 2rem;
+  margin: 4rem 0 3rem 0;
+  position: relative;
+  z-index: 1;
+  
+  .item {
+    box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+    padding: 2rem;
+    background: #2c303a;
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+
+    
+    a.item-area {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+    }
+
+
+    .item-title {
+      color: var(--white-2);
+      font-weight: 700;
+      font-style: italic;
+      font-size: 1.8rem;
+      line-height: 130%;
+
+      a {
+        color: var(--white-2);
+        font-weight: 700;
+        font-style: italic;
+        font-size: 1.4rem;
+        line-height: 130%;
+      }
+    }
+
+
+    &:hover {
+      box-shadow: 0 5px 40px 0 rgba(0,0,0,0.20);
+    }
+
+    .item-img {
+      border-radius: 1rem;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 40px 0 rgba(0,0,0,0.20);
+        cursor: zoom-in;
+      }
+    }
+
+    .date {
+      display: block;
+      font-size: 0.8rem;
+    }
+
+    .categories {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      .category {
+        z-index: 2;
+        margin: 0 0.5rem 0.3rem 0;
+        display: block;
+        color: var(--gray-4);
+        background: var(--white-2);
+        border-radius: 15px;
+        font-size: 0.7rem;
+        padding: 0 0.8rem;
+        line-height: 1.3rem;
+        cursor: pointer;
+
+      }
+
+    }
+  }
+}
+
+
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  display: none;
+
+
+  &.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn .5s;
+    -webkit-animation: fadeIn .5s;
+    -moz-animation: fadeIn .5s;
+    -o-animation: fadeIn .5s;
+    -ms-animation: fadeIn .5s;
+
+
+
+  }
+
+  img {
+    
+    max-width: 100%;
+    max-height: 100%;
+    padding: 4px;
+    background-color: black;
+    box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+  }
+
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+   @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+
+
+
+  @keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeOut {
+    100%  {opacity:0;}
+    0% {opacity:1;}
+  }
+
+}
+
+
 /* media query */
 
 @media screen and (max-width: 750px) {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div id="gradient">
+
+  {% include head.html %}
+
+  <body>
+    <main>
+      {% include header.html %}
+      {% include bio.html %}
+      <section class="items">
+        {% for item in site.portfolio %}
+        <article class="item">
+          <div id="text-wrapper">
+          <h1 class="item-title is-centered">
+            {{ item.item }} 
+          </h1>
+          <!-- <a href="#!" data-base-url="{{site.baseurl}}" class="category"></a> -->
+          
+          <h4 class="is-centered">
+            
+            <a href="{{ item.url }}"> Live URL</a>
+          </h4>
+          </div>
+          <br>
+          <img class="item-img" src="{{ item.screenshot }}" alt="" />
+        </article>
+        {% endfor %}
+
+      </section>
+      {% include footer.html %}
+    </main>
+    {% include category-modal.html%}
+  </body>
+  </div>
+</html>

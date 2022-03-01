@@ -11,8 +11,16 @@ navigation:
   url: "/life.html"
 - text: Tutorials
   url: "/tutorials.html"   
-- text: Rangers
-  url: "/rangers.html"
+- text: Portfolio
+  url: "/portfolio.html"
+
+portfolio:
+- item: JekyllxBulma
+  screenshot: "assets/uploads/jekyllxbulma.png"
+  url: "https://nativvstudios.com/jekyllxbulma"
+- item: Jekyll Bootstrap Theme
+  screenshot: "assets/uploads/jekyllboot.png"
+  url: "https://www.nativvstudios.com/bootstrap-jekyll-dark/"
 
 # for atom feed
 author:
