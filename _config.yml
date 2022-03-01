@@ -17,10 +17,17 @@ navigation:
 portfolio:
 - item: JekyllxBulma
   screenshot: "assets/uploads/jekyllxbulma.png"
+  description: JekyllxBulma is a Jekyll theme built ontop of the Bulma CSS Framework
   url: "https://nativvstudios.com/jekyllxbulma"
 - item: Jekyll Bootstrap Theme
+  description: Jekyll theme built ontop of the Bootstrap 5 Framework
   screenshot: "assets/uploads/jekyllboot.png"
   url: "https://www.nativvstudios.com/bootstrap-jekyll-dark/"
+- item: Rangers
+  description: Rangers is a 2D mobile RPG Built with Unity TBA
+  screenshot: "assets/uploads/nativvsplash.png"
+  url: ""
+
 
 # for atom feed
 author:

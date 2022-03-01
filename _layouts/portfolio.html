@@ -16,13 +16,14 @@
             {{ item.item }} 
           </h1>
           <!-- <a href="#!" data-base-url="{{site.baseurl}}" class="category"></a> -->
-          
+          <p class="item-description is-centered" style="font-style:italic;">{{ item.description }}</p>
           <h4 class="is-centered">
-            
-            <a href="{{ item.url }}"> Live URL</a>
+            {% if item.url != "" %}
+             <a href="{{ item.url }}"> Live URL</a>
           </h4>
           </div>
           <br>
+          {% endif %}
           <img class="item-img" src="{{ item.screenshot }}" alt="" />
         </article>
         {% endfor %}
