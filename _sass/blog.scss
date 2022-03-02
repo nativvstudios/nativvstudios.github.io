@@ -177,11 +177,9 @@ main {
 
 #social-wrapper {
   margin-top: 1rem;
-  img {
-    filter: invert(100%) !important;
-    width: 25px;
-    height: 25px;
-    margin: 0 0 0.3rem 0;
+  i {
+    font-size: 24px;
+    color: white;
     transition: all 0.2s ease-in-out;
 
     &:hover {

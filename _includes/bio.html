@@ -9,14 +9,14 @@
     <div id="social-wrapper">
       {% for i in site.data.author.contact %}
       <a href="{{i.url}}" target="_blank">
-        <i class="fa-brands fa-{{i.title}} fa-lg" style="color:white; font-size: 24px;"></i>
+        <i class="fa-brands fa-{{i.title}} fa-lg" style=""></i>
 
       </a>
 
       {%endfor%}
       {% if site.data.author.contact[3].title == "email" %}
         <a href="{{ site.data.author.contact[3].url }}" target="_blank">
-          <i class="fa-solid fa-envelope fa-lg" style="color:white; margin-left: -8px; font-size: 24px;"></i>
+          <i class="fa-solid fa-envelope fa-lg" style="margin-left: -8px;"></i>
         </a>
       {%endif%}
 
