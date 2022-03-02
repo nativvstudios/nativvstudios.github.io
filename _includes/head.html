@@ -11,9 +11,11 @@
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
 
-
+  <script src="https://kit.fontawesome.com/c281819682.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10883YNNL"></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -32,18 +34,21 @@
 
 
   <title>{{site.title}} | {{page.title}}</title>
-  {% if page.layout == "post" %}
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/post.css" />
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
-  {% else %}
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
-  <script src="{{site.baseurl}}/assets/js/animatedBackground.js"></script>
-  {%endif%}
+
+
+
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/common.css" />
+
+  {% if page.layout == "post" %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/post.css" />
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
+  {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
+    <script src="{{site.baseurl}}/assets/js/animatedBackground.js"></script>
+  {%endif%}
+
+  {% if page.layout == 404 %}
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/404.css" />
-
-  {% if page.layout == "404" %}
-
   {% endif %}
   <script src="{{site.baseurl}}/assets/js/categories.js"></script>
   {% if page.layout == "post" %}
@@ -55,5 +60,4 @@
   {% endif %}
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 </head>

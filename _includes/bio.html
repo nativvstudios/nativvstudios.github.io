@@ -9,20 +9,20 @@
     <div id="social-wrapper">
       {% for i in site.data.author.contact %}
       <a href="{{i.url}}" target="_blank">
-        <img src="{{site.baseurl}}/assets/icons/{{i.title}}.png" alt="" />
+        <i class="fa-brands fa-{{i.title}} fa-lg" style="color:white; font-size: 24px;"></i>
+
       </a>
+
       {%endfor%}
+      {% if site.data.author.contact[3].title == "email" %}
+        <a href="{{ site.data.author.contact[3].url }}" target="_blank">
+          <i class="fa-solid fa-envelope fa-lg" style="color:white; margin-left: -8px; font-size: 24px;"></i>
+        </a>
+      {%endif%}
+
     </div>
     <div id="text-wrapper">
-
       {% include navbar.html %}
-
-      <!-- {% if page.layout == "blog" %}
-      {% for link in site.navigation %}
-      <a href="{{ link.url }}">{{link.text}}</a>
-      {%endfor%}
-      {% else %}
-      {% endif %} -->
     </div>
   </section>
 </section>
