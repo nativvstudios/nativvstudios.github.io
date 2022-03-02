@@ -14,9 +14,15 @@
       {%endfor%}
     </div>
     <div id="text-wrapper">
+
+      {% include navbar.html %}
+
+      <!-- {% if page.layout == "blog" %}
       {% for link in site.navigation %}
       <a href="{{ link.url }}">{{link.text}}</a>
       {%endfor%}
+      {% else %}
+      {% endif %} -->
     </div>
   </section>
 </section>

@@ -1,10 +1,71 @@
 <nav>
 <div class="navbar">
     <div id="text-wrapper">
-        <a href="{{ site.url }}">Home</a>
-        {% for link in site.navigation %}
-        <a href="{{ link.url }}">{{link.text}}</a>
-        {%endfor%}
+
+
+
+        {% if page.layout == "blog" %}
+        
+        <a href="{{ site.navigation[1].url }}">{{site.navigation[1].text}}</a>
+        <a href="{{ site.navigation[2].url }}">{{site.navigation[2].text}}</a>
+        <a href="{{ site.navigation[3].url }}">{{site.navigation[3].text}}</a>
+
+        {% else %}
+
+        {% endif %}
+
+        {% if page.layout == "life" %}
+        
+        <a href="{{ site.navigation[0].url }}">{{site.navigation[0].text}}</a>
+        <a href="{{ site.navigation[2].url }}">{{site.navigation[2].text}}</a>
+        <a href="{{ site.navigation[3].url }}">{{site.navigation[3].text}}</a>
+
+
+        {% else %}
+
+
+        {% endif %}
+
+        {% if page.layout == "tutorials" %}
+        <a href="{{ site.navigation[0].url }}">{{site.navigation[0].text}}</a>
+        <a href="{{ site.navigation[1].url }}">{{site.navigation[1].text}}</a>
+        <a href="{{ site.navigation[3].url }}">{{site.navigation[3].text}}</a>
+
+
+        {% else %}
+
+        {% endif %}
+
+        {% if page.layout == "portfolio" %}
+        <a href="{{ site.navigation[0].url }}">{{site.navigation[0].text}}</a>
+        <a href="{{ site.navigation[1].url }}">{{site.navigation[1].text}}</a>
+        <a href="{{ site.navigation[2].url }}">{{site.navigation[2].text}}</a>
+
+
+        {% else %}
+
+        {% endif %}
+
+        {% if page.layout == "post" or page.layout == "about" %}
+        <a href="{{ site.navigation[0].url }}">{{site.navigation[0].text}}</a>
+        <a href="{{ site.navigation[1].url }}">{{site.navigation[1].text}}</a>
+        <a href="{{ site.navigation[2].url }}">{{site.navigation[2].text}}</a>
+        <a href="{{ site.navigation[3].url }}">{{site.navigation[3].text}}</a>
+
+
+        {% else %}
+
+        {% endif %}
+
+<!-- 
+        {% assign nav_links = site.navigation %}
+             
+          {% for link in nav_links %}
+
+          {% endfor %} -->
+          
+
+        
       </div>
 </div>
 </nav>

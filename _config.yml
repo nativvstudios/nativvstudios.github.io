@@ -7,6 +7,8 @@ repository: nativvstudios/nativvstudios.github.io
 sitehome: "/index.html"
 
 navigation:
+- text: Home
+  url: "/"
 - text: Life
   url: "/life.html"
 - text: Tutorials

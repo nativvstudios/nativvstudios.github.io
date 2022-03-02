@@ -86,11 +86,6 @@ main {
   }
 }
 
-#img-wrapper-ranger img {
-  max-width: 70%;
-  width: 700px;
-}
-
 #bio-wrapper {
   margin-left: 1rem;
 }
@@ -503,6 +498,28 @@ main {
 
   .articles {
     row-gap: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #bio {
+    display: grid;
+    align-items: center;
+  }
+  
+  #img-wrapper img {
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 30%;
+    max-width: 100%;
+    box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+  
+    &:hover {
+      box-shadow: 0 3px 26px 0 rgba(255, 255, 255, 0.431);
+      outline: 2px solid white;
+      outline-offset: -2px;
+  
+    }
   }
 }
 
