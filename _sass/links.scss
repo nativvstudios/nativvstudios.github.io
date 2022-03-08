@@ -1,0 +1,52 @@
+
+.links {
+    display: grid;
+    margin: 3rem auto 3rem auto;
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    max-width: 100%;
+    
+    .link {
+      box-shadow: 0 3px 15px 0 rgba(0,0,0,0.20);
+      padding: 1rem;
+      margin: -.5em;
+      background: #2c303a;
+      border-radius: 15px;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+            
+      a.link-area {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+  
+      }
+  
+  
+      .link-title {
+        color: var(--white-2);
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1.0rem;
+        line-height: 130%;
+  
+        a {
+          color: var(--white-2);
+          font-weight: 700;
+          font-style: normal;
+          font-size: 1.0rem;
+          line-height: 130%;
+        }
+      }
+  
+  
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 40px 0 rgba(125, 214, 230, 0.493);
+      }
+    }
+  }

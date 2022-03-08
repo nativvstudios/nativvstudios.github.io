@@ -33,9 +33,7 @@
   max-height: 150%;
 
 }   
-html {
-  
-}
+
 body {
   color: var(--white-2);
   background-color: var(--gray-6);
@@ -49,6 +47,7 @@ header {
 
   .site-title {
     background: linear-gradient(to right, #eeeeee 30%, #a9abb3 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 4.75rem;
@@ -494,7 +493,7 @@ main {
     font-size: 3rem;
   }
 
-  .articles {
+  .articles, .links {
     row-gap: 1.2rem;
   }
 }
@@ -539,7 +538,7 @@ main {
     align-items: flex-start;
 }
 
-  main, .articles {
+  main, .articles, .links {
     padding: 0;
     margin: 0;
   }
@@ -548,7 +547,7 @@ main {
     padding-bottom: 1rem;
   }
 
-  .articles {
+  .articles, .links {
     margin: 2rem 0 3rem 0;
     row-gap: 1.2rem;
   }
@@ -557,11 +556,11 @@ main {
     font-size: 2.4rem;
   }
 
-  .article {
+  .article, .link {
     padding: 1.2rem;
   }
 
-  .articles .article .article-title {
+  .articles .article .article-title .links .link .link-title {
     font-size: 1rem;
 
     a {

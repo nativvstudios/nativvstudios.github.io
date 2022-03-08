@@ -13,12 +13,30 @@ description: "
 "
 email: whyherro@nativvstudios.com
 contact:
+  - title: twitter 
+    url: 'https://twitter.com/whyherro1'
   - title: github
-    url: https://github.com/nativvstudios
-  - title: twitter
-    url: https://twitter.com/whyherro1
+    url:  'https://github.com/nativvstudios'
   - title: dev
     url: https://dev.to/nativvstudios
+  # - title: facebook
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: instagram
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: linkedin
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: youtube
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: twitch
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: telegram
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: whatsapp
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: discord
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: slack
+  #   url: 'https://example.com/@jekyllrb'
   - title: email
     url: mailto:whyherro@nativvstudios.com
 

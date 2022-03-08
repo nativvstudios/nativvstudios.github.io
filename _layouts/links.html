@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div id="gradient">
+
+  {% include head.html %}
+
+  <body>
+    <main>
+    <h1 class="is-centered">{%include header.html%}
+        Links
+    </h1>            
+    {% for i in site.linklist %}
+      <section class="links">
+        <article class="link">
+          <a href="{{i.url}}" class="link-area"></a>
+          <h2 class="link-title is-centered">
+            <a href="{{i.url}}"> {{ i.title }}</a>
+          </h2>
+        </article>
+      </section>
+
+    {% endfor %}
+      {% include footer.html %}
+    </main>
+  </body>
+  </div>
+</html>
