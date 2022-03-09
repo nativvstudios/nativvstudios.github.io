@@ -29,7 +29,8 @@ linklist:
     url:  'https://github.com/nativvstudios'
   - title: Dev.to
     url: https://dev.to/nativvstudios
-
+  - title: Gitlab
+    url: https://gitlab.com/whyherro1
   # - title: facebook
   #   url: 'https://example.com/@jekyllrb'
   # - title: instagram
