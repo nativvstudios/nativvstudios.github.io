@@ -11,6 +11,8 @@
   --gray-6:#111111;
   --white-1:#eeeeee;
   --white-2:#a9abb3;
+
+  --navbar-color: cyan;
 }
 
 * {
@@ -137,11 +139,11 @@ main {
   max-width: 100%;
   a {
     text-decoration: none;
-    color: cyan;
+    color: var(--navbar-color);
     text-align: center;
     position: relative;
     flex-grow: 1;
-    border-bottom: 1px solid cyan;
+    border-bottom: 0px;
     overflow: hidden;
     padding: 1px;
     cursor: pointer;
@@ -155,7 +157,8 @@ main {
     height: calc(100% + 4px);
     top: calc(2px/-1);
     left: calc(2px/-1);
-    background: linear-gradient(to right, cyan 0%, cyan 100%), linear-gradient(to top, cyan 50%, transparent 50%), linear-gradient(to top, cyan 50%, transparent 50%), linear-gradient(to right, cyan 0%, cyan 100%), linear-gradient(to left, cyan 0%, cyan 100%);
+    background: linear-gradient(to right, var(--navbar-color) 0%, var(--navbar-color) 100%), linear-gradient(to top, var(--navbar-color) 50%, transparent 50%), linear-gradient(to top, var(--navbar-color) 50%, transparent 50%), linear-gradient(to right, var(--navbar-color) 0%, var(--navbar-color) 100%),
+     linear-gradient(to left, var(--navbar-color) 0%, var(--navbar-color) 100%);
     background-size: 100% 2px, 2px 200%, 2px 200%, 0% 2px, 0% 2px;
     background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
     background-repeat: no-repeat, no-repeat;
