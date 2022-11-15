@@ -6,20 +6,21 @@
 
   <body>
     <main>
-    <h1 class="is-centered">{%include header.html%}
+      {% include header.html %}
+      <h1 class="is-centered">
         Links
-    </h1>            
-    {% for i in site.linklist %}
+      </h1>   
+      
       <section class="links">
+        {% for i in site.data.author.linklist %}
         <article class="link">
           <a href="{{i.url}}" class="link-area"></a>
           <h2 class="link-title is-centered">
             <a href="{{i.url}}"> {{ i.title }}</a>
           </h2>
         </article>
+        {% endfor %}
       </section>
-
-    {% endfor %}
       {% include footer.html %}
     </main>
   </body>

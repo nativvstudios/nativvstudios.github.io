@@ -12,6 +12,43 @@ description: "
   </P>
 "
 email: whyherro@nativvstudios.com
+
+
+
+linklist:
+  - title: Buy me a Tea ❤️
+    url: https://ko-fi.com/nativvstudios
+  - title: Twitter 
+    url: 'https://twitter.com/whyherro1'
+  - title: Github
+    url:  'https://github.com/nativvstudios'
+  - title: Dev.to
+    url: https://dev.to/nativvstudios
+  - title: Gitlab
+    url: https://gitlab.com/whyherro1
+  - title: Your Mom
+    url: '#'
+  # - title: facebook
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: instagram
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: linkedin
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: youtube
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: twitch
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: telegram
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: whatsapp
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: discord
+  #   url: 'https://example.com/@jekyllrb'
+  # - title: slack
+  #   url: 'https://example.com/@jekyllrb'
+  - title: Email
+    url: mailto:whyherro@nativvstudios.com
+
 contact:
   - title: twitter 
     url: 'https://twitter.com/whyherro1'

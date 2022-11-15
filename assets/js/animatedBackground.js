@@ -15,7 +15,7 @@ var colors = new Array(
   var colorIndices = [0,1,2,3];
   
   //transition speed
-  var gradientSpeed = 0.002;
+  var gradientSpeed = 0.004;
   
   function updateGradient()
   {
@@ -70,4 +70,4 @@ var colors = new Array(
     }
   }
   
-  setInterval(updateGradient,10);
+  setInterval(updateGradient,20);
