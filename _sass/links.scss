@@ -10,7 +10,7 @@
     .link {
       box-shadow: 0 3px 15px 0 rgba(0,0,0,0.20);
       padding: 1rem;
-      margin: 1em;
+      margin: 1rem;
       background: #2c303a;
       border-radius: 1em;
       transition: all 0.2s ease-in-out;
@@ -47,6 +47,17 @@
       &:hover {
         transform: scale(1.05);
         box-shadow: 0 5px 40px 0 rgba(125, 214, 230, 0.493);
+      }
+    }
+
+
+  }
+
+  @media screen and (max-width: 500px) {
+    .links {
+
+      .link {
+        margin: .3rem;
       }
     }
   }
