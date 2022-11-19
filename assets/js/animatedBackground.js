@@ -14,9 +14,56 @@ var colors = new Array(
   // next color right
   var colorIndices = [0,1,2,3];
   
-  //transition speed
+  //transition speed  
   var gradientSpeed = 0.004;
-  
+
+  $(document).ready(function(){
+    $("#dayNightToggle").change(function() {
+        //var sheet = document.styleSheets[0];
+
+        if(this.checked) {
+          console.log("Day");
+          //sheet.insertRule(":root{--navbar-color:var(--dayBtn)");
+          document.documentElement.style.setProperty('--navbar-color', 'var(--dayBtn)');
+          document.body.style.color = "var(--gray-6)";
+          document.documentElement.style.setProperty('--article-color', '--white-2');
+          document.documentElement.style.setProperty('--text-color', 'var(--day-text-color)');
+          document.documentElement.style.setProperty('--category-color', 'var(--dayBtn)');
+          document.documentElement.style.setProperty('--category-bg-color', '#fff');
+          document.documentElement.style.setProperty('--site-title-gradient', 'linear-gradient(to right, #25282c 30%, #3f3f3f 100%)');
+
+
+
+
+          colors = new Array(
+            [244,244,244],
+            [232,232,232],
+            [225,225,225],
+            [215,215,215],
+            [215,215,215],
+            [225,225,225]);
+
+        }else{
+          console.log("Night");
+          document.documentElement.style.setProperty('--navbar-color', 'cyan');
+          document.body.style.color = "var(--white-2)";
+          document.documentElement.style.setProperty('--article-color', '#2c303a');
+          document.documentElement.style.setProperty('--text-color', 'var(--night-text-color)');
+          document.documentElement.style.setProperty('--category-color', 'var(--white-2)');
+          document.documentElement.style.setProperty('--category-bg-color', 'var(--gray-4)');
+          document.documentElement.style.setProperty('--site-title-gradient', 'linear-gradient(to right, #eeeeee 30%, #a9abb3 100%)');
+
+
+          colors = new Array(
+            [19,20,23],
+            [25,26,31],
+            [30,31,38],
+            [33,35,40],
+            [55,39,73],
+            [37,40,44]);
+        }
+    });
+});
   function updateGradient()
   {
     
@@ -71,3 +118,5 @@ var colors = new Array(
   }
   
   setInterval(updateGradient,20);
+
+  

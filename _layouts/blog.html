@@ -6,6 +6,11 @@
   <body>
     <main>
       {% include header.html %} {% include bio.html %}
+      <label class="dayNight">
+          <input type="checkbox" id="dayNightToggle">
+          <div></div>
+      </label>
+    
       <section class="articles">
         {% for post in site.posts %}
         <article class="article" id="article">
