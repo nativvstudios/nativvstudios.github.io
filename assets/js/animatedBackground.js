@@ -31,6 +31,7 @@ var colors = new Array(
           document.documentElement.style.setProperty('--category-color', 'var(--dayBtn)');
           document.documentElement.style.setProperty('--category-bg-color', '#fff');
           document.documentElement.style.setProperty('--site-title-gradient', 'linear-gradient(to right, #25282c 30%, #3f3f3f 100%)');
+          document.documentElement.style.setProperty('--social-btn-color', 'var(--night)');
 
 
 
@@ -52,7 +53,7 @@ var colors = new Array(
           document.documentElement.style.setProperty('--category-color', 'var(--white-2)');
           document.documentElement.style.setProperty('--category-bg-color', 'var(--gray-4)');
           document.documentElement.style.setProperty('--site-title-gradient', 'linear-gradient(to right, #eeeeee 30%, #a9abb3 100%)');
-
+          document.documentElement.style.setProperty('--social-btn-color', 'var(--day)');
 
           colors = new Array(
             [19,20,23],

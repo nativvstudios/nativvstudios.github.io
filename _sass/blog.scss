@@ -23,6 +23,7 @@
   --category-color: var(--white-2);
   --category-bg-color: var(--gray-4);
   --night-text-color: var(--white-2);
+  --social-btn-color: var(--day);
   --nightBtn: #fff;
   --dayBtn: #5628EE;
 }
@@ -193,7 +194,7 @@ main {
   margin-top: 1rem;
   i {
     font-size: 24px;
-    color: white;
+    color: var(--social-btn-color);
     transition: all 0.2s ease-in-out;
 
     &:hover {
@@ -269,7 +270,7 @@ main {
         z-index: 2;
         margin: 0 0.5rem 0.3rem 0;
         display: block;
-        color: var(--gray-4);
+        color: var(--category-bg-color);
         background: var(--category-color);
         border-radius: 15px;
         font-size: 0.7rem;
@@ -359,8 +360,8 @@ main {
         z-index: 2;
         margin: 0 0.5rem 0.3rem 0;
         display: block;
-        color: #fff;
-        background: var(--white-2);
+        color: var(--category-bg-color);
+        background-color: var(--white-2);
         border-radius: 15px;
         font-size: 0.7rem;
         padding: 0 0.8rem;
