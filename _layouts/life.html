@@ -6,6 +6,24 @@
     <main>
       {% include header.html %}
       {% include bio.html %}
+
+      <section class="life-items">
+        <h1 class="item-title is-centered">
+          Top Podcasts we listen to on Spotify! 
+        </h1>
+        {% for i in site.data.author.artists %}
+        <article class="life-item">
+             
+          {% if i.url != "" %}
+          <a href="{{ i.url }}"> 
+            <img class="life-item-img" src="{{ i.dp }}" alt="" />
+          </a>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </section>
+
+
       <section class="articles">
         {% for post in site.categories.life %}
         <article class="article">
@@ -23,7 +41,7 @@
           </div>
         </article>
         {%endfor%}
-      </section>
+      </section>  
       {% include footer.html %}
     </main>
     {% include category-modal.html%}

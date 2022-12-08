@@ -14,6 +14,32 @@ description: "
 email: whyherro@nativvstudios.com
 
 
+artists:
+  - name: "Ram Dass Here And Now"
+    about: "Ram Dass shares his heart-centered wisdom in each episode featuring excerpted lectures given throughout the last 40 years, with an introduction from Raghu Markus of Ram Dass' Love Serve Remember Foundation."
+    dp: 'https://i.scdn.co/image/352b7188faa2fbb5150e176822ee5702ebd800c5'
+    url: 'https://open.spotify.com/show/3Dz4DL2ZMvnNQUnDSXqSdm?si=542f9eb5013d4c60'
+  - name: 'Darknet Diaries'
+    about: 'Explore true stories of the dark side of the Internet with host Jack Rhysider as he takes you on a journey through the chilling world of hacking, data breaches, and cyber crime.'
+    dp: 'https://i.scdn.co/image/ab67656300005f1f11874ad24c1dcac2ace8d4c9'
+    url: 'https://open.spotify.com/show/4XPl3uEEL9hvqMkoZrzbx5?si=f122e433244646da'
+  - name: 'Lex Fridman Podcast'
+    about: 'Conversations about science, technology, history, philosophy and the nature of intelligence, consciousness, love, and power. Lex is an AI researcher at MIT and beyond.'
+    dp: 'https://i.scdn.co/image/ab67656300005f1f563ebb538d297875b10114b7'
+    url: 'https://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL?si=e9f349d6404d49c5'
+  - name: 'Mind rolling with Raghu Markus'
+    about: "Escapades in Mind-Expansion and Cultural Misadventures. Mindrolling Podcast is about coming unstuck and the recent history of awoken awareness. It’s about the intersection of culture, consciousness and realization with Raghu Markus."
+    dp: 'https://i.scdn.co/image/004275bd469fe5fe4c225087348bad81a035d527'
+    url: 'https://open.spotify.com/show/5T7BVMUpBAs7n3ehxTNahu?si=9ac91957d69d43bf'
+  - name: 'A Place For Humans'
+    about: 'A weekly breakdown of culture, psychedelics, spirituality, conspiracy theories and other things and stuff or whatever with Dakota Wint.'
+    dp: 'https://i.scdn.co/image/ab67656300005f1f479fcaf0d9700f973b3a7d62'
+    url: 'https://open.spotify.com/show/33yBzOyp5vPDmnZCxMO10H?si=4c9ee9cc28804322'
+  - name: 'Pilgrim Heart with Krishna Das'
+    about: 'The Krishna Das Pilgrim Heart Hour features Krishna Das’ no-nonsense take on everyday struggles for finding balance on the spiritual path. Through the honesty, humility and humor of his own personal experiences, he points to the possibility of navigating life’s trials with a true inner yearning for truth. His own practice of kirtan or chant is the well stone of his ability to share from his spiritual heart. As KD says, “Love is a disease - we catch it from those who have it.”'
+    dp: 'https://i.scdn.co/image/a2e7ee3bf2f62a1533d7ee0e7542406547496534'
+    url: 'https://open.spotify.com/show/7H4opZfDyfdJvCWGEnB4a7?si=65364a1999764a81'
+
 
 linklist:
   - title: Buy me a Tea ❤️
@@ -22,29 +48,10 @@ linklist:
     url: 'https://twitter.com/whyherro1'
   - title: Github
     url:  'https://github.com/nativvstudios'
-  - title: Dev.to
+  - title: Dev.to 
     url: https://dev.to/nativvstudios
   - title: Gitlab
     url: https://gitlab.com/whyherro1
-
-  # - title: facebook
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: instagram
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: linkedin
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: youtube
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: twitch
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: telegram
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: whatsapp
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: discord
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: slack
-  #   url: 'https://example.com/@jekyllrb'
   - title: Email
     url: mailto:whyherro@nativvstudios.com
 
@@ -55,24 +62,6 @@ contact:
     url:  'https://github.com/nativvstudios'
   - title: dev
     url: https://dev.to/nativvstudios
-  # - title: facebook
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: instagram
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: linkedin
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: youtube
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: twitch
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: telegram
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: whatsapp
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: discord
-  #   url: 'https://example.com/@jekyllrb'
-  # - title: slack
-  #   url: 'https://example.com/@jekyllrb'
   - title: email
     url: mailto:whyherro@nativvstudios.com
 
