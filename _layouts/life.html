@@ -12,14 +12,22 @@
           Top Podcasts we listen to on Spotify! 
         </h1>
         {% for i in site.data.author.artists %}
-        <article class="life-item">
-             
+        <article class="life-item  is-centered">
+          <figure class="image-hover">
+              <div class="image"><img src="{{ i.dp }}" class="thumb" alt="sample55"/></div>
+              <figcaption class="header">
+                  <p class="description"> {{ i.about }}</p>
+              </figcaption><a href="{{ i.url }}"></a>
+          </figure>
+        </article>
+
+        <!-- <article class="life-item">
           {% if i.url != "" %}
           <a href="{{ i.url }}"> 
             <img class="life-item-img" src="{{ i.dp }}" alt="" />
           </a>
           {% endif %}
-        </article>
+        </article> -->
         {% endfor %}
       </section>
 
