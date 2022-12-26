@@ -1,15 +1,17 @@
 
 .links {
     display: grid;
-    margin: 3rem auto 3rem auto;
     position: relative;
+    align-items: center;
+    justify-items: center;
     z-index: 1;
-    width: 50%;
-    max-width: 100%;
+  
     
     .link {
       box-shadow: 0 3px 15px 0 rgba(0,0,0,0.20);
       padding: 1rem;
+      width: 50%;
+      max-width: 100%;
       margin: 1rem;
       background: #2c303a;
       border-radius: 1em;
@@ -46,7 +48,7 @@
   
       &:hover {
         transform: scale(1.05);
-        box-shadow: 0 5px 40px 0 rgba(125, 214, 230, 0.493);
+        box-shadow: 0 2px 60px 0 rgba(125, 214, 230, 0.493);
       }
     }
 

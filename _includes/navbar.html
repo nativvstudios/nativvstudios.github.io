@@ -33,6 +33,13 @@
 
         {% endif %}
 
+        {% if page.layout == "links" %}
+            <a href="{{ site.navigation[0].url }}">{{site.navigation[0].text}}</a>
+            <a href="{{ site.navigation[1].url }}">{{site.navigation[1].text}}</a>
+            <a href="{{ site.navigation[2].url }}">{{site.navigation[2].text}}</a>
+            <a href="{{ site.navigation[4].url }}">{{site.navigation[3].text}}</a>
+        {% endif %}
+
         {% if page.layout == "post" or page.layout == "about" %}
             <a href="{{ site.navigation[0].url }}">{{site.navigation[0].text}}</a>
             <a href="{{ site.navigation[1].url }}">{{site.navigation[1].text}}</a>
@@ -41,6 +48,8 @@
             <a href="{{ site.navigation[4].url }}">{{site.navigation[4].text}}</a>
 
         {% endif %}
+
+        
       </div>
 </div>
 </nav>

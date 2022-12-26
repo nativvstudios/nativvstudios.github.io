@@ -11,8 +11,12 @@
 
         Links
       </h1>   
+
       
       <section class="links">
+        <div id="text-wrapper is-centered">
+          {% include navbar.html %}
+        </div>
         {% for i in site.data.author.linklist %}
         <article class="link">
           <a href="{{i.url}}" class="link-area"></a>
