@@ -214,13 +214,11 @@ main {
   .article {
     box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
     padding: 2rem;
-    max-width: 80%;
+    max-width: 100%;
     background: var(--article-color);
     border-radius: 15px;
     transition: all 0.2s ease-in-out;
     position: relative;
-
-
     
     a.article-area {
       display: block;
@@ -286,19 +284,35 @@ main {
 
 
 .life-items {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 4rem 0 3rem 0;
-  gap: .5rem;
 
+  margin: 4rem 0 3rem 0;
+
+  .item-title {
+    color: var(--text-color);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 130%;
+    margin-bottom: 1rem;
+    
+  }
+  .life-items-wrapper {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-rows: minmax(50px, auto);
+    z-index: 1;
+    gap: 1rem;
+  
   .life-item {
-    width: 25%;
     box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
     padding: .75rem;
     background: #2c303a;
     border-radius: 15px;
     transition: all 0.2s ease-in-out;
     position: relative;
+    
     &:hover {
       transform: scale(1.05);
       background: #4e5463;
@@ -308,7 +322,6 @@ main {
     p {
       color: var(--text-color);
       font-weight: 300;
-      font-size: .8rem;
       line-height: 130%;
 
     }
@@ -321,6 +334,7 @@ main {
       float: left;
       color: var(--text-color);
 
+      }
     }
   }
 
@@ -338,13 +352,9 @@ main {
 .image-hover {
   font-family: 'Raleway', Arial, sans-serif;
   color: #FFFFFF;
-
   overflow: hidden;
-  margin: 0 auto;
   text-align: center;
-  font-size: 15px;
-
-  max-width: 11rem;
+  max-width: auto;
   border-radius: .9375rem;
 
   transform: translateZ(0);
@@ -396,7 +406,7 @@ main {
   transform: translateY(-90%);
 }
 .image-hover .description {
-  font-size: 0.25em;
+  font-size: .7rem;
 
   bottom: 0;
   
