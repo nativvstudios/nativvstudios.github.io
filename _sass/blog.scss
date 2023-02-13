@@ -282,6 +282,7 @@ main {
   }
 }
 
+//Podcasts on life page
 
 .life-items {
 
@@ -308,6 +309,7 @@ main {
   .life-item {
     box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
     padding: .75rem;
+    max-width: 165px;
     background: #2c303a;
     border-radius: 15px;
     transition: all 0.2s ease-in-out;
