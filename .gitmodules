@@ -1,0 +1,3 @@
+[submodule "nativvstudios.github.io"]
+    path = ../
+    url = git://github.com/nativvstudios/nativvstudios.github.io.git
