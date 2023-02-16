@@ -44,16 +44,22 @@ artists:
 linklist:
   - title: Buy me a Tea ❤️
     url: https://ko-fi.com/nativvstudios
+    color: rgba(248, 49, 47, 0.493)
   - title: Twitter 
     url: 'https://twitter.com/whyherro1'
+    color: rgba(29, 161, 242, 0.493)
   - title: Github
     url:  'https://github.com/nativvstudios'
+    color: rgba(110, 84, 148, 0.493)
   - title: Dev.to 
     url: https://dev.to/nativvstudios
+    color: rgba(125, 214, 230, 0.493)
   - title: Gitlab
     url: https://gitlab.com/whyherro1
+    color: rgba(252, 109, 38, 0.493)
   - title: Email
     url: mailto:whyherro@nativvstudios.com
+    color: rgba(125, 214, 230, 0.493)
 
 contact:
   - title: twitter 
