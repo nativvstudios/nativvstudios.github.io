@@ -1,5 +1,5 @@
 current directory: /home/whyherro/Desktop/nativvstudios.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.23.10/ext/commonmarker
-/home/whyherro/.rbenv/versions/2.7.5/bin/ruby -I /home/whyherro/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20240527-19209-1c94zax.rb extconf.rb
+/home/whyherro/.rbenv/versions/2.7.5/bin/ruby -I /home/whyherro/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20240527-21635-157wct1.rb extconf.rb
 creating Makefile
 
 current directory: /home/whyherro/Desktop/nativvstudios.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.23.10/ext/commonmarker
@@ -58,4 +58,4 @@ linking shared-object commonmarker/commonmarker.so
 
 current directory: /home/whyherro/Desktop/nativvstudios.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.23.10/ext/commonmarker
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20240527-19209-1f73e15/commonmarker
+/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20240527-21635-5y435v/commonmarker

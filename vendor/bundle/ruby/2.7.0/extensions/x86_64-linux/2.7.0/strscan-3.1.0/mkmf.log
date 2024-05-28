@@ -91,7 +91,7 @@ checked program was:
 /* end */
 
 "gcc -o conftest -I/home/whyherro/.rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux -I/home/whyherro/.rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/backward -I/home/whyherro/.rbenv/versions/2.7.5/include/ruby-2.7.0 -I.    -g -O2 -fPIC conftest.c  -L. -L/home/whyherro/.rbenv/versions/2.7.5/lib -Wl,-rpath,/home/whyherro/.rbenv/versions/2.7.5/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/whyherro/.rbenv/versions/2.7.5/lib -L/home/whyherro/.rbenv/versions/2.7.5/lib -lruby  -lm   -lc"
-/usr/bin/ld: /tmp/ccke2gsy.o: in function `t':
+/usr/bin/ld: /tmp/ccGje9xn.o: in function `t':
 /home/whyherro/Desktop/nativvstudios.github.io/vendor/bundle/ruby/2.7.0/gems/strscan-3.1.0/ext/strscan/conftest.c:17:(.text+0x7): undefined reference to `rb_reg_onig_match'
 collect2: error: ld returned 1 exit status
 checked program was:
