@@ -4,10 +4,8 @@
         {% for item in site.navigation %}
             {% unless page.url == item.url %}
                 <a href="{{ item.url }}">{{item.text}}</a>
-
             {% endunless %}
         {% endfor %}
-     
       </div>
 </div>
 </nav>
