@@ -61,9 +61,9 @@ portfolio:
   description: Jekyll theme built ontop of the Bootstrap 5 Framework
   screenshot: "assets/uploads/jekyllboot.png"
   url: "https://www.nativvstudios.com/bootstrap-jekyll-dark/"
-- item: Rangers
-  description: Rangers is a 2D mobile RPG Built with Unity TBA
-  screenshot: "assets/uploads/nativvsplash.png"
+- item: From Ether
+  description: "From Ether is a captivating story-driven 2D pixel art RPG where you discover your origins from the mythical element of creation, Ether. Guided by the Ether, you realize your destined role in this timeline: to overcome the encroaching evil. Unravel the mysteries of your existence and fulfill your purpose in a beautifully crafted world, blending compelling narrative and nostalgic visuals."
+  screenshot: "assets/uploads/FromEtherLogo.png"
   url: ""
 
 
