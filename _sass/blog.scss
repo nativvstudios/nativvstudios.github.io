@@ -53,11 +53,12 @@ body {
   color: var(--white-2);
   font-family: 'JetBrains Mono', monospace;
   line-height: 2rem;
+  
 }
 
 header {
   padding: 2rem 0 4rem 0;
-
+  display: flex; justify-content: center;
   .site-title {
     background: var(--site-title-gradient);
     background-clip: text;
@@ -65,7 +66,7 @@ header {
     margin: 0 auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 4.75rem;
+    font-size: 6rem;
     font-weight: 800;
     line-height: 110%;
   }
@@ -73,8 +74,9 @@ header {
 
 main {
   margin: 0 auto;
-  max-width: 47rem;
+  max-width: 55rem;
   padding: 3rem 0;
+  
 }
 /* header */
 
@@ -651,6 +653,9 @@ main {
 /* media query */
 
 @media screen and (max-width: 750px) {
+  .dayNightObj {
+    opacity: 0;
+  }
   main {
     padding: 1.5rem;
   }
@@ -661,7 +666,9 @@ main {
 }
 
 @media screen and (max-width: 650px) {
-
+  .dayNightObj {
+    opacity: 0;
+  }
   .life-items {
     // flex-direction: column;
     .life-item {
@@ -765,9 +772,16 @@ main {
   }
 }
 
+.dayNightObj {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  padding-top: 50px;
+  padding-right: 50px;
+}
 
-
-.dayNight body {
+.dayNight div {
     transition: background .4s ease;
     background: var(--night);
     &.day {
@@ -776,6 +790,8 @@ main {
 }
 
 .dayNight { 
+  justify-content: flex-end;
+  display: flex;
     cursor: pointer;
     input {
         display: none;
@@ -829,10 +845,3 @@ main {
 }
 
 // Center & dribbble
-.dayNight body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: right;
-    align-items: right;
-
-}
