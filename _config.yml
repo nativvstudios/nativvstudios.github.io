@@ -53,6 +53,10 @@ linklist:
     url: mailto:whyherro@nativvstudios.com
 
 portfolio:
+- item: Aurora Css
+  screenshot: "assets/uploads/aurora.gif"
+  description: "A lightweight, modern CSS framework focused on creating elegant, responsive interfaces with glass morphism effects, fluid animations, and dark/light mode support."
+  url: "/aurora.html"
 - item: JekyllxBulma
   screenshot: "assets/uploads/jekyllxbulma.png"
   description: JekyllxBulma is a Jekyll theme built ontop of the Bulma CSS Framework
