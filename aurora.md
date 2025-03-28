@@ -1,4 +1,4 @@
 ---
-title: Links
+title: Aurora CSS
 layout: aurora
 ---
