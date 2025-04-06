@@ -31,7 +31,35 @@ const categories = {
 window.onload = function () {
   document.querySelectorAll(".category").forEach((category) => {
     category.addEventListener("click", function (e) {
-      const posts = categories[e.target.innerText];
+      const categoryName = e.target.innerText;
+      
+      // Find the matching category by comparing the exact text
+      let matchingCategory = null;
+      for (const key in categories) {
+        if (key === categoryName) {
+          matchingCategory = key;
+          break;
+        }
+      }
+      
+      // If no exact match found, try to find a case-insensitive match
+      if (!matchingCategory) {
+        for (const key in categories) {
+          if (key.toLowerCase() === categoryName.toLowerCase()) {
+            matchingCategory = key;
+            break;
+          }
+        }
+      }
+      
+      // If still no match, log an error and return
+      if (!matchingCategory) {
+        console.error(`Category "${categoryName}" not found in categories object`);
+        return;
+      }
+      
+      const posts = categories[matchingCategory];
+      
       let html = ``
       posts.forEach(post=>{
         html += `
@@ -41,7 +69,7 @@ window.onload = function () {
         </a>
         `
       })
-      document.querySelector("#category-modal-title").innerText = e.target.innerText;
+      document.querySelector("#category-modal-title").innerText = categoryName;
       document.querySelector("#category-modal-content").innerHTML = html;
       document.querySelector("#category-modal-bg").classList.toggle("open");
       document.querySelector("#category-modal").classList.toggle("open");
