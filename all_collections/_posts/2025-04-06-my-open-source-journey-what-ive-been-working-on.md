@@ -2,7 +2,7 @@
 layout: post
 title: "My Open Source Journey: Projects I've Been Working On!"
 date: 2025-04-05 22:39:13 -0300
-categories: ["life","OpenSource"]
+categories: ["life","Open Source"]
 tags: ["Unity","FOSS","CSS","JavaScript"]
 comments: true
 ---

@@ -5,7 +5,7 @@
 const categories = {
   {% for category in site.categories %}
   {% capture category_name %}{{ category | first }}{% endcapture %}
-  {{ category_name }}: [
+  "{{ category_name }}": [
     {% for post in site.categories[category_name] %}
     {
       url: `{{ site.baseurl }}{{ post.url }}`,
