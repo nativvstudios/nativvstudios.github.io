@@ -55,10 +55,14 @@ linklist:
 portfolio:
 
 - item: PlacesNB
-  screenshot: "assets/uploads/placesnb.png"
+  slides:
+    - image: "assets/uploads/placesnb.png"
+  # screenshot: "assets/uploads/placesnb.png"
   description: "PlacesNB is your comprehensive guide to outdoor adventure in New Brunswick. We're passionate about showcasing the natural beauty and recreational opportunities throughout our beautiful province."
   url: "https://www.placesnb.ca"
 - item: NativvShare
+  slides:
+    - image: "assets/uploads/NativvShare.png"
   screenshot: "assets/uploads/NativvShare.png"
   description: "NativvShare is an image hosting service that functions in the way Imgur used to before it migrated to being a social network. NativvShare is for internal use only and registrations will never be open."
   url: "https://www.nativvstudios.io"
