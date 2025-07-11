@@ -53,6 +53,15 @@ linklist:
     url: mailto:whyherro@nativvstudios.com
 
 portfolio:
+
+- item: PlacesNB
+  screenshot: "assets/uploads/placesnb.png"
+  description: "PlacesNB is your comprehensive guide to outdoor adventure in New Brunswick. We're passionate about showcasing the natural beauty and recreational opportunities throughout our beautiful province."
+  url: "https://www.placesnb.ca"
+- item: NativvShare
+  screenshot: "assets/uploads/NativvShare.png"
+  description: "NativvShare is an image hosting service that functions in the way Imgur used to before it migrated to being a social network. NativvShare is for internal use only and registrations will never be open."
+  url: "https://www.nativvstudios.io"
 - item: Aurora Css
   description: "A lightweight, modern CSS framework focused on creating elegant, responsive interfaces with glass morphism effects, fluid animations, and dark/light mode support."
   url: "/aurora.html"
