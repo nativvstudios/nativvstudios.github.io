@@ -13,26 +13,487 @@
         {% for item in site.portfolio %}
         <article class="item">
           <div id="text-wrapper">
-          <h1 class="item-title is-centered">
-            {{ item.item }} 
-          </h1>
-          <!-- <a href="#!" data-base-url="{{site.baseurl}}" class="category"></a> -->
-          <p class="item-description is-centered" style="font-style:italic;">{{ item.description }}</p>
-          <h4 class="is-centered">
+            <h1 class="item-title is-centered">
+              {{ item.item }} 
+            </h1>
+            <p class="item-description is-centered" style="font-style:italic;">{{ item.description }}</p>
             {% if item.url != "" %}
-             <a href="{{ item.url }}"> Live URL</a>
-          </h4>
+            <h4 class="is-centered">
+              <a href="{{ item.url }}">Live URL</a>
+            </h4>
+            {% endif %}
           </div>
-          <br>
-          {% endif %}
-          <img class="item-img" src="{{ item.screenshot }}" alt="" />
+
+          <div class="carousel-wrapper">
+            <div class="carousel-container" id="carousel-{{ forloop.index }}">
+              {% for slide in item.slides %}
+              <div class="carousel-slide" id="slide-{{ forloop.parentloop.index }}-{{ forloop.index }}" data-index="{{ forloop.index0 }}">
+                <img class="item-img" src="{{ slide.image }}" alt="{{ item.item }} - Screenshot {{ forloop.index }}" />
+                <div class="slide-content">
+                  <h2>{{ item.item }}</h2>
+                  <p>{{ slide.description }}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            {% if item.slides.size > 1 %}
+            <div class="carousel-navigation">
+              <div class="carousel-controls">
+                <a href="#" class="prev-btn">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </a>
+                <a href="#" class="next-btn">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </a>
+              </div>
+              <div class="carousel-dots" id="carousel-dots-{{ forloop.index }}">
+                {% for slide in item.slides %}
+                <a href="#slide-{{ forloop.parentloop.index }}-{{ forloop.index }}" data-index="{{ forloop.index0 }}"></a>
+                {% endfor %}
+              </div>
+            </div>
+            {% endif %}
+          </div>
         </article>
         {% endfor %}
-
       </section>
+
+      <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+          <img src="" alt="Enlarged view" class="lightbox-img" id="lightbox-img" />
+          <button class="lightbox-close" id="lightbox-close">&times;</button>
+        </div>
+      </div>
+
       {% include footer.html %}
     </main>
     {% include category-modal.html%}
   </body>
   </div>
+
+  <style>
+    /* --- Fonts & Global Styles --- */
+    @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Titillium+Web:wght@700&display=swap");
+
+    :root {
+      --bg-color: #2d333b;
+      --card-color: #353c47;
+      --text-color: #cdd9e5;
+      --heading-color: #e6edf3;
+      --accent-color: #48e8c3;
+      --border-color: rgba(137, 147, 158, 0.2);
+    }
+
+    /* --- The Project Card Container --- */
+    .project-card {
+      width: 100%;
+      max-width: 800px;
+      background-color: var(--card-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      border: 1px solid var(--border-color);
+      margin: 2rem auto;
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .card-header h1 {
+      font-family: "Titillium Web", sans-serif;
+      font-size: 3rem;
+      color: var(--heading-color);
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-header p {
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+    }
+
+    .card-header .live-url {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      display: inline-block;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .card-header .live-url:hover {
+      border-bottom-color: var(--accent-color);
+    }
+
+    /* --- Carousel Structure --- */
+    .carousel-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .carousel-container {
+      display: flex;
+      height: 450px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* --- Animation Definitions --- */
+    @keyframes ken-burns {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
+    }
+    @keyframes text-reveal {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      scroll-snap-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: ken-burns 10s infinite alternate ease-in-out;
+    }
+    .carousel-slide:nth-child(2) img {
+      animation-direction: alternate-reverse;
+    }
+    .carousel-slide:nth-child(4) img {
+      animation-direction: alternate-reverse;
+      animation-duration: 12s;
+    }
+
+    .slide-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 2rem 2.5rem;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        transparent 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .slide-content h2,
+    .slide-content p {
+      color: var(--heading-color);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+    }
+
+    .carousel-slide.is-active .slide-content h2 {
+      animation: text-reveal 0.8s 0.3s both
+        cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .carousel-slide.is-active .slide-content p {
+      animation: text-reveal 0.8s 0.4s both
+        cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .slide-content h2 {
+      font-family: "Titillium Web", sans-serif;
+      font-size: 1.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .slide-content p {
+      font-family: "Roboto Mono", monospace;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      max-width: 90%;
+    }
+
+    /* --- Navigation Controls --- */
+    .carousel-navigation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+    .carousel-controls a {
+      pointer-events: all;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .carousel-controls a:hover {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+      transform: scale(1.05);
+    }
+    .carousel-controls a svg {
+      width: 24px;
+      height: 24px;
+      stroke: #fff;
+      stroke-width: 2.5;
+    }
+    .carousel-dots {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+    .carousel-dots a {
+      pointer-events: all;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      transition: background-color 0.3s ease;
+    }
+    .carousel-dots a:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    .carousel-dots a.active {
+      background-color: var(--accent-color);
+    }
+
+    /* --- Lightbox Styles --- */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .lightbox.is-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+    .lightbox-img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+      transform: scale(0.9);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .lightbox.is-active .lightbox-img {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: -10px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 3rem;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    /* --- Responsive Design --- */
+    @media (max-width: 768px) {
+      .project-card {
+        padding: 1.5rem;
+      }
+      .card-header h1 {
+        font-size: 2rem;
+      }
+      .card-header p {
+        font-size: 0.9rem;
+      }
+      .carousel-container {
+        height: 300px;
+      }
+      .slide-content h2 {
+        font-size: 1.25rem;
+      }
+      .slide-content p {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initialize all carousels
+      document.querySelectorAll('.carousel-container').forEach((container, containerIndex) => {
+        const slides = container.querySelectorAll(".carousel-slide");
+        const dots = document.querySelector(`#carousel-dots-${containerIndex + 1}`).querySelectorAll("a");
+        const prevBtn = container.parentElement.querySelector(".prev-btn");
+        const nextBtn = container.parentElement.querySelector(".next-btn");
+        const slideCount = slides.length;
+
+        const updateNav = (currentIndex) => {
+          dots.forEach((dot) => dot.classList.remove("active"));
+          dots[currentIndex].classList.add("active");
+
+          const prevIndex = (currentIndex - 1 + slideCount) % slideCount;
+          const nextIndex = (currentIndex + 1) % slideCount;
+          prevBtn.href = `#slide-${containerIndex + 1}-${prevIndex + 1}`;
+          nextBtn.href = `#slide-${containerIndex + 1}-${nextIndex + 1}`;
+
+          slides.forEach((slide) => slide.classList.remove("is-active"));
+          slides[currentIndex].classList.add("is-active");
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const currentIndex = parseInt(
+                  entry.target.dataset.index,
+                  10
+                );
+                updateNav(currentIndex);
+              }
+            });
+          },
+          {
+            root: container,
+            threshold: 0.5,
+          }
+        );
+
+        slides.forEach((slide) => observer.observe(slide));
+
+        // Handle navigation button clicks
+        prevBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const currentSlide = container.querySelector('.carousel-slide.is-active') || slides[0];
+          const currentIndex = parseInt(currentSlide.dataset.index, 10);
+          const prevIndex = (currentIndex - 1 + slideCount) % slideCount;
+          slides[prevIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const currentSlide = container.querySelector('.carousel-slide.is-active') || slides[0];
+          const currentIndex = parseInt(currentSlide.dataset.index, 10);
+          const nextIndex = (currentIndex + 1) % slideCount;
+          slides[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        });
+
+        // Handle dot navigation
+        dots.forEach((dot, dotIndex) => {
+          dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            slides[dotIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          });
+        });
+
+        // Lightbox functionality
+        let startX, startY;
+        slides.forEach((slide) => {
+          slide.addEventListener("mousedown", (e) => {
+            startX = e.pageX;
+            startY = e.pageY;
+          });
+          slide.addEventListener("mouseup", (e) => {
+            const diffX = Math.abs(e.pageX - startX);
+            const diffY = Math.abs(e.pageY - startY);
+            if (diffX < 10 && diffY < 10) openLightbox(slide);
+          });
+        });
+      });
+
+      // Global lightbox elements
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxClose = document.getElementById("lightbox-close");
+
+      function openLightbox(slide) {
+        const imgSrc = slide.querySelector("img").src;
+        lightboxImg.src = imgSrc;
+        lightbox.classList.add("active");
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+      }
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      lightboxClose.addEventListener("click", closeLightbox);
+    });
+  </script>
 </html>
