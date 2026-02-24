@@ -18,6 +18,12 @@
 
   --article-color: #2c303a;
   --article-hover-color: #4e5463;
+  --modal-bg: #282c34;
+  --modal-hover-bg: #383E4A;
+  --modal-text: var(--white-2);
+  --img-hover-border: white;
+  --img-hover-shadow: 0 3px 26px 0 rgba(255,255,255,0.43);
+  --img-hover-outline: 2px solid white;
   --overlay-bg: rgba(13,13,13,.7);
   --overlay-text: #ffffff;
   --night: #171C28;
@@ -109,7 +115,8 @@
 
 @media screen and (max-width: 750px) {
   .dayNightObj {
-    opacity: 0;
+    padding-top: 20px;
+    padding-right: 20px;
   }
 }
 #category-modal-bg {
@@ -130,7 +137,7 @@
   border-radius: 1rem;
   padding: 1rem;
   margin: auto;
-  background: var(--gray-blue2);
+  background: var(--modal-bg);
   display: none;
   visibility: hidden;
   line-height: 140%;
@@ -156,7 +163,7 @@
 .modal-article,
 .modal-article-date {
   display: block;
-  color: var(--white-2);
+  color: var(--modal-text);
 }
 .modal-article {
   border-radius: 1rem;
@@ -170,7 +177,7 @@
 
 
 .modal-article:hover {
-  background: var(--gray-blue2-hover);
+  background: var(--modal-hover-bg);
   border-radius: 1rem;
 }
 

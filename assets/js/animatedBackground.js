@@ -34,6 +34,12 @@ function applyTheme(isDay) {
     document.body.style.color = "var(--gray-6)";
     root.style.setProperty('--article-color', '#ffffff');
     root.style.setProperty('--article-hover-color', '#e8e8e8');
+    root.style.setProperty('--modal-bg', '#ffffff');
+    root.style.setProperty('--modal-hover-bg', '#f0f0f0');
+    root.style.setProperty('--modal-text', 'var(--gray-6)');
+    root.style.setProperty('--img-hover-border', '#5628EE');
+    root.style.setProperty('--img-hover-shadow', '0 0 0 4px rgba(86,40,238,0.4)');
+    root.style.setProperty('--img-hover-outline', 'none');
     root.style.setProperty('--overlay-bg', 'rgba(255,255,255,0.85)');
     root.style.setProperty('--overlay-text', '#111111');
     root.style.setProperty('--text-color', 'var(--day-text-color)');
@@ -47,6 +53,12 @@ function applyTheme(isDay) {
     document.body.style.color = "var(--white-2)";
     root.style.setProperty('--article-color', '#2c303a');
     root.style.setProperty('--article-hover-color', '#4e5463');
+    root.style.setProperty('--modal-bg', '#282c34');
+    root.style.setProperty('--modal-hover-bg', '#383E4A');
+    root.style.setProperty('--modal-text', 'var(--white-2)');
+    root.style.setProperty('--img-hover-border', 'white');
+    root.style.setProperty('--img-hover-shadow', '0 3px 26px 0 rgba(255,255,255,0.43)');
+    root.style.setProperty('--img-hover-outline', '2px solid white');
     root.style.setProperty('--overlay-bg', 'rgba(13,13,13,.7)');
     root.style.setProperty('--overlay-text', '#ffffff');
     root.style.setProperty('--text-color', 'var(--night-text-color)');

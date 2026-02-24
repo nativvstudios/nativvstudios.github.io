@@ -29,10 +29,6 @@
               {% for slide in item.slides %}
               <div class="carousel-slide" id="slide-{{ forloop.parentloop.index }}-{{ forloop.index }}" data-index="{{ forloop.index0 }}">
                 <img class="item-img" src="{{ slide.image }}" alt="{{ item.item }} - Screenshot {{ forloop.index }}" />
-                <div class="slide-content">
-                  <h2>{{ item.item }}</h2>
-                  <p>{{ slide.description }}</p>
-                </div>
               </div>
               {% endfor %}
             </div>
@@ -77,64 +73,6 @@
   </div>
 
   <style>
-    /* --- Fonts & Global Styles --- */
-    @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Titillium+Web:wght@700&display=swap");
-
-    :root {
-      --bg-color: #2d333b;
-      --card-color: #353c47;
-      --slide-text-color: #cdd9e5;
-      --heading-color: #e6edf3;
-      --accent-color: #48e8c3;
-      --border-color: rgba(137, 147, 158, 0.2);
-    }
-
-    /* --- The Project Card Container --- */
-    .project-card {
-      width: 100%;
-      max-width: 800px;
-      background-color: var(--card-color);
-      border-radius: 16px;
-      padding: 2.5rem;
-      border: 1px solid var(--border-color);
-      margin: 2rem auto;
-    }
-
-    .card-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .card-header h1 {
-      font-family: "Titillium Web", sans-serif;
-      font-size: 3rem;
-      color: var(--heading-color);
-      letter-spacing: 1.5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-header p {
-      font-size: 1rem;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 0 auto 1rem;
-    }
-
-    .card-header .live-url {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: var(--accent-color);
-      text-decoration: none;
-      display: inline-block;
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-
-    .card-header .live-url:hover {
-      border-bottom-color: var(--accent-color);
-    }
-
     /* --- Carousel Structure --- */
     .carousel-wrapper {
       position: relative;
@@ -158,22 +96,8 @@
 
     /* --- Animation Definitions --- */
     @keyframes ken-burns {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(1.1);
-      }
-    }
-    @keyframes text-reveal {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { transform: scale(1.05); }
+      100% { transform: scale(1.15); }
     }
 
     .carousel-slide {
@@ -197,50 +121,6 @@
     .carousel-slide:nth-child(4) img {
       animation-direction: alternate-reverse;
       animation-duration: 12s;
-    }
-
-    .slide-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 2rem 2.5rem;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.8) 0%,
-        transparent 100%
-      );
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .slide-content h2,
-    .slide-content p {
-      color: var(--heading-color);
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-      opacity: 0;
-    }
-
-    .carousel-slide.is-active .slide-content h2 {
-      animation: text-reveal 0.8s 0.3s both
-        cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    .carousel-slide.is-active .slide-content p {
-      animation: text-reveal 0.8s 0.4s both
-        cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .slide-content h2 {
-      font-family: "Titillium Web", sans-serif;
-      font-size: 1.75rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .slide-content p {
-      font-family: "Roboto Mono", monospace;
-      font-size: 0.9rem;
-      color: var(--slide-text-color);
-      max-width: 90%;
     }
 
     /* --- Navigation Controls --- */
@@ -311,7 +191,7 @@
       background-color: rgba(255, 255, 255, 0.5);
     }
     .carousel-dots button.active {
-      background-color: var(--accent-color);
+      background-color: var(--navbar-color);
     }
 
     /* --- Lightbox Styles --- */
