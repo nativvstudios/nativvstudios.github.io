@@ -40,20 +40,20 @@
             {% if item.slides.size > 1 %}
             <div class="carousel-navigation">
               <div class="carousel-controls">
-                <a href="#" class="prev-btn">
+                <button class="prev-btn">
                   <svg viewBox="0 0 24 24" fill="none">
                     <path d="M15 18l-6-6 6-6" />
                   </svg>
-                </a>
-                <a href="#" class="next-btn">
+                </button>
+                <button class="next-btn">
                   <svg viewBox="0 0 24 24" fill="none">
                     <path d="M9 18l6-6-6-6" />
                   </svg>
-                </a>
+                </button>
               </div>
               <div class="carousel-dots" id="carousel-dots-{{ forloop.index }}">
                 {% for slide in item.slides %}
-                <a href="#slide-{{ forloop.parentloop.index }}-{{ forloop.index }}" data-index="{{ forloop.index0 }}"></a>
+                <button data-index="{{ forloop.index0 }}"></button>
                 {% endfor %}
               </div>
             </div>
@@ -83,7 +83,7 @@
     :root {
       --bg-color: #2d333b;
       --card-color: #353c47;
-      --text-color: #cdd9e5;
+      --slide-text-color: #cdd9e5;
       --heading-color: #e6edf3;
       --accent-color: #48e8c3;
       --border-color: rgba(137, 147, 158, 0.2);
@@ -239,7 +239,7 @@
     .slide-content p {
       font-family: "Roboto Mono", monospace;
       font-size: 0.9rem;
-      color: var(--text-color);
+      color: var(--slide-text-color);
       max-width: 90%;
     }
 
@@ -263,25 +263,26 @@
       justify-content: space-between;
       padding: 0 1rem;
     }
-    .carousel-controls a {
+    .carousel-controls button {
       pointer-events: all;
       background-color: rgba(0, 0, 0, 0.3);
+      border: none;
       border-radius: 8px;
       width: 40px;
       height: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-decoration: none;
+      cursor: pointer;
       opacity: 0.7;
       transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .carousel-controls a:hover {
+    .carousel-controls button:hover {
       opacity: 1;
       background-color: rgba(0, 0, 0, 0.5);
       transform: scale(1.05);
     }
-    .carousel-controls a svg {
+    .carousel-controls button svg {
       width: 24px;
       height: 24px;
       stroke: #fff;
@@ -295,18 +296,21 @@
       display: flex;
       gap: 10px;
     }
-    .carousel-dots a {
+    .carousel-dots button {
       pointer-events: all;
       width: 10px;
       height: 10px;
       border-radius: 50%;
+      border: none;
       background-color: rgba(255, 255, 255, 0.3);
       transition: background-color 0.3s ease;
+      cursor: pointer;
+      padding: 0;
     }
-    .carousel-dots a:hover {
+    .carousel-dots button:hover {
       background-color: rgba(255, 255, 255, 0.5);
     }
-    .carousel-dots a.active {
+    .carousel-dots button.active {
       background-color: var(--accent-color);
     }
 
@@ -397,19 +401,19 @@
       // Initialize all carousels
       document.querySelectorAll('.carousel-container').forEach((container, containerIndex) => {
         const slides = container.querySelectorAll(".carousel-slide");
-        const dots = document.querySelector(`#carousel-dots-${containerIndex + 1}`).querySelectorAll("a");
+        const slideCount = slides.length;
+
+        // Single-slide items have no navigation — skip
+        const dotsContainer = document.querySelector(`#carousel-dots-${containerIndex + 1}`);
+        if (!dotsContainer) return;
+
+        const dots = dotsContainer.querySelectorAll("button");
         const prevBtn = container.parentElement.querySelector(".prev-btn");
         const nextBtn = container.parentElement.querySelector(".next-btn");
-        const slideCount = slides.length;
 
         const updateNav = (currentIndex) => {
           dots.forEach((dot) => dot.classList.remove("active"));
           dots[currentIndex].classList.add("active");
-
-          const prevIndex = (currentIndex - 1 + slideCount) % slideCount;
-          const nextIndex = (currentIndex + 1) % slideCount;
-          prevBtn.href = `#slide-${containerIndex + 1}-${prevIndex + 1}`;
-          nextBtn.href = `#slide-${containerIndex + 1}-${nextIndex + 1}`;
 
           slides.forEach((slide) => slide.classList.remove("is-active"));
           slides[currentIndex].classList.add("is-active");
@@ -435,28 +439,30 @@
 
         slides.forEach((slide) => observer.observe(slide));
 
+        const scrollToSlide = (index) => {
+          container.scrollTo({ left: index * container.offsetWidth, behavior: 'smooth' });
+        };
+
         // Handle navigation button clicks
-        prevBtn.addEventListener('click', (e) => {
-          e.preventDefault();
+        prevBtn.addEventListener('click', () => {
           const currentSlide = container.querySelector('.carousel-slide.is-active') || slides[0];
           const currentIndex = parseInt(currentSlide.dataset.index, 10);
           const prevIndex = (currentIndex - 1 + slideCount) % slideCount;
-          slides[prevIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          scrollToSlide(prevIndex);
         });
 
-        nextBtn.addEventListener('click', (e) => {
-          e.preventDefault();
+        nextBtn.addEventListener('click', () => {
           const currentSlide = container.querySelector('.carousel-slide.is-active') || slides[0];
           const currentIndex = parseInt(currentSlide.dataset.index, 10);
           const nextIndex = (currentIndex + 1) % slideCount;
-          slides[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          scrollToSlide(nextIndex);
         });
 
         // Handle dot navigation
         dots.forEach((dot, dotIndex) => {
           dot.addEventListener('click', (e) => {
             e.preventDefault();
-            slides[dotIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            scrollToSlide(dotIndex);
           });
         });
 

@@ -7,8 +7,8 @@
     display: flex;
     flex-direction: column;
     a.Link{
-      color: cyan;
-      border-bottom: 1px solid cyan;
+      color: var(--navbar-color);
+      border-bottom: 1px solid var(--navbar-color);
     }
 
     a.Link:hover:before  {

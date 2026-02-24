@@ -1,68 +1,92 @@
-var colors = new Array(
+var nightColors = [
     [19,20,23],
     [25,26,31],
     [30,31,38],
     [33,35,40],
     [55,39,73],
-    [37,40,44]);
-  
-  var step = 0;
-  //color table indices for: 
-  // current color left
-  // next color left
-  // current color right
-  // next color right
-  var colorIndices = [0,1,2,3];
-  
-  //transition speed  
-  var gradientSpeed = 0.004;
+    [37,40,44]];
 
-  $(document).ready(function(){
+var dayColors = [
+    [244,244,244],
+    [232,232,232],
+    [225,225,225],
+    [215,215,215],
+    [215,215,215],
+    [225,225,225]];
+
+var colors = nightColors.slice();
+
+var step = 0;
+//color table indices for:
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0,1,2,3];
+
+//transition speed
+var gradientSpeed = 0.004;
+
+function applyTheme(isDay) {
+  var root = document.documentElement;
+  if (isDay) {
+    root.style.setProperty('--navbar-color', 'var(--dayBtn)');
+    document.body.style.color = "var(--gray-6)";
+    root.style.setProperty('--article-color', '#ffffff');
+    root.style.setProperty('--article-hover-color', '#e8e8e8');
+    root.style.setProperty('--overlay-bg', 'rgba(255,255,255,0.85)');
+    root.style.setProperty('--overlay-text', '#111111');
+    root.style.setProperty('--text-color', 'var(--day-text-color)');
+    root.style.setProperty('--category-color', 'var(--dayBtn)');
+    root.style.setProperty('--category-bg-color', '#fff');
+    root.style.setProperty('--site-title-gradient', 'linear-gradient(to right, #25282c 30%, #3f3f3f 100%)');
+    root.style.setProperty('--social-btn-color', 'var(--night)');
+    colors = dayColors.slice();
+  } else {
+    root.style.setProperty('--navbar-color', 'cyan');
+    document.body.style.color = "var(--white-2)";
+    root.style.setProperty('--article-color', '#2c303a');
+    root.style.setProperty('--article-hover-color', '#4e5463');
+    root.style.setProperty('--overlay-bg', 'rgba(13,13,13,.7)');
+    root.style.setProperty('--overlay-text', '#ffffff');
+    root.style.setProperty('--text-color', 'var(--night-text-color)');
+    root.style.setProperty('--category-color', 'var(--white-2)');
+    root.style.setProperty('--category-bg-color', 'var(--gray-4)');
+    root.style.setProperty('--site-title-gradient', 'linear-gradient(to right, #eeeeee 30%, #a9abb3 100%)');
+    root.style.setProperty('--social-btn-color', 'var(--day)');
+    colors = nightColors.slice();
+  }
+}
+
+$(document).ready(function(){
+    var toggle = document.getElementById('dayNightToggle');
+
+    // Restore saved preference, or fall back to system preference
+    var saved = localStorage.getItem('theme');
+    if (saved === 'day') {
+      toggle.checked = true;
+      applyTheme(true);
+    } else if (saved === 'night') {
+      toggle.checked = false;
+      applyTheme(false);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      toggle.checked = true;
+      applyTheme(true);
+    }
+
+    // Listen for toggle changes
     $("#dayNightToggle").change(function() {
-        //var sheet = document.styleSheets[0];
+        var isDay = this.checked;
+        localStorage.setItem('theme', isDay ? 'day' : 'night');
+        applyTheme(isDay);
+    });
 
-        if(this.checked) {
-          console.log("Day");
-          //sheet.insertRule(":root{--navbar-color:var(--dayBtn)");
-          document.documentElement.style.setProperty('--navbar-color', 'var(--dayBtn)');
-          document.body.style.color = "var(--gray-6)";
-          document.documentElement.style.setProperty('--article-color', '--white-2');
-          document.documentElement.style.setProperty('--text-color', 'var(--day-text-color)');
-          document.documentElement.style.setProperty('--category-color', 'var(--dayBtn)');
-          document.documentElement.style.setProperty('--category-bg-color', '#fff');
-          document.documentElement.style.setProperty('--site-title-gradient', 'linear-gradient(to right, #25282c 30%, #3f3f3f 100%)');
-          document.documentElement.style.setProperty('--social-btn-color', 'var(--night)');
-
-
-
-
-          colors = new Array(
-            [244,244,244],
-            [232,232,232],
-            [225,225,225],
-            [215,215,215],
-            [215,215,215],
-            [225,225,225]);
-
-        }else{
-          console.log("Night");
-          document.documentElement.style.setProperty('--navbar-color', 'cyan');
-          document.body.style.color = "var(--white-2)";
-          document.documentElement.style.setProperty('--article-color', '#2c303a');
-          document.documentElement.style.setProperty('--text-color', 'var(--night-text-color)');
-          document.documentElement.style.setProperty('--category-color', 'var(--white-2)');
-          document.documentElement.style.setProperty('--category-bg-color', 'var(--gray-4)');
-          document.documentElement.style.setProperty('--site-title-gradient', 'linear-gradient(to right, #eeeeee 30%, #a9abb3 100%)');
-          document.documentElement.style.setProperty('--social-btn-color', 'var(--day)');
-
-          colors = new Array(
-            [19,20,23],
-            [25,26,31],
-            [30,31,38],
-            [33,35,40],
-            [55,39,73],
-            [37,40,44]);
-        }
+    // Listen for system preference changes (only if no saved preference)
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) {
+        toggle.checked = e.matches;
+        applyTheme(e.matches);
+      }
     });
 });
   function updateGradient()

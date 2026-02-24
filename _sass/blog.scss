@@ -13,12 +13,15 @@
   --white-2:#a9abb3;
 
   --article-color: #2c303a;
+  --article-hover-color: #4e5463;
+  --overlay-bg: rgba(13,13,13,.7);
+  --overlay-text: #ffffff;
   --navbar-color: cyan;
 
   --site-title-gradient: linear-gradient(to right, #eeeeee 30%, #a9abb3 100%);
   --night: #171C28;
   --day: #fff;
-  --text-color: --white-2;
+  --text-color: var(--white-2);
   --day-text-color: var(--gray-6);
   --category-color: var(--white-2);
   --category-bg-color: var(--gray-4);
@@ -75,8 +78,8 @@ header {
 main {
   margin: 0 auto;
   max-width: 55rem;
-  padding: 3rem 0;
-  
+  padding: 3rem 1.5rem;
+
 }
 /* header */
 
@@ -320,7 +323,7 @@ main {
     
     &:hover {
       transform: scale(1.05);
-      background: #4e5463;
+      background: var(--article-hover-color);
       box-shadow: 0 5px 40px 0 rgba(0,0,0,0.20);
     }
 
@@ -394,7 +397,8 @@ main {
   left: 0;
   width: 100%;
   opacity: 0;
-  background-color: rgba(13,13,13,.7);
+  color: var(--overlay-text);
+  background-color: var(--overlay-bg);
   transform: scaleY(.75);
   margin: 0;
   padding: 15px 25px;
@@ -454,13 +458,13 @@ main {
   .item {
     box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
     padding: 2rem;
-    background: #2c303a;
+    background: var(--article-color);
     border-radius: 15px;
     transition: all 0.2s ease-in-out;
     position: relative;
 
 
-    
+
     a.item-area {
       display: block;
       position: absolute;
@@ -473,14 +477,14 @@ main {
 
 
     .item-title {
-      color: var(--white-2);
+      color: var(--text-color);
       font-weight: 700;
       font-style: italic;
       font-size: 1.8rem;
       line-height: 130%;
 
       a {
-        color: var(--white-2);
+        color: var(--text-color);
         font-weight: 700;
         font-style: italic;
         font-size: 1.4rem;
@@ -741,16 +745,13 @@ main {
     align-items: flex-start;
 }
 
-  main, .articles, .links {
-    padding: 0;
-    margin: 0;
-  }
-
   main {
+    padding: 0.75rem;
     padding-bottom: 1rem;
   }
 
   .articles, .links {
+    padding: 0;
     margin: 2rem 0 3rem 0;
     row-gap: 1.2rem;
   }

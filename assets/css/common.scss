@@ -15,6 +15,102 @@
   --gray-6: #111111;
   --white-1: #eeeeee;
   --white-2: #a9abb3;
+
+  --article-color: #2c303a;
+  --article-hover-color: #4e5463;
+  --overlay-bg: rgba(13,13,13,.7);
+  --overlay-text: #ffffff;
+  --night: #171C28;
+  --day: #fff;
+  --nightBtn: #fff;
+  --dayBtn: #5628EE;
+  --site-title-gradient: linear-gradient(to right, #eeeeee 30%, #a9abb3 100%);
+  --navbar-color: cyan;
+  --text-color: var(--white-2);
+  --day-text-color: var(--gray-6);
+  --night-text-color: var(--white-2);
+  --category-color: var(--white-2);
+  --category-bg-color: var(--gray-4);
+  --social-btn-color: var(--day);
+}
+
+.dayNightObj {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  padding-top: 50px;
+  padding-right: 50px;
+  z-index: 10;
+}
+
+.dayNight div {
+  transition: background .4s ease;
+  background: var(--night);
+  &.day {
+    background: var(--day);
+  }
+}
+
+.dayNight {
+  justify-content: flex-end;
+  display: flex;
+  cursor: pointer;
+  input {
+    display: none;
+    & + div {
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      position: relative;
+      box-shadow: inset 16px -16px 0 0 var(--nightBtn);
+      transform: scale(1) rotate(-2deg);
+      transition: box-shadow .5s ease 0s, transform .4s ease .1s;
+      &:before {
+        content: '';
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: background .3s ease;
+      }
+      &:after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin: -4px 0 0 -4px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-shadow: 0 -23px 0 var(--dayBtn), 0 23px 0 var(--dayBtn), 23px 0 0 var(--dayBtn), -23px 0 0 var(--dayBtn),
+        15px 15px 0 var(--dayBtn),-15px 15px 0 var(--dayBtn), 15px -15px 0 var(--dayBtn), -15px -15px 0 var(--dayBtn);
+        transform: scale(0);
+        transition: all .3s ease;
+      }
+    }
+    &:checked + div {
+      box-shadow: inset 32px -32px 0 0 var(--nightBtn);
+      transform: scale(.5) rotate(0deg);
+      transition: transform .3s ease .1s, box-shadow .2s ease 0s;
+      &:before {
+        background: var(--dayBtn);
+        transition: background .3s ease .1s;
+      }
+      &:after {
+        transform: scale(1.5);
+        transition: transform .5s ease .15s;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .dayNightObj {
+    opacity: 0;
+  }
 }
 #category-modal-bg {
   position: fixed;
