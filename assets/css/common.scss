@@ -16,8 +16,9 @@
   --white-1: #eeeeee;
   --white-2: #a9abb3;
 
-  --article-color: #2c303a;
-  --article-hover-color: #4e5463;
+  --article-color: rgba(10, 12, 20, 0.72);
+  --article-hover-color: rgba(20, 24, 36, 0.80);
+  --article-border: rgba(255, 255, 255, 0.07);
   --modal-bg: #282c34;
   --modal-hover-bg: #383E4A;
   --modal-text: var(--white-2);
@@ -41,13 +42,10 @@
 }
 
 .dayNightObj {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  right: 0;
-  padding-top: 50px;
-  padding-right: 50px;
-  z-index: 10;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
 }
 
 .dayNight div {

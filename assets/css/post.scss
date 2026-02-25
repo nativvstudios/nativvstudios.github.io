@@ -12,7 +12,7 @@
   --gray-blue1:#2c303a;
   --gray-blue2:#282c34;
   --gray-blue2-hover:#383E4A;
-  
+
   --gray-1:#3f3f3f;
   --gray-2:#32353a;
   --gray-3:#25282c;
@@ -21,6 +21,8 @@
   --gray-6:#111111;
   --white-1:#eeeeee;
   --white-2:#a9abb3;
+
+  --post-bg: rgba(10, 12, 20, 0.94);
 }
 
 * {
@@ -57,38 +59,22 @@ body:before {
 .content a, .navbar a {
   text-decoration: none;
   color: var(--navbar-color);
-  text-align: center;
-  position: relative;
-  flex-grow: 1;
-  border-bottom: 2px solid var(--navbar-color);
-
-  padding: 1px;
+  padding: 4px;
   cursor: pointer;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background-image:
+    linear-gradient(var(--navbar-color), var(--navbar-color)),
+    linear-gradient(var(--navbar-color), var(--navbar-color)),
+    linear-gradient(var(--navbar-color), var(--navbar-color)),
+    linear-gradient(var(--navbar-color), var(--navbar-color));
+  background-size: 100% 2px, 2px 0%, 2px 0%, 0% 2px;
+  background-position: bottom left, left bottom, right bottom, top left;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
 }
-.content a:before, .navbar a:before  {
-  content: "";
-  position: absolute;
-  border-bottom: 0px solid var(--navbar-color);
-
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  top: calc(2px/-1);
-  left: calc(2px/-1);
-  background: linear-gradient(to right, var(--navbar-color) 0%, var(--navbar-color) 100%), linear-gradient(to top, var(--navbar-color) 50%, transparent 50%), linear-gradient(to top, var(--navbar-color) 50%, transparent 50%), linear-gradient(to right, var(--navbar-color) 0%, var(--navbar-color) 100%), linear-gradient(to left, var(--navbar-color) 0%, var(--navbar-color) 100%);
-  background-size: 100% 2px, 2px 200%, 2px 200%, 0% 2px, 0% 2px;
-  background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
-  background-repeat: no-repeat, no-repeat;
-  transition: transform 0.2s ease-in-out, background-position 0.2s ease-in-out, background-size 0.2s ease-in-out;
-  transform: scaleX(0) rotate(0deg);
-  transition-delay: 0.2s, 0.2s, 0s;
-}
-.content a:hover:before, .navbar a:hover:before  {
-  background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
-  background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
-  transform: scaleX(1) rotate(0deg);
-  transition-delay: 0s, 0.2s, 0.2s;
-  border-bottom: 0px;
-
+.content a:hover, .navbar a:hover {
+  background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
 }
 
 
@@ -130,8 +116,11 @@ main {
 }
 
 .article {
-  box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
-  background-color: var(--article-color);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background-color: var(--post-bg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
   margin-bottom: 3rem;
   padding: 2em 3em 0 3em;
@@ -316,7 +305,7 @@ main {
 }
 
 .contentComments {
-  background-color: var(--article-color);
+  background-color: var(--post-bg);
   padding: 1em 0em 1em 0em;
   border-radius: 0px 0px 25px 25px;
 
@@ -571,9 +560,9 @@ main {
   }
 
   .article {
-    box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
-    background-color: var(--article-color);
+    background-color: var(--post-bg);
     border-radius: 25px 25px 25px 25px;
     margin-bottom: 3rem;
     padding: 2em 1.5em 0 1.5em;

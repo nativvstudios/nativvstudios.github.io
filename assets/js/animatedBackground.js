@@ -1,39 +1,44 @@
 var nightColors = [
-    [19,20,23],
-    [25,26,31],
-    [30,31,38],
-    [33,35,40],
-    [55,39,73],
-    [37,40,44]];
+    [15, 17, 28],   // deep navy
+    [20, 22, 38],   // dark blue
+    [28, 20, 42],   // deep indigo
+    [22, 28, 40],   // dark blue-gray
+    [38, 28, 58],   // deep purple
+    [18, 24, 35]];  // dark slate blue
 
 var dayColors = [
-    [244,244,244],
-    [232,232,232],
-    [225,225,225],
-    [215,215,215],
-    [215,215,215],
-    [225,225,225]];
+    [248, 248, 252],  // pale cool white
+    [242, 244, 250],  // soft blue-white
+    [244, 240, 248],  // pale lavender-white
+    [250, 248, 244],  // warm white
+    [240, 246, 250],  // pale sky
+    [246, 244, 248]]; // soft neutral
 
 var colors = nightColors.slice();
 
 var step = 0;
-//color table indices for:
-// current color left
-// next color left
-// current color right
-// next color right
-var colorIndices = [0,1,2,3];
+var colorIndices = [0, 1, 2, 3];
 
-//transition speed
-var gradientSpeed = 0.004;
+// at 60fps: 1/(60*12) ≈ 0.0014 → ~12s per transition
+var gradientSpeed = 0.0014;
+
+function smoothstep(t) {
+  return t * t * (3 - 2 * t);
+}
+
+function lerp(a, b, t) {
+  return Math.round(a + (b - a) * t);
+}
 
 function applyTheme(isDay) {
   var root = document.documentElement;
   if (isDay) {
     root.style.setProperty('--navbar-color', 'var(--dayBtn)');
     document.body.style.color = "var(--gray-6)";
-    root.style.setProperty('--article-color', '#ffffff');
-    root.style.setProperty('--article-hover-color', '#e8e8e8');
+    root.style.setProperty('--article-color', 'rgba(255, 255, 255, 0.75)');
+    root.style.setProperty('--article-hover-color', 'rgba(240, 242, 255, 0.88)');
+    root.style.setProperty('--article-border', 'rgba(0, 0, 0, 0.06)');
+    root.style.setProperty('--post-bg', 'rgba(255, 255, 255, 0.96)');
     root.style.setProperty('--modal-bg', '#ffffff');
     root.style.setProperty('--modal-hover-bg', '#f0f0f0');
     root.style.setProperty('--modal-text', 'var(--gray-6)');
@@ -51,8 +56,10 @@ function applyTheme(isDay) {
   } else {
     root.style.setProperty('--navbar-color', 'cyan');
     document.body.style.color = "var(--white-2)";
-    root.style.setProperty('--article-color', '#2c303a');
-    root.style.setProperty('--article-hover-color', '#4e5463');
+    root.style.setProperty('--article-color', 'rgba(10, 12, 20, 0.72)');
+    root.style.setProperty('--article-hover-color', 'rgba(20, 24, 36, 0.80)');
+    root.style.setProperty('--article-border', 'rgba(255, 255, 255, 0.07)');
+    root.style.setProperty('--post-bg', 'rgba(10, 12, 20, 0.94)');
     root.style.setProperty('--modal-bg', '#282c34');
     root.style.setProperty('--modal-hover-bg', '#383E4A');
     root.style.setProperty('--modal-text', 'var(--white-2)');
@@ -101,59 +108,48 @@ $(document).ready(function(){
       }
     });
 });
-  function updateGradient()
-  {
-    
-    if ( $===undefined ) return;
-    
+
+var gradientEl = null;
+var circleEl = null;
+var pageBtnEl = null;
+
+function updateGradient() {
   var c0_0 = colors[colorIndices[0]];
   var c0_1 = colors[colorIndices[1]];
   var c1_0 = colors[colorIndices[2]];
   var c1_1 = colors[colorIndices[3]];
-  
-  var istep = 1 - step;
-  var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-  var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-  var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-  var color1 = "rgb("+r1+","+g1+","+b1+")";
-  
-  var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-  var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-  var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-  var color2 = "rgb("+r2+","+g2+","+b2+")";
-  
-   $('#gradient').css({
-     background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
-      background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
-    
-      $('html').css({
-        background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
-         background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
 
-      $('a.PageNotFoundButton').css({
-        background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
-         background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+  var t = smoothstep(step);
 
-         $('.circle').css({
-          background: "-webkit-gradient(linear, left bottom, right bottom, from("+color1+"), to("+color2+"))"}).css({
-           background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+  var r1 = lerp(c0_0[0], c0_1[0], t);
+  var g1 = lerp(c0_0[1], c0_1[1], t);
+  var b1 = lerp(c0_0[2], c0_1[2], t);
 
+  var r2 = lerp(c1_0[0], c1_1[0], t);
+  var g2 = lerp(c1_0[1], c1_1[1], t);
+  var b2 = lerp(c1_0[2], c1_1[2], t);
 
-    step += gradientSpeed;
-    if ( step >= 1 )
-    {
-      step %= 1;
-      colorIndices[0] = colorIndices[1];
-      colorIndices[2] = colorIndices[3];
-      
-      //pick two new target color indices
-      //do not pick the same as the current one
-      colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-      colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-      
-    }
+  var gradient = "linear-gradient(135deg, rgb(" + r1 + "," + g1 + "," + b1 + ") 0%, rgb(" + r2 + "," + g2 + "," + b2 + ") 100%)";
+
+  if (!gradientEl) gradientEl = document.getElementById('gradient');
+  if (!circleEl) circleEl = document.querySelector('.circle');
+  if (!pageBtnEl) pageBtnEl = document.querySelector('a.PageNotFoundButton');
+
+  document.documentElement.style.background = gradient;
+  if (gradientEl) gradientEl.style.background = gradient;
+  if (circleEl) circleEl.style.background = gradient;
+  if (pageBtnEl) pageBtnEl.style.background = gradient;
+
+  step += gradientSpeed;
+  if (step >= 1) {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+    colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+    colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
   }
-  
-  setInterval(updateGradient,20);
 
-  
+  requestAnimationFrame(updateGradient);
+}
+
+requestAnimationFrame(updateGradient);
