@@ -14,7 +14,9 @@
           {% for i in site.data.author.artists %}
           <a href="{{ i.url }}" class="life-card">
             <img src="{{ i.dp }}" class="life-card-img" alt="{{ i.about }}" />
-            <p class="life-card-desc">{{ i.about }}</p>
+            <div class="life-card-overlay">
+              <p>{{ i.about }}</p>
+            </div>
           </a>
           {% endfor %}
         </div>

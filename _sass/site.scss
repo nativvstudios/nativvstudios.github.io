@@ -126,8 +126,27 @@
 // Post content (markdown body)
 .post-content {
   padding-top: var(--space-6);
+  color: var(--slate-fog);
 
   p { max-width: none; }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  ul, ol {
+    padding-left: var(--space-6);
+    margin-block: var(--space-4);
+
+    li {
+      margin-bottom: var(--space-2);
+      line-height: var(--leading-normal);
+    }
+  }
+
+  ul { list-style: disc; }
+  ol { list-style: decimal; }
 
   img {
     border-radius: var(--radius-md);
@@ -192,17 +211,20 @@
 // Life card (podcast grid item)
 .life-card {
   display: block;
+  position: relative;
   text-decoration: none;
   border-radius: var(--radius-lg);
   border: var(--border-subtle);
   overflow: hidden;
-  background: var(--surface-1);
-  transition: box-shadow 0.3s var(--ease-out), border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+  transition: box-shadow 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
 
   &:hover {
-    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     border-color: rgba(211, 218, 217, 0.2);
+  }
+
+  &:hover .life-card-overlay {
+    opacity: 1;
   }
 }
 
@@ -213,11 +235,23 @@
   display: block;
 }
 
-.life-card-desc {
-  padding: var(--space-2) var(--space-3);
-  font-size: var(--text-xs);
-  color: var(--slate-ash);
-  line-height: var(--leading-normal);
+.life-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 40, 49, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out);
+
+  p {
+    color: var(--slate-pearl);
+    font-size: var(--text-xs);
+    line-height: var(--leading-normal);
+    text-align: center;
+  }
 }
 
 // Links page
@@ -340,6 +374,27 @@
 .modal-article-date {
   font-size: var(--text-xs);
   color: var(--slate-ash);
+}
+
+// Disqus comments — blend into dark theme
+.disqus-wrapper {
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  border: var(--border-subtle);
+
+  #disqus_thread {
+    color-scheme: dark;
+  }
+
+  iframe {
+    color-scheme: dark;
+  }
+}
+
+[data-theme="light"] .disqus-wrapper {
+  background: var(--surface-1);
 }
 
 // Day/Night toggle
