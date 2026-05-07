@@ -376,27 +376,6 @@
   color: var(--slate-ash);
 }
 
-// Disqus comments — blend into dark theme
-.disqus-wrapper {
-  margin-top: var(--space-6);
-  padding: var(--space-6);
-  background: var(--surface-2);
-  border-radius: var(--radius-lg);
-  border: var(--border-subtle);
-
-  #disqus_thread {
-    color-scheme: dark;
-  }
-
-  iframe {
-    color-scheme: dark;
-  }
-}
-
-[data-theme="light"] .disqus-wrapper {
-  background: var(--surface-1);
-}
-
 // Day/Night toggle
 .theme-toggle {
   position: fixed;
