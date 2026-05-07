@@ -1,0 +1,94 @@
+// Slate UI — Navigation
+
+/* ============================================================
+   9. COMPONENTS — Navigation
+   ============================================================ */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-6);
+    background: rgba(42, 40, 49, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: var(--border-subtle);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+}
+.navbar-brand {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    color: var(--slate-pearl);
+    text-decoration: none;
+}
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+}
+.navbar-links a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    color: var(--slate-fog);
+    transition:
+        color var(--duration-fast) var(--ease-out),
+        background var(--duration-fast) var(--ease-out);
+}
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: var(--slate-pearl);
+    background: rgba(211, 218, 217, 0.06);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: var(--space-1);
+    border-bottom: var(--border-subtle);
+    padding-bottom: 0;
+}
+.tab {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--slate-ash);
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out);
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: -1px;
+}
+.tab:hover {
+    color: var(--slate-fog);
+}
+.tab.active {
+    color: var(--slate-accent);
+    border-bottom-color: var(--slate-accent);
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--slate-ash);
+    list-style: none;
+}
+.breadcrumbs li + li::before {
+    content: "/";
+    margin-right: var(--space-2);
+    opacity: 0.5;
+}
+.breadcrumbs a {
+    color: var(--slate-fog);
+}
+.breadcrumbs a:hover {
+    color: var(--slate-pearl);
+}

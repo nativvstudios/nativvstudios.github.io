@@ -1,0 +1,124 @@
+// Slate UI — Buttons
+
+/* ============================================================
+   5. COMPONENTS — Buttons
+   ============================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: var(--tracking-wide);
+    padding: 0.625rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out);
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+}
+.btn:active {
+    transform: scale(0.97);
+}
+.btn:disabled,
+.btn[disabled] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Primary */
+.btn-primary {
+    background: var(--slate-accent);
+    color: var(--slate-void);
+}
+.btn-primary:hover {
+    background: var(--slate-accent-soft);
+    box-shadow: var(--shadow-glow);
+    color: var(--slate-ash);
+}
+
+/* Secondary */
+.btn-secondary {
+    background: var(--surface-2);
+    color: var(--slate-mist);
+    border-color: rgba(211, 218, 217, 0.15);
+}
+.btn-secondary:hover {
+    background: var(--slate-ash);
+    color: var(--slate-pearl);
+}
+
+/* Ghost */
+.btn-ghost {
+    background: transparent;
+    color: var(--slate-mist);
+}
+.btn-ghost:hover {
+    background: rgba(211, 218, 217, 0.08);
+}
+
+/* Outline */
+.btn-outline {
+    background: transparent;
+    color: var(--slate-accent);
+    border-color: var(--slate-accent);
+}
+.btn-outline:hover {
+    background: var(--slate-accent);
+    color: var(--slate-void);
+}
+
+/* Danger */
+.btn-danger {
+    background: var(--slate-danger);
+    color: var(--slate-white);
+}
+.btn-danger:hover {
+    background: #c96a6a;
+}
+
+/* Sizes */
+.btn-xs {
+    font-size: var(--text-xs);
+    padding: 0.35rem 0.7rem;
+}
+.btn-sm {
+    font-size: var(--text-sm);
+    padding: 0.5rem 1rem;
+}
+.btn-lg {
+    font-size: var(--text-base);
+    padding: 0.75rem 1.5rem;
+}
+.btn-xl {
+    font-size: var(--text-lg);
+    padding: 0.875rem 2rem;
+}
+
+/* Icon button */
+.btn-icon {
+    padding: 0.625rem;
+    aspect-ratio: 1;
+}
+
+/* Button group */
+.btn-group {
+    display: inline-flex;
+}
+.btn-group .btn {
+    border-radius: 0;
+}
+.btn-group .btn:first-child {
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+.btn-group .btn:last-child {
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+.btn-group .btn + .btn {
+    border-left-color: rgba(0, 0, 0, 0.15);
+}

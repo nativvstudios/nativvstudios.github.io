@@ -1,0 +1,89 @@
+// _admin.scss — Admin panel styles
+
+/* --- Admin Table --- */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+
+    th, td {
+        padding: var(--space-2) var(--space-3);
+        text-align: left;
+        border-bottom: var(--border-subtle);
+    }
+
+    th {
+        color: var(--slate-ash);
+        font-weight: 500;
+        font-size: var(--text-xs);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    tbody tr {
+        transition: background 0.15s ease;
+
+        &:hover {
+            background: var(--surface-1);
+        }
+    }
+}
+
+/* --- Announcement Banner (shown on dashboard) --- */
+.announcement-banner {
+    position: relative;
+    padding: var(--space-3) var(--space-4);
+    padding-right: var(--space-8);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+    border-left: 4px solid;
+    background: var(--surface-1);
+
+    &.announcement-info {
+        border-left-color: var(--slate-info, #64b5f6);
+    }
+
+    &.announcement-warning {
+        border-left-color: rgba(255, 193, 7, 0.7);
+    }
+
+    &.announcement-update {
+        border-left-color: rgba(76, 175, 80, 0.7);
+    }
+
+    &.announcement-event {
+        border-left-color: var(--accent-ember);
+    }
+}
+
+.announcement-title {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--slate-pearl);
+    margin-bottom: 2px;
+}
+
+.announcement-body {
+    font-size: var(--text-xs);
+    color: var(--slate-fog);
+    line-height: 1.5;
+}
+
+.announcement-dismiss {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    background: none;
+    border: none;
+    color: var(--slate-ash);
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+
+    &:hover {
+        opacity: 1;
+    }
+}

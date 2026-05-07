@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <div id="gradient">
-  {% include dayNightObj.html %}
-
   {% include head.html %}
-
+  <div id="gradient">
+    {% include dayNightObj.html %}
   <body>
-    <main>
-      <h1 class="is-centered">
-        {% include header.html %}
+    <main class="container container-sm">
+      {% include header.html %}
+      {% include navbar.html %}
 
-        Links
-      </h1>   
-
-      
-      <section class="links">
-        <div id="text-wrapper is-centered">
-          {% include navbar.html %}
-        </div>
+      <section class="links-grid mt-8">
         {% for i in site.data.author.linklist %}
-        <a href="{{i.url}}" class="link-area">
-        <article class="link" style="--hover-color: {{ i.color }}">
-          <h2 class="link-title is-centered">
-             {{ i.title }}
-          </h2>
-        </article>
-      </a>
+        <a href="{{i.url}}" class="card link-card p-6 transition" style="--hover-color: {{ i.color }}">
+          <h2 class="font-display text-center">{{ i.title }}</h2>
+        </a>
         {% endfor %}
       </section>
       {% include footer.html %}
     </main>
+    {% include category-modal.html%}
   </body>
   </div>
 </html>

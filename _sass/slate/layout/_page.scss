@@ -1,0 +1,24 @@
+// _page.scss — Auth Pages + Page Layout (sticky footer)
+
+/* --- Auth Pages --- */
+.auth-page {
+    padding: var(--space-4);
+}
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* --- Page Layout (sticky footer) --- */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.main-content {
+    padding: var(--space-6);
+    max-width: 1200px;
+    margin-inline: auto;
+    flex: 1;
+    width: 100%;
+}

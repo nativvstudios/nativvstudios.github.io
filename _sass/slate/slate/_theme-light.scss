@@ -1,0 +1,96 @@
+// Slate UI — Light Mode
+
+/* ============================================================
+   19. THEME — Light Mode
+   ============================================================ */
+[data-theme="light"] {
+    color-scheme: light;
+
+    /* --- Surfaces flip to light --- */
+    --surface-0: #f2f4f3;
+    --surface-1: #ffffff;
+    --surface-2: #e8eceb;
+    --surface-3: #d3dad9;
+
+    /* --- Text flips to dark --- */
+    --slate-pearl: #2a2831;
+    --slate-mist: #37353e;
+    --slate-fog: #5c5b66;
+    --slate-ash: #8c8a95;
+    --slate-white: #1a181f;
+
+    /* --- Borders for light context --- */
+    --border-subtle: 1px solid rgba(42, 40, 49, 0.08);
+    --border-default: 1px solid rgba(42, 40, 49, 0.12);
+    --border-strong: 1px solid rgba(42, 40, 49, 0.2);
+
+    /* --- Shadows lighter --- */
+    --shadow-sm: 0 1px 2px rgba(42, 40, 49, 0.06);
+    --shadow-md: 0 4px 12px rgba(42, 40, 49, 0.08);
+    --shadow-lg: 0 8px 30px rgba(42, 40, 49, 0.1);
+    --shadow-xl: 0 16px 50px rgba(42, 40, 49, 0.12);
+    --shadow-inner: inset 0 2px 6px rgba(42, 40, 49, 0.06);
+    --shadow-glow: 0 0 20px rgba(194, 134, 107, 0.15);
+
+    /* --- Accent darkened slightly for contrast --- */
+    --slate-accent: #a8714f;
+    --slate-accent-soft: #c2866b;
+
+    /* --- Semantic colors stay vibrant but darkened --- */
+    --slate-success: #4a7d55;
+    --slate-warning: #9e8330;
+    --slate-danger: #a04040;
+    --slate-info: #4d7a90;
+}
+
+/* Light mode navbar needs opaque light background */
+[data-theme="light"] .navbar {
+    background: rgba(242, 244, 243, 0.9);
+}
+
+/* Light mode card hover border */
+[data-theme="light"] .card:hover {
+    border-color: rgba(42, 40, 49, 0.15);
+}
+
+/* Light mode form select arrow dark */
+[data-theme="light"] .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%235C5B66'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+}
+
+/* Light mode selection */
+[data-theme="light"] ::selection {
+    background: rgba(168, 113, 79, 0.25);
+    color: #1a181f;
+}
+
+/* System preference fallback for non-logged-in pages */
+@media (prefers-color-scheme: light) {
+    html:not([data-theme]) {
+        color-scheme: light;
+        --surface-0: #f2f4f3;
+        --surface-1: #ffffff;
+        --surface-2: #e8eceb;
+        --surface-3: #d3dad9;
+        --slate-pearl: #2a2831;
+        --slate-mist: #37353e;
+        --slate-fog: #5c5b66;
+        --slate-ash: #8c8a95;
+        --slate-white: #1a181f;
+        --border-subtle: 1px solid rgba(42, 40, 49, 0.08);
+        --border-default: 1px solid rgba(42, 40, 49, 0.12);
+        --border-strong: 1px solid rgba(42, 40, 49, 0.2);
+        --shadow-sm: 0 1px 2px rgba(42, 40, 49, 0.06);
+        --shadow-md: 0 4px 12px rgba(42, 40, 49, 0.08);
+        --shadow-lg: 0 8px 30px rgba(42, 40, 49, 0.1);
+        --shadow-xl: 0 16px 50px rgba(42, 40, 49, 0.12);
+        --shadow-inner: inset 0 2px 6px rgba(42, 40, 49, 0.06);
+        --shadow-glow: 0 0 20px rgba(194, 134, 107, 0.15);
+        --slate-accent: #a8714f;
+        --slate-accent-soft: #c2866b;
+        --slate-success: #4a7d55;
+        --slate-warning: #9e8330;
+        --slate-danger: #a04040;
+        --slate-info: #4d7a90;
+    }
+}

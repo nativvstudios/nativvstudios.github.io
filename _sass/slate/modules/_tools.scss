@@ -1,0 +1,384 @@
+// _tools.scss — Tools & Resources page
+a.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+
+    &:hover {
+        color: var(--slate-obsidian);
+        background-color: var(--slate-accent);
+        transform: translateY(-2px);
+    }
+}
+
+/* --- GE Tool Cards --- */
+.tool-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+}
+
+.tool-card-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--surface-2);
+    color: var(--slate-accent);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tool-card:hover .tool-card-icon {
+    background: var(--slate-obsidian);
+    color: var(--slate-obsidian);
+}
+
+.tool-card-title {
+    font-weight: 600;
+    color: var(--slate-pearl);
+    margin-bottom: var(--space-1);
+    font-size: var(--text-sm);
+}
+
+.tool-card-desc {
+    font-size: var(--text-xs);
+    color: var(--slate-ash);
+    margin: 0;
+    line-height: var(--leading-normal);
+    transition: color 0.2s ease;
+}
+
+.tool-card:hover .tool-card-title,
+.tool-card:hover .tool-card-desc {
+    color: var(--slate-obsidian);
+}
+
+/* --- Quick Link Cards --- */
+.quick-link-card {
+    position: relative;
+    padding: var(--space-3) var(--space-4);
+}
+
+.quick-link-title {
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+.quick-link-arrow {
+    font-size: var(--text-xs);
+    color: var(--slate-ash);
+    transition: opacity 0.15s ease;
+}
+
+.quick-link-card:hover .quick-link-arrow {
+    opacity: 0;
+}
+
+.quick-link-delete {
+    position: absolute;
+    top: 50%;
+    right: var(--space-2);
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.quick-link-delete-btn {
+    color: var(--slate-ash);
+    font-size: 1rem;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+        color: var(--slate-danger);
+        background-color: color-mix(in srgb, var(--slate-danger) 10%, transparent);
+    }
+}
+
+.quick-link-card:hover .quick-link-delete {
+    opacity: 1;
+}
+
+/* --- Reference Tables --- */
+.ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+
+    th,
+    td {
+        padding: var(--space-2) var(--space-3);
+        text-align: left;
+        border-bottom: 1px solid var(--surface-3);
+    }
+
+    th {
+        font-size: var(--text-xs);
+        font-weight: 600;
+        color: var(--slate-pearl);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        background: var(--surface-1);
+        white-space: nowrap;
+    }
+
+    td {
+        color: var(--slate-fog);
+    }
+
+    tbody tr {
+        transition: background-color 0.15s ease;
+
+        &:hover {
+            background-color: var(--surface-1);
+        }
+    }
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+}
+
+/* --- Column Chips --- */
+.ref-col-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-2) var(--space-1) var(--space-3);
+    background: var(--surface-2);
+    border: 1px solid var(--surface-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    color: var(--slate-fog);
+    line-height: 1;
+    transition: border-color 0.15s ease;
+
+    &:hover {
+        border-color: var(--slate-blush);
+    }
+}
+
+.ref-col-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.ref-col-chip-text {
+    font-weight: 500;
+    color: var(--slate-pearl);
+}
+
+.ref-col-chip-color,
+.ref-col-chip-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--slate-ash);
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ref-col-chip-color:hover {
+    background: var(--surface-3);
+    color: var(--slate-pearl);
+}
+
+.ref-col-chip-remove:hover {
+    background: rgba(184, 92, 92, 0.2);
+    color: var(--danger, var(--slate-danger));
+}
+
+/* --- Color Picker Popover --- */
+.ref-color-popover {
+    background: var(--surface-1);
+    border: 1px solid var(--surface-3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-lg);
+    min-width: 176px;
+    animation: refColorFadeIn 0.12s ease-out;
+}
+
+@keyframes refColorFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.ref-color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: var(--space-3);
+}
+
+.ref-color-swatch {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+    padding: 0;
+    outline: none;
+
+    &:hover {
+        transform: scale(1.15);
+        box-shadow: 0 0 0 2px var(--surface-0);
+    }
+}
+
+.ref-color-swatch-selected {
+    border-color: var(--slate-pearl) !important;
+    box-shadow: 0 0 0 2px var(--surface-0), 0 0 0 3px var(--slate-pearl);
+}
+
+.ref-color-swatch-none {
+    background: var(--surface-2);
+    color: var(--slate-ash);
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--surface-3);
+
+    &:hover {
+        border-color: var(--slate-blush);
+        color: var(--slate-fog);
+    }
+}
+
+.ref-color-custom {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--surface-2);
+
+    label {
+        color: var(--slate-ash);
+        white-space: nowrap;
+    }
+}
+
+.ref-color-custom-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 28px;
+    border: 1px solid var(--surface-3);
+    border-radius: var(--radius-md);
+    background: transparent;
+    cursor: pointer;
+    padding: 2px;
+
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+        border: none;
+        border-radius: calc(var(--radius-md) - 2px);
+    }
+
+    &::-moz-color-swatch {
+        border: none;
+        border-radius: calc(var(--radius-md) - 2px);
+    }
+}
+
+/* --- Row Builder Entries --- */
+.ref-row-entry {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    margin-bottom: var(--space-2);
+    background: var(--surface-0);
+    border: 1px solid var(--surface-2);
+    border-radius: var(--radius-md);
+    transition: border-color 0.15s ease;
+
+    &:hover {
+        border-color: var(--surface-3);
+    }
+}
+
+.ref-row-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    flex: 1;
+
+    .form-group {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+.ref-row-remove {
+    flex-shrink: 0;
+    margin-bottom: var(--space-1);
+}
+
+/* --- Flip Tracker Modal --- */
+.flip-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(42, 40, 49, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    animation: flipFadeIn 0.15s ease-out;
+}
+
+@keyframes flipFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.flip-modal {
+    width: 100%;
+    max-width: 440px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: flipSlideIn 0.15s ease-out;
+
+    &:hover {
+        transform: none;
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+@keyframes flipSlideIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,56 @@
+// Slate UI — Modal (CSS-only)
+
+/* ============================================================
+   15. COMPONENTS — Modal (CSS-only with :target)
+   ============================================================ */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(42, 40, 49, 0.7);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration-normal) var(--ease-out);
+}
+.modal-backdrop:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal {
+    background: var(--surface-1);
+    border: var(--border-default);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    max-width: 480px;
+    width: 90%;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(10px) scale(0.98);
+    transition: transform var(--duration-normal) var(--ease-spring);
+}
+.modal-backdrop:target .modal {
+    transform: translateY(0) scale(1);
+}
+.modal-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    color: var(--slate-pearl);
+    margin-bottom: var(--space-3);
+}
+.modal-close {
+    float: right;
+    background: none;
+    border: none;
+    color: var(--slate-ash);
+    font-size: var(--text-xl);
+    cursor: pointer;
+    padding: var(--space-1);
+    line-height: 1;
+}
+.modal-close:hover {
+    color: var(--slate-pearl);
+}

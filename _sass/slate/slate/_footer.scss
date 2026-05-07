@@ -1,0 +1,92 @@
+// Slate UI — Footer
+
+/* ============================================================
+   15b. COMPONENTS — Footer
+   ============================================================ */
+.slate-footer {
+    background: var(--surface-1);
+    border-top: var(--border-subtle);
+    padding: var(--space-10) var(--space-6) var(--space-6);
+    margin-top: var(--space-12);
+    font-size: var(--text-sm);
+    color: var(--slate-ash);
+}
+.slate-footer-inner {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(2, 1fr);
+    gap: var(--space-8);
+}
+.slate-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+.slate-footer-brand-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    color: var(--slate-pearl);
+    text-decoration: none;
+}
+.slate-footer-brand-tagline {
+    font-size: var(--text-sm);
+    color: var(--slate-ash);
+    max-width: 30ch;
+    line-height: var(--leading-normal);
+}
+.slate-footer-heading {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--slate-fog);
+    margin-bottom: var(--space-3);
+}
+.slate-footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+.slate-footer-links a {
+    color: var(--slate-ash);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color var(--duration-fast) var(--ease-out);
+}
+.slate-footer-links a:hover {
+    color: var(--slate-accent);
+}
+.slate-footer-bottom {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-6);
+    margin-top: var(--space-8);
+    border-top: var(--border-subtle);
+    font-size: var(--text-xs);
+    color: var(--slate-ash);
+}
+.slate-footer-bottom a {
+    color: var(--slate-accent);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+.slate-footer-bottom a:hover {
+    color: var(--slate-pearl);
+}
+
+@media (max-width: 768px) {
+    .slate-footer-inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    .slate-footer-bottom {
+        flex-direction: column;
+        gap: var(--space-2);
+        text-align: center;
+    }
+}

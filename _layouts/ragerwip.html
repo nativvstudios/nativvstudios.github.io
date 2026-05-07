@@ -2,38 +2,32 @@
 <html lang="en">
   {% include head.html %}
   <div id="gradient">
-
+    {% include dayNightObj.html %}
   <body>
-    <main>
-      {% include header.html %} {% include bio.html %}
-      {% include navbar.html%}
-      <section class="articles">
-        <section id="img-wrapper-ranger">
+    <main class="container container-sm">
+      {% include header.html %}
+      {% include bio.html %}
+      {% include navbar.html %}
 
-          <img src="/assets/uploads/nativvsplash.png" alt="" />
-          <h2 class="article-title"> THIS PAGE IS UNDER CONSTRUCTION <BR>
-            CHECK BACK SOON :)
-          </h2>
-        </section>
-
+      <section class="article-grid mt-8">
+        <article class="card-glass p-6 text-center">
+          <img src="/assets/uploads/nativvsplash.png" alt="Nativv Studios" class="rounded-xl mb-4" style="max-width:100%;" />
+          <h2 class="font-display text-xl">This page is under construction. Check back soon!</h2>
+        </article>
 
         {% for post in site.categories.rangers %}
-        <article class="article">
-          <a href="{{site.baseurl}}{{post.url}}" class="article-area"></a>
+        <article class="card-glass p-6 transition animate-fade-in">
           <h2 class="article-title">
-            <a href="{{site.baseurl}}{{post.url}}"> {{post.title | markdownify}} </a>
+            <a href="{{site.baseurl}}{{post.url}}">{{post.title | markdownify}}</a>
           </h2>
-
-          <small class="date">{{post.date | date_to_string}}</small>
-          <div class="categories">
+          <small class="text-muted">{{post.date | date_to_string}}</small>
+          <div class="flex flex-wrap gap-2 mt-2">
             {% for c in post.categories %}
-            <a href="#!" data-base-url="{{site.baseurl}}" class="category"
-              >{{c}}</a
-            >
+            <a href="#!" data-base-url="{{site.baseurl}}" class="badge badge-default category">{{c}}</a>
             {% endfor %}
           </div>
         </article>
-        {%endfor%}
+        {% endfor %}
       </section>
       {% include footer.html %}
     </main>

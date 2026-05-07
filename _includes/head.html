@@ -13,6 +13,12 @@
 
   <script src="https://kit.fontawesome.com/c281819682.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10883YNNL"></script>
 
@@ -30,32 +36,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=5" />
   <meta name="HandheldFriendly" content="true">
   <meta name="description" content="Nativv Studios">
-  <meta name="theme-color" content="#282C34">
+  <meta name="theme-color" content="#2a2831">
 
 
   <title>{{site.title}} | {{page.title}}</title>
 
-
-
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/common.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
 
   {% if page.layout == "post" %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/post.css" />
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
-  {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
-  {%endif%}
+  {% endif %}
+
   <script src="{{site.baseurl}}/assets/js/animatedBackground.js"></script>
-
-  {% if page.layout == 404 %}
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/404.css" />
-  {% endif %}
   <script src="{{site.baseurl}}/assets/js/categories.js"></script>
-  {% if page.layout == "post" %}
-  <script defer src="{{site.baseurl}}/assets/js/lbox.js"></script>
-  {% endif %}
 
-  {% if page.layout == "portfolio" %}
+  {% if page.layout == "post" or page.layout == "portfolio" %}
   <script defer src="{{site.baseurl}}/assets/js/lbox.js"></script>
   {% endif %}
 

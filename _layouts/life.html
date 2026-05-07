@@ -1,64 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% include head.html %}
   <div id="gradient">
     {% include dayNightObj.html %}
-
-    {% include head.html %}
   <body>
-    <main>
+    <main class="container container-sm">
       {% include header.html %}
       {% include bio.html %}
 
-      <section class="life-items">
-        <h1 class="item-title is-centered">
-          Top Podcasts we listen to on Spotify! 
-        </h1>
-        <div class="life-items-wrapper">
-        {% for i in site.data.author.artists %}
-        <div class="test">
-          <article class="life-item">
-            <figure class="image-hover">
-                <div class="image"><img src="{{ i.dp }}" class="thumb" alt="sample55"/></div>
-                <figcaption class="header">
-                    <p class="description"> {{ i.about }}</p>
-                </figcaption><a href="{{ i.url }}"></a>
-            </figure>
-          </article>
-        </div>
-        <!-- <article class="life-item">
-          {% if i.url != "" %}
-          <a href="{{ i.url }}"> 
-            <img class="life-item-img" src="{{ i.dp }}" alt="" />
+      <section class="mt-8">
+        <h2 class="font-display text-center mb-6">Top Podcasts we listen to on Spotify!</h2>
+        <div class="life-grid">
+          {% for i in site.data.author.artists %}
+          <a href="{{ i.url }}" class="life-card">
+            <img src="{{ i.dp }}" class="life-card-img" alt="{{ i.about }}" />
+            <p class="life-card-desc">{{ i.about }}</p>
           </a>
-          {% endif %}
-        </article> -->
-        {% endfor %}
-
-      </div>  
+          {% endfor %}
+        </div>
       </section>
 
-
-      <section class="articles">
+      <section class="article-grid mt-8">
         {% for post in site.categories.life %}
-          <article class="article">
-            <a href="{{site.baseurl}}{{post.url}}" class="article-area"></a>
-            <h2 class="article-title">
-              <a href="{{site.baseurl}}{{post.url}}"> {{post.title | markdownify}} </a>
-            </h2>
-            <small class="date">{{post.date | date_to_string}}</small>
-            <div class="categories">
-              {% for c in post.categories %}
-              <a href="#!" data-base-url="{{site.baseurl}}" class="category"
-                >{{c}}</a>
-              {% endfor %}
-            </div>
-          </article>
-        {%endfor%}
-      </section>  
+        <article class="card-glass p-6 transition animate-fade-in">
+          <h2 class="article-title">
+            <a href="{{site.baseurl}}{{post.url}}">{{post.title | markdownify}}</a>
+          </h2>
+          <small class="text-muted">{{post.date | date_to_string}}</small>
+          <div class="flex flex-wrap gap-2 mt-2">
+            {% for c in post.categories %}
+            <a href="#!" data-base-url="{{site.baseurl}}" class="badge badge-default category">{{c}}</a>
+            {% endfor %}
+          </div>
+        </article>
+        {% endfor %}
+      </section>
       {% include footer.html %}
     </main>
     {% include category-modal.html%}
-    
   </body>
-</div>
+  </div>
 </html>

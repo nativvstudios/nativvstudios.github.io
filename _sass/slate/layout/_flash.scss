@@ -1,0 +1,22 @@
+// _flash.scss — Flash Messages
+
+/* --- Flash Messages --- */
+.flash-message {
+    position: relative;
+    padding-right: var(--space-10);
+}
+.flash-dismiss {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: var(--text-xl);
+    cursor: pointer;
+    opacity: 0.7;
+    line-height: 1;
+}
+.flash-dismiss:hover {
+    opacity: 1;
+}

@@ -1,0 +1,46 @@
+// _characters.scss — Character Cards, Character Switcher, Sidebar Stats
+
+/* --- Character Cards --- */
+.character-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: var(--surface-1);
+    border: var(--border-subtle);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--duration-fast) var(--ease-out);
+    text-decoration: none;
+}
+.character-card:hover {
+    border-color: var(--slate-obsidian);
+    background: var(--slate-accent);
+    .task-title {
+        color: var(--slate-obsidian);
+    }
+}
+
+/* --- Character Switcher (select) --- */
+.character-switcher .form-select {
+    background-color: var(--surface-2);
+    font-size: var(--text-sm);
+    padding: var(--space-1) var(--space-8) var(--space-1) var(--space-3);
+    min-width: 160px;
+}
+
+/* --- Sidebar Stats --- */
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+}
+.stat-label {
+    color: var(--slate-ash);
+}
+.stat-value {
+    font-family: var(--font-mono);
+    color: var(--slate-pearl);
+    font-weight: 500;
+}

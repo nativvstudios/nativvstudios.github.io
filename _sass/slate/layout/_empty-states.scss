@@ -1,0 +1,25 @@
+// _empty-states.scss — Empty States
+
+/* --- Empty States --- */
+.empty-state {
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+    color: var(--slate-ash);
+}
+.empty-state-icon {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-4);
+    opacity: 0.5;
+}
+.empty-state-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    color: var(--slate-fog);
+    margin-bottom: var(--space-2);
+}
+.empty-state-text {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+    max-width: 40ch;
+    margin-inline: auto;
+}

@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <div id="gradient">
-
   {% include head.html %}
-
+  <div id="gradient">
+    {% include dayNightObj.html %}
   <body>
-    <main>
-      {% include header.html %} {% include bio.html %}
-      <section class="articles">
-        <article class="article">
-          <a href="{{site.sitehome}}" class="article-area"></a>
-          <h2 class="article-title is-centered">
-            <a href="{{site.sitehome}}"> About Us! </a>
-          </h2>
-          <!-- <a href="#!" data-base-url="{{site.baseurl}}" class="category"></a> -->
+    <main class="container container-sm">
+      {% include header.html %}
+      {% include bio.html %}
 
-          <h2 class="article-title is-centered"> THIS PAGE IS UNDER CONSTRUCTION <BR>
-            CHECK BACK SOON :)
-          </h2>
-          <img src="/assets/uploads/nativvsplash.png" alt="" />
+      <section class="article-grid mt-8">
+        <article class="card-glass p-6 text-center">
+          <h2 class="font-display text-2xl mb-4">About Us!</h2>
+          <p class="text-muted text-lg mb-6">This page is under construction. Check back soon!</p>
+          <img src="/assets/uploads/nativvsplash.png" alt="Nativv Studios" class="rounded-xl" style="max-width:100%;" />
         </article>
       </section>
       {% include footer.html %}

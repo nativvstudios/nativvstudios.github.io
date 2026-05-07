@@ -1,0 +1,40 @@
+// _templates.scss — Task Templates page styles
+
+.templates-page {
+    .section-title--sub {
+        font-size: var(--text-sm);
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-wide);
+        color: var(--slate-blush);
+    }
+
+    .inline {
+        display: inline;
+    }
+}
+
+// Shared card base for templates and sets
+.template-card,
+.template-set-card {
+    padding: var(--space-4);
+}
+
+.template-card--link,
+.template-set-card--link {
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+        background-color: var(--surface-2);
+    }
+}
+
+.template-card-title {
+    font-weight: 600;
+    color: var(--slate-pearl);
+    text-decoration: none;
+}
+
+.template-delete-btn {
+    color: var(--danger);
+}

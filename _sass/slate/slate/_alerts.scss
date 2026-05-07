@@ -1,0 +1,36 @@
+// Slate UI — Alerts / Callouts
+
+/* ============================================================
+   8. COMPONENTS — Alerts / Callouts
+   ============================================================ */
+.alert {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-left: 3px solid;
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+.alert-info {
+    background: rgba(107, 143, 163, 0.08);
+    border-color: var(--slate-info);
+    color: var(--slate-info);
+}
+.alert-success {
+    background: rgba(110, 148, 119, 0.08);
+    border-color: var(--slate-success);
+    color: var(--slate-success);
+}
+.alert-warning {
+    background: rgba(194, 162, 78, 0.08);
+    border-color: var(--slate-warning);
+    color: var(--slate-warning);
+}
+.alert-danger {
+    background: rgba(184, 92, 92, 0.08);
+    border-color: var(--slate-danger);
+    color: var(--slate-danger);
+}
+.alert-title {
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+}

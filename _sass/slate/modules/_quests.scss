@@ -1,0 +1,145 @@
+// _quests.scss — Quest log display
+
+/* --- Progress Bar --- */
+.quest-progress-bar {
+    height: 8px;
+    background: var(--surface-2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.quest-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-ember), var(--accent-copper));
+    border-radius: var(--radius-full);
+    transition: width 0.6s ease;
+}
+
+/* --- Quest Search --- */
+.quest-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    .form-input {
+        max-width: 320px;
+    }
+}
+
+/* --- Quest Grid --- */
+.quest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+}
+
+.quest-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    background: var(--surface-1);
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.quest-cell:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.quest-name {
+    font-size: var(--text-sm);
+    color: var(--slate-fog);
+}
+
+.quest-qp {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--slate-ash);
+    white-space: nowrap;
+    margin-left: var(--space-2);
+}
+
+/* State-specific styling */
+.quest-finished {
+    border-left: 3px solid rgba(76, 175, 80, 0.5);
+
+    .quest-name {
+        color: var(--slate-pearl);
+    }
+
+    .quest-qp {
+        color: rgba(76, 175, 80, 0.8);
+    }
+}
+
+.quest-in-progress {
+    border-left: 3px solid rgba(255, 193, 7, 0.5);
+
+    .quest-name {
+        color: var(--slate-pearl);
+    }
+
+    .quest-qp {
+        color: rgba(255, 193, 7, 0.8);
+    }
+}
+
+.quest-not-started {
+    opacity: 0.7;
+
+    .quest-name {
+        color: var(--slate-ash);
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/* --- Quest Actions (Add Task button) --- */
+.quest-actions {
+    flex-shrink: 0;
+    margin-left: var(--space-2);
+}
+
+.btn-quest-task {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--surface-3);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--slate-ash);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    padding: 0;
+
+    &:hover {
+        background: var(--accent-ember);
+        border-color: var(--accent-ember);
+        color: var(--slate-obsidian);
+        transform: scale(1.1);
+    }
+
+    &.added {
+        background: rgba(76, 175, 80, 0.2);
+        border-color: rgba(76, 175, 80, 0.5);
+        color: rgba(76, 175, 80, 0.8);
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .quest-grid {
+        grid-template-columns: 1fr;
+    }
+}

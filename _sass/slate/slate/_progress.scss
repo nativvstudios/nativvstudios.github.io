@@ -1,0 +1,70 @@
+// Slate UI — Progress & Loading
+
+/* ============================================================
+   11. COMPONENTS — Progress & Loading
+   ============================================================ */
+.progress {
+    height: 6px;
+    background: var(--surface-2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    background: var(--slate-accent);
+    border-radius: var(--radius-full);
+    transition: width var(--duration-slow) var(--ease-out);
+}
+.progress-bar.success {
+    background: var(--slate-success);
+}
+.progress-bar.warning {
+    background: var(--slate-warning);
+}
+.progress-bar.danger {
+    background: var(--slate-danger);
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--surface-2);
+    border-top-color: var(--slate-accent);
+    border-radius: var(--radius-full);
+    animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.spinner-sm {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+}
+.spinner-lg {
+    width: 36px;
+    height: 36px;
+    border-width: 4px;
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--surface-2),
+        var(--surface-1),
+        var(--surface-2)
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+}
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

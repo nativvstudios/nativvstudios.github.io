@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
+gem "csv"
+gem "webrick"
 gem "github-pages", "~> 231", group: :jekyll_plugins
 gem 'jekyll-compose', group: [:jekyll_plugins]
 gem "jemoji"

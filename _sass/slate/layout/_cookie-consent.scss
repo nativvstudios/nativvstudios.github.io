@@ -1,0 +1,51 @@
+// Cookie Consent Banner
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-toast);
+    padding: var(--space-4) var(--space-6);
+    background: var(--surface-1);
+    border-top: var(--border-default);
+    box-shadow: 0 -4px 20px rgba(42, 40, 49, 0.4);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform var(--duration-slow) var(--ease-out),
+                opacity var(--duration-slow) var(--ease-out);
+
+    &[aria-hidden="false"] {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    &__body {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: var(--space-6);
+
+        @media (max-width: 640px) {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-4);
+        }
+    }
+
+    &__text {
+        font-size: var(--text-sm);
+        color: var(--slate-fog);
+        line-height: var(--leading-normal);
+        margin: 0;
+
+        strong {
+            color: var(--slate-pearl);
+        }
+    }
+
+    &__dismiss {
+        flex-shrink: 0;
+    }
+}

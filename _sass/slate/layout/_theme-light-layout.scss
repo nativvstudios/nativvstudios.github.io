@@ -1,0 +1,89 @@
+// _theme-light-layout.scss — Light Mode Layout Overrides + Theme toggle button
+
+/* --- Light Mode Layout Overrides --- */
+[data-theme="light"] .task-card:hover {
+    border-color: rgba(42, 40, 49, 0.15);
+}
+[data-theme="light"] .task-card.is-next {
+    background: rgba(168, 113, 79, 0.08);
+}
+[data-theme="light"] .character-card:hover {
+    border-color: rgba(42, 40, 49, 0.15);
+}
+[data-theme="light"] .mobile-menu {
+    background: var(--surface-1);
+}
+[data-theme="light"] .mobile-menu a:hover {
+    background: rgba(42, 40, 49, 0.05);
+}
+[data-theme="light"] .navbar-links a:hover,
+[data-theme="light"] .navbar-links a.active {
+    background: rgba(42, 40, 49, 0.05);
+}
+[data-theme="light"] .stat-cell.stat-maxed {
+    border-color: rgba(168, 113, 79, 0.3);
+    background: rgba(168, 113, 79, 0.06);
+}
+[data-theme="light"] .btn-done {
+    background: rgba(74, 125, 85, 0.12);
+    color: var(--slate-success);
+    border-color: rgba(74, 125, 85, 0.25);
+}
+[data-theme="light"] .btn-done:hover {
+    background: rgba(74, 125, 85, 0.2);
+}
+[data-theme="light"] .btn-undo {
+    background: rgba(158, 131, 48, 0.12);
+    color: var(--slate-warning);
+    border-color: rgba(158, 131, 48, 0.25);
+}
+[data-theme="light"] .btn-undo:hover {
+    background: rgba(158, 131, 48, 0.2);
+}
+[data-theme="light"] .calendar-grid {
+    border-color: rgba(42, 40, 49, 0.12);
+}
+[data-theme="light"] .calendar-day {
+    border-color: rgba(42, 40, 49, 0.08);
+}
+[data-theme="light"] .calendar-header-cell {
+    border-color: rgba(42, 40, 49, 0.1);
+}
+[data-theme="light"] .calendar-day:hover {
+    background: rgba(42, 40, 49, 0.04);
+}
+[data-theme="light"] .calendar-day.is-selected {
+    background: rgba(168, 113, 79, 0.08);
+}
+
+/* --- Theme toggle button --- */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--slate-fog);
+    cursor: pointer;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--duration-fast) var(--ease-out),
+                background var(--duration-fast) var(--ease-out);
+}
+.theme-toggle:hover {
+    color: var(--slate-pearl);
+    background: rgba(211, 218, 217, 0.08);
+}
+[data-theme="light"] .theme-toggle:hover {
+    background: rgba(42, 40, 49, 0.05);
+}
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+/* Show sun in dark mode, moon in light mode */
+.theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: block; }

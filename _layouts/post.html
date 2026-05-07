@@ -3,26 +3,23 @@
   {% include head.html %}
   <body>
     {% include dayNightObj.html %}
-    <main>
+    <main class="container container-sm py-8">
       {% include header.html %}
       {% include navbar.html %}
-      <section class="article">
-        <div class="article-header">
-          <h2 class="article-title">{{page.title}}</h2>
-          <small class="date">{{page.date | date_to_string}}</small>
-          <div class="categories">
+      <section class="card-glass p-8 rounded-xl">
+        <div class="mb-6">
+          <h2 class="font-display text-3xl mb-2">{{page.title}}</h2>
+          <small class="text-muted">{{page.date | date_to_string}}</small>
+          <div class="flex flex-wrap gap-2 mt-4">
             {% for c in page.categories %}
-            <a href="#!" class="category">{{c}}</a>
+            <a href="#!" class="badge badge-default category">{{c}}</a>
             {% endfor %}
           </div>
         </div>
-        <div class="content">{{content}}</div>
-        
-        <div class="contentComments"> 
+        <div class="post-content">{{content}}</div>
+        <div class="py-4">
           {% include comments.html %}
-
         </div>
-
       </section>
       {% include footer.html %}
     </main>

@@ -1,0 +1,37 @@
+// _mobile.scss — Mobile Menu
+
+/* --- Mobile Menu --- */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--surface-1);
+    border-bottom: var(--border-subtle);
+    padding: var(--space-2) var(--space-4);
+}
+.mobile-menu.is-open {
+    display: flex;
+}
+.mobile-menu a {
+    display: block;
+    padding: var(--space-3) var(--space-2);
+    color: var(--slate-fog);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+}
+.mobile-menu a:hover {
+    background-color: var(--slate-accent);
+    border-color: var(--slate-accent-soft);
+    color: var(--slate-obsidian);
+}
+.mobile-menu-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-2);
+    margin-top: var(--space-2);
+    border-top: var(--border-subtle);
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
