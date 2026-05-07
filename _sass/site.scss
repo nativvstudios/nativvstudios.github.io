@@ -19,6 +19,12 @@
     var(--surface-0);
 }
 
+// Site header
+.site-header {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-6);
+}
+
 // Site title sizing
 .site-title {
   font-size: var(--text-5xl);
@@ -94,13 +100,13 @@
 // Footer
 .site-footer {
   margin-top: var(--space-12);
-  padding: var(--space-10) 0 var(--space-8);
+  padding: var(--space-5) 0 var(--space-6);
   border-top: var(--border-subtle);
   text-align: center;
 }
 
 .site-footer-wordmark {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 0.2em;
@@ -129,7 +135,7 @@
 
 .wordmark-top {
   font-family: var(--font-display);
-  font-size: unquote("clamp(2.5rem, 6vw, 4rem)");
+  font-size: unquote("clamp(1.4rem, 3vw, 2rem)");
   font-weight: 400;
   letter-spacing: 0.25em;
   color: var(--slate-pearl);
@@ -139,7 +145,7 @@
 
 .wordmark-bottom {
   font-family: var(--font-body);
-  font-size: unquote("clamp(0.6rem, 1.4vw, 0.9rem)");
+  font-size: unquote("clamp(0.5rem, 1vw, 0.7rem)");
   font-weight: 500;
   letter-spacing: 0.6em;
   color: var(--slate-accent);
