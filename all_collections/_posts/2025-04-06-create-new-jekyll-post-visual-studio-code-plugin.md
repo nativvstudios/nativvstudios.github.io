@@ -4,6 +4,7 @@ title: "Jekyll Post Creator Visual Studio Code plugin"
 date: 2025-04-06 19:34:32 -0300
 categories: ["Open Source"]
 comments: true
+description: "A VS Code plugin I built that lets you create new Jekyll posts directly from the command palette, with a webview UI for filling in front matter."
 ---
 
 

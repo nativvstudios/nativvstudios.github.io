@@ -4,6 +4,7 @@ title: Nativv Studios 2022 Recap
 date: 2022-12-26
 categories: ["life","recap"]
 comments: true
+description: "A look back at 2022: two Jekyll themes shipped, new site sections added, and goals set for writing more tutorials and themes in the new year."
 ---
 
 Well that was quick!

@@ -4,6 +4,7 @@ title: How to make a simple (but powerful!) news bulletin box in Unity!
 date: 2022-01-07
 categories: ["tutorials","unity"]
 comments: true
+description: "Learn how to build a TextMeshPro news bulletin box in Unity that pulls live content from a web host using Unity's WebRequest API."
 ---
 
 Hey there!

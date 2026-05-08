@@ -5,6 +5,7 @@ date: 2025-04-05 22:39:13 -0300
 categories: ["life","Open Source"]
 tags: ["Unity","FOSS","CSS","JavaScript"]
 comments: true
+description: "It's been a while! Here's a look at what I've been building: a CSS framework, a couple of Unity tools, a Jekyll theme, and more."
 ---
 
 # My Open Source Journey: Projects I've Been Working On!

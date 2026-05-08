@@ -3,6 +3,7 @@ layout: post
 title: Jekyll Markdown
 date: 2021-11-04
 categories: ["tutorials","jekyll"]
+description: "A reference post covering all the Markdown formatting options available in Jekyll: headings, lists, code blocks, tables, images, and more."
 ---
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`
