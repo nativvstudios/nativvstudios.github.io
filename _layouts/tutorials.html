@@ -15,6 +15,9 @@
             <a href="{{site.baseurl}}{{post.url}}">{{post.title | markdownify}}</a>
           </h2>
           <small class="text-muted">{{post.date | date_to_string}}</small>
+          {% if post.description or post.excerpt %}
+          <p class="text-muted mt-2" style="font-size: 0.85em; line-height: 1.5;">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
+          {% endif %}
           <div class="flex flex-wrap gap-2 mt-2">
             {% for c in post.categories %}
             <a href="#!" data-base-url="{{site.baseurl}}" class="badge badge-default category">{{c}}</a>
