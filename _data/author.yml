@@ -2,14 +2,9 @@ name: Nativv Studios
 dp: https://avatars.githubusercontent.com/u/26895364?v=4
 description: "
   <p>
-    Nativv Studios is an Indie Dev Studio based out of New Brunswick, Canada! <br/>
-    We make games, websites 🤔 whatever we want really!
+    Nativv Studios is an indie dev studio based out of New Brunswick, Canada. <br/>
+    We build games, web apps, developer tools, and whatever else sparks our interest.
   </p>
-  <br/>
-  <p>
-    You should check out our <a href='https://forums.nativvstudios.com'>Forums!</a> <br/>
-    Or get to know more about us <a href='/about.html'>Here!</a>
-  </P>
 "
 email: whyherro@nativvstudios.com
 
@@ -45,13 +40,13 @@ linklist:
   - title: Buy me a Tea ❤️
     url: https://ko-fi.com/nativvstudios
     color: rgba(248, 49, 47, 0.493)
-  - title: Twitter 
+  - title: Twitter
     url: 'https://twitter.com/whyherro1'
     color: rgba(29, 161, 242, 0.493)
   - title: Github
     url:  'https://github.com/nativvstudios'
     color: rgba(110, 84, 148, 0.493)
-  - title: Dev.to 
+  - title: Dev.to
     url: https://dev.to/nativvstudios
     color: rgba(125, 214, 230, 0.493)
   - title: Gitlab
@@ -62,7 +57,7 @@ linklist:
     color: rgba(125, 214, 230, 0.493)
 
 contact:
-  - title: twitter 
+  - title: twitter
     url: 'https://twitter.com/whyherro1'
   - title: github
     url:  'https://github.com/nativvstudios'
@@ -70,5 +65,3 @@ contact:
     url: https://dev.to/nativvstudios
   - title: email
     url: mailto:whyherro@nativvstudios.com
-
-  

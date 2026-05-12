@@ -138,9 +138,16 @@
   font-size: unquote("clamp(1.4rem, 3vw, 2rem)");
   font-weight: 400;
   letter-spacing: 0.25em;
+  margin-right: -0.25em;
   color: var(--slate-pearl);
   line-height: 1;
   text-transform: uppercase;
+}
+
+.wordmark-separator {
+  width: calc(100% - 30px);
+  height: 1px;
+  background: var(--slate-graphite);
 }
 
 .wordmark-bottom {
@@ -150,6 +157,16 @@
   letter-spacing: 0.6em;
   color: var(--slate-accent);
   text-transform: uppercase;
+}
+
+.site-header .site-footer-wordmark {
+  .wordmark-top {
+    font-size: unquote("clamp(2.5rem, 5.5vw, 3.8rem)");
+  }
+
+  .wordmark-bottom {
+    font-size: unquote("clamp(0.75rem, 1.6vw, 1.2rem)");
+  }
 }
 
 .site-footer-copy {

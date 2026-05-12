@@ -7,26 +7,24 @@ repository: nativvstudios/nativvstudios.github.io
 sitehome: "/index.html"
 
 navigation:
-- text: Home
-  url: "/"
-- text: Life
-  url: "/life.html"
-- text: Tutorials
-  url: "/tutorials.html"   
-- text: Portfolio
-  url: "/portfolio.html"
-- text: Links
-  url: "/links.html"
-
-
+  - text: Home
+    url: "/"
+  - text: Life
+    url: "/life.html"
+  - text: Tutorials
+    url: "/tutorials.html"
+  - text: Portfolio
+    url: "/portfolio.html"
+  - text: Links
+    url: "/links.html"
 
 linklist:
   - title: Buy me a Tea ❤️
     url: https://ko-fi.com/nativvstudios
-  - title: Twitter 
-    url: 'https://twitter.com/whyherro1'
+  - title: Twitter
+    url: "https://twitter.com/whyherro1"
   - title: Github
-    url:  'https://github.com/nativvstudios'
+    url: "https://github.com/nativvstudios"
   - title: Dev.to
     url: https://dev.to/nativvstudios
   - title: Gitlab
@@ -53,47 +51,47 @@ linklist:
     url: mailto:whyherro@nativvstudios.com
 
 portfolio:
+  - item: Gielinor Dailies
+    description: "Gielinor Dailies is a daily co-pilot for Old School RuneScape. Plan smarter, play better — track your characters, manage daily tasks, access calculators, guides, and tools all in one place. Includes a RuneLite plugin for in-game task tracking."
+    url: "https://www.gielinordailies.com"
+    slides:
+      - image: "assets/uploads/gielinor-landing.png"
+      - image: "assets/uploads/gielinor-dashboard.png"
+      - image: "assets/uploads/gielinor-planner.png"
+      - image: "assets/uploads/gielinor-tools.png"
+      - image: "assets/uploads/gielinor-character.png"
+      - image: "assets/uploads/gielinor-plugin.png"
 
-- item: PlacesNB
-  slides:
-    - image: "assets/uploads/placesnb.png"
-  # screenshot: "assets/uploads/placesnb.png"
-  description: "PlacesNB is your comprehensive guide to outdoor adventure in New Brunswick. We're passionate about showcasing the natural beauty and recreational opportunities throughout our beautiful province."
-  url: "https://www.placesnb.ca"
-- item: NativvShare
-  slides:
-    - image: "assets/uploads/NativvShare.png"
-  screenshot: "assets/uploads/NativvShare.png"
-  description: "NativvShare is an image hosting service that functions in the way Imgur used to before it migrated to being a social network. NativvShare is for internal use only and registrations will never be open."
-  url: "https://www.nativvstudios.io"
-- item: Aurora Css
-  description: "A lightweight, modern CSS framework focused on creating elegant, responsive interfaces with glass morphism effects, fluid animations, and dark/light mode support."
-  url: "/aurora.html"
-  slides:
-    - image: "assets/uploads/aurora.gif"
-      description: "A lightweight, modern CSS framework focused on creating elegant, responsive interfaces with glass morphism effects, fluid animations, and dark/light mode support."
-    - image: "assets/uploads/aurora.gif"
-      description: "A lightweight, modern CSS framework focused on creating elegant, responsive interfaces with glass morphism effects, fluid animations, and dark/light mode support."
+  - item: Noctis
+    description: "Noctis is a minimalist, dark-themed Jekyll theme with responsive design, tag and category support, light/dark mode toggle, and multiple color schemes. The theme powering nativvstudios.com."
+    url: "https://github.com/nativvstudios/Noctis"
+    slides:
+      - image: "assets/uploads/noctis-desktop.png"
+      - image: "assets/uploads/noctis-mobile.png"
+      - image: "assets/uploads/noctis-showcase.gif"
 
-- item: JekyllxBulma
-  description: "JekyllxBulma is a Jekyll theme built ontop of the Bulma CSS Framework"
-  url: "https://nativvstudios.com/jekyllxbulma"
-  slides:
-    - image: "assets/uploads/jekyllxbulma.png"
-      description: "JekyllxBulma is a Jekyll theme built ontop of the Bulma CSS Framework"
-- item: Jekyll Bootstrap Theme
-  description: "Jekyll theme built ontop of the Bootstrap 5 Framework"
-  url: "https://www.nativvstudios.com/bootstrap-jekyll-dark/"
-  slides:
-    - image: "assets/uploads/jekyllboot.png"
-      description: "Jekyll theme built ontop of the Bootstrap 5 Framework"
-- item: From Ether
-  description: "From Ether is a captivating story-driven 2D pixel art RPG where you discover your origins from the mythical element of creation, Ether. Guided by the Ether, you realize your destined role in this timeline: to overcome the encroaching evil. Unravel the mysteries of your existence and fulfill your purpose in a beautifully crafted world, blending compelling narrative and nostalgic visuals."
-  url: ""
-  slides:
-    - image: "assets/uploads/FromEtherLogo.png"
-      description: "From Ether is a captivating story-driven 2D pixel art RPG where you discover your origins from the mythical element of creation, Ether. Guided by the Ether, you realize your destined role in this timeline: to overcome the encroaching evil. Unravel the mysteries of your existence and fulfill your purpose in a beautifully crafted world, blending compelling narrative and nostalgic visuals."
+  - item: Zen Search
+    description: "Zen Search is a minimalist Chrome extension that replaces your new tab with a clean dark homepage featuring a clock, pinned shortcuts, and instant search. Includes a Spotlight-style overlay (Ctrl+Shift+Space) to search tabs, history, and the web without leaving your current page."
+    url: "https://github.com/nativvstudios/Zen-search"
+    slides:
+      - image: "assets/uploads/zensearch-newtab.png"
+      - image: "assets/uploads/zensearch-suggestions.png"
+      - image: "assets/uploads/zensearch-spotlight.png"
+      - image: "assets/uploads/zensearch-panel.png"
+      - image: "assets/uploads/zensearch-settings.png"
 
+  - item: nUtilities
+    description: "A collection of Unity Editor utilities to boost your productivity. Features nSearch (fuzzy search), Scene Organizer, Favorites bookmarking, and Hierarchy Organizer to streamline your Unity workflow."
+    url: "https://github.com/nativvstudios/com.nutilities.editor"
+    slides:
+      - image: "assets/uploads/scenemanager.gif"
+      - image: "assets/uploads/nsearch.gif"
+
+  - item: From Ether
+    description: "From Ether is a captivating story-driven 2D pixel art RPG where you discover your origins from the mythical element of creation, Ether. Guided by the Ether, you realize your destined role in this timeline: to overcome the encroaching evil. Unravel the mysteries of your existence and fulfill your purpose in a beautifully crafted world, blending compelling narrative and nostalgic visuals."
+    url: ""
+    slides:
+      - image: "assets/uploads/FromEtherLogo.png"
 
 # for atom feed
 author:
@@ -134,4 +132,3 @@ defaults:
       layout: "post"
       permalink: /posts/:title/
 # exclude: ["sitemap.xml", "feed.xml", "LICENSE", "README.md"]
-
