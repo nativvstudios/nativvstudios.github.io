@@ -57,10 +57,16 @@
       </section>
 
       <div class="lightbox" id="lightbox">
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
         <div class="lightbox-content">
           <img src="" alt="Enlarged view" class="lightbox-img" id="lightbox-img" />
           <button class="lightbox-close" id="lightbox-close">&times;</button>
         </div>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" /></svg>
+        </button>
       </div>
 
       {% include footer.html %}
@@ -180,11 +186,19 @@
       transition: opacity var(--duration-slow) var(--ease-out);
     }
     .lightbox.active { opacity: 1; pointer-events: all; }
-    .lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; }
+    .lightbox-content {
+      position: relative;
+      max-width: 80vw;
+      max-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .lightbox-img {
       display: block;
       max-width: 100%;
-      max-height: 100%;
+      max-height: 85vh;
+      object-fit: contain;
       border-radius: var(--radius-md);
       transform: scale(0.9);
       opacity: 0;
@@ -207,6 +221,28 @@
       transition: opacity var(--duration-fast) ease;
     }
     .lightbox-close:hover { opacity: 1; }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(42, 40, 49, 0.6);
+      border: none;
+      border-radius: var(--radius-md);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+      z-index: 10;
+    }
+    .lightbox-nav:hover { opacity: 1; }
+    .lightbox-nav svg { width: 28px; height: 28px; stroke: var(--slate-pearl); stroke-width: 2.5; }
+    .lightbox-prev { left: var(--space-6); }
+    .lightbox-next { right: var(--space-6); }
+    .lightbox-nav.hidden { display: none; }
 
     @media (max-width: 768px) {
       .carousel-container { height: 300px; }
@@ -215,6 +251,15 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxClose = document.getElementById("lightbox-close");
+      const lightboxPrev = document.getElementById("lightbox-prev");
+      const lightboxNext = document.getElementById("lightbox-next");
+
+      let currentSlides = [];
+      let currentSlideIndex = 0;
+
       document.querySelectorAll('.carousel-container').forEach((container, containerIndex) => {
         const slides = container.querySelectorAll(".carousel-slide");
         const slideCount = slides.length;
@@ -273,24 +318,48 @@
         slides.forEach((slide) => {
           slide.addEventListener("mousedown", (e) => { startX = e.pageX; startY = e.pageY; });
           slide.addEventListener("mouseup", (e) => {
-            if (Math.abs(e.pageX - startX) < 10 && Math.abs(e.pageY - startY) < 10) openLightbox(slide);
+            if (Math.abs(e.pageX - startX) < 10 && Math.abs(e.pageY - startY) < 10) {
+              currentSlides = Array.from(slides);
+              currentSlideIndex = parseInt(slide.dataset.index, 10);
+              openLightbox();
+            }
           });
         });
       });
 
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const lightboxClose = document.getElementById("lightbox-close");
-
-      function openLightbox(slide) {
-        lightboxImg.src = slide.querySelector("img").src;
+      function openLightbox() {
+        lightboxImg.src = currentSlides[currentSlideIndex].querySelector("img").src;
+        updateLightboxNav();
         lightbox.classList.add("active");
+      }
+
+      function updateLightboxNav() {
+        const hide = currentSlides.length <= 1;
+        lightboxPrev.classList.toggle("hidden", hide);
+        lightboxNext.classList.toggle("hidden", hide);
       }
 
       function closeLightbox() { lightbox.classList.remove("active"); }
 
+      lightboxPrev.addEventListener("click", () => {
+        currentSlideIndex = (currentSlideIndex - 1 + currentSlides.length) % currentSlides.length;
+        lightboxImg.src = currentSlides[currentSlideIndex].querySelector("img").src;
+      });
+
+      lightboxNext.addEventListener("click", () => {
+        currentSlideIndex = (currentSlideIndex + 1) % currentSlides.length;
+        lightboxImg.src = currentSlides[currentSlideIndex].querySelector("img").src;
+      });
+
       lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
       lightboxClose.addEventListener("click", closeLightbox);
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") lightboxPrev.click();
+        if (e.key === "ArrowRight") lightboxNext.click();
+      });
     });
   </script>
 </html>

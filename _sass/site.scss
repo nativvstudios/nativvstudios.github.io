@@ -353,7 +353,8 @@
 }
 
 // Lightbox
-#lightbox {
+#lightbox,
+#lbox-overlay {
   position: fixed;
   z-index: var(--z-modal);
   inset: 0;

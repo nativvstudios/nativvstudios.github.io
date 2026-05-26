@@ -1,22 +1,21 @@
-const lightbox = document.createElement("div");
-lightbox.id = "lightbox";
-document.body.appendChild(lightbox);
+const lbox = document.createElement("div");
+lbox.id = "lbox-overlay";
+document.body.appendChild(lbox);
 
 const images = document.querySelectorAll(".post-content img");
-const portImages = document.querySelectorAll(".portfolio-grid .card-glass img");
 
 images.forEach((image) => {
   image.addEventListener("click", (e) => {
     disableScroll();
-    lightbox.classList.add("active");
+    lbox.classList.add("active");
     const img = document.createElement("img");
     img.src = image.src;
-    while (lightbox.firstChild) {
-      lightbox.removeChild(lightbox.firstChild);
+    while (lbox.firstChild) {
+      lbox.removeChild(lbox.firstChild);
     }
     img.style.setProperty("cursor", "not-allowed");
-    lightbox.appendChild(img);
-    lightbox.style.setProperty("cursor", "zoom-out");
+    lbox.appendChild(img);
+    lbox.style.setProperty("cursor", "zoom-out");
   });
 });
 
@@ -57,23 +56,8 @@ function enableScroll() {
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-portImages.forEach((image) => {
-  image.addEventListener("click", (e) => {
-    disableScroll();
-    lightbox.classList.add("active");
-    const img = document.createElement("img");
-    img.src = image.src;
-    while (lightbox.firstChild) {
-      lightbox.removeChild(lightbox.firstChild);
-    }
-    img.style.setProperty("cursor", "not-allowed");
-    lightbox.appendChild(img);
-    lightbox.style.setProperty("cursor", "zoom-out");
-  });
-});
-
-lightbox.addEventListener("click", (e) => {
+lbox.addEventListener("click", (e) => {
   if (e.target !== e.currentTarget) return;
-  lightbox.classList.remove("active");
+  lbox.classList.remove("active");
   enableScroll();
 });
