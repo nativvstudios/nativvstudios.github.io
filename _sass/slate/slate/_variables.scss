@@ -1,40 +1,78 @@
 // Slate UI — Variables / Design Tokens
+// "Nocturne" — midnight neutrals lit by an aurora accent.
 
 /* ============================================================
    0. CUSTOM PROPERTIES (Design Tokens)
    ============================================================ */
 :root {
     /* --- Core palette --- */
-    --slate-obsidian: #37353e;
-    --slate-graphite: #44444e;
-    --slate-mauve: #715a5a;
-    --slate-mist: #d3dad9;
+    --slate-obsidian: #1b1a24;
+    --slate-graphite: #262531;
+    --slate-mauve: #3b3950;
+    --slate-mist: #cfcde0;
 
     /* --- Extended palette --- */
-    --slate-void: #2a2831;
-    --slate-ash: #5c5b66;
-    --slate-clay: #8c6e6e;
-    --slate-blush: #a38a8a;
-    --slate-fog: #bfc7c6;
-    --slate-pearl: #ebf0ef;
-    --slate-white: #f7faf9;
+    --slate-void: #14131b;
+    --slate-ash: #8784a0;
+    --slate-clay: #6d6a86;
+    --slate-blush: #c9c2ff;
+    --slate-fog: #a9a6bd;
+    --slate-pearl: #efedf8;
+    --slate-white: #fbfaff;
+
+    /* --- Accent: aurora mint, with a violet partner for gradients --- */
+    --slate-accent: #6fe3b5;
+    --slate-accent-soft: #a6f0d1;
+    --slate-accent-2: #a393ff;
+    --on-accent: #0b1f18;
+    --accent-bright: #6fe3b5; /* stays bright in both themes, for dark overlays */
 
     /* --- Semantic colors --- */
-    --slate-accent: #c2866b;
-    --slate-accent-soft: #d4a48e;
-    --slate-info: #6b8fa3;
-    --slate-success: #6e9477;
-    --slate-warning: #c2a24e;
-    --slate-danger: #b85c5c;
+    --slate-info: #6cb8ff;
+    --slate-success: #7ad69a;
+    --slate-warning: #f0c56a;
+    --slate-danger: #ff7d8c;
+
+    /* --- Color channels, for tints: rgba(var(--accent-rgb), 0.2) --- */
+    --accent-rgb: 111, 227, 181;
+    --accent-2-rgb: 163, 147, 255;
+    --ink-rgb: 237, 235, 255; /* foreground: hairlines, hover washes */
+    --scrim-rgb: 8, 8, 13; /* backdrops, shadows */
+    --info-rgb: 108, 184, 255;
+    --success-rgb: 122, 214, 154;
+    --warning-rgb: 240, 197, 106;
+    --danger-rgb: 255, 125, 140;
 
     /* --- Surfaces --- */
     --surface-0: var(--slate-void);
     --surface-1: var(--slate-obsidian);
     --surface-2: var(--slate-graphite);
-    --surface-3: var(--slate-ash);
+    --surface-3: #33323f;
+    --surface-glass: rgba(27, 26, 36, 0.72);
+
+    /* --- Aurora glow behind the header --- */
+    --glow-strength: 0.16;
+    --grid-strength: 0.12;
+    --gradient-aurora: linear-gradient(
+        90deg,
+        var(--slate-accent),
+        var(--slate-accent-2)
+    );
+
+    /* --- Code --- */
+    --code-bg: #0f0e16;
+    --code-fg: #d9d7ea;
+    --code-comment: #817e9c;
+    --code-keyword: #b4a5ff;
+    --code-string: #7fe7bd;
+    --code-number: #f6cf85;
+    --code-function: #83c9ff;
+    --code-type: #f5a3d0;
+    --code-tag: #ff9ea8;
+    --code-punct: #a9a6bd;
 
     /* --- Typography --- */
-    --font-display: "DM Serif Display", Georgia, serif;
+    --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
     --font-body: "Satoshi", "Segoe UI", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
@@ -72,21 +110,22 @@
     --space-20: 5rem;
     --space-24: 6rem;
 
-    /* --- Radii --- */
+    /* --- Radii (crisp, not pillowy) --- */
     --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
-    --radius-2xl: 24px;
+    --radius-md: 6px;
+    --radius-lg: 10px;
+    --radius-xl: 14px;
+    --radius-2xl: 20px;
     --radius-full: 9999px;
 
     /* --- Shadows --- */
-    --shadow-sm: 0 1px 2px rgba(42, 40, 49, 0.25);
-    --shadow-md: 0 4px 12px rgba(42, 40, 49, 0.3);
-    --shadow-lg: 0 8px 30px rgba(42, 40, 49, 0.35);
-    --shadow-xl: 0 16px 50px rgba(42, 40, 49, 0.4);
-    --shadow-inner: inset 0 2px 6px rgba(42, 40, 49, 0.25);
-    --shadow-glow: 0 0 20px rgba(194, 134, 107, 0.2);
+    --shadow-sm: 0 1px 2px rgba(var(--scrim-rgb), 0.35);
+    --shadow-md: 0 6px 16px -4px rgba(var(--scrim-rgb), 0.45);
+    --shadow-lg: 0 14px 34px -8px rgba(var(--scrim-rgb), 0.55);
+    --shadow-xl: 0 24px 60px -12px rgba(var(--scrim-rgb), 0.65);
+    --shadow-inner: inset 0 2px 6px rgba(var(--scrim-rgb), 0.3);
+    --shadow-glow: 0 0 0 1px rgba(var(--accent-rgb), 0.25),
+        0 8px 28px -6px rgba(var(--accent-rgb), 0.35);
 
     /* --- Transitions --- */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -104,7 +143,7 @@
     --z-toast: 500;
 
     /* --- Border --- */
-    --border-subtle: 1px solid rgba(211, 218, 217, 0.1);
-    --border-default: 1px solid rgba(211, 218, 217, 0.15);
-    --border-strong: 1px solid rgba(211, 218, 217, 0.25);
+    --border-subtle: 1px solid rgba(var(--ink-rgb), 0.07);
+    --border-default: 1px solid rgba(var(--ink-rgb), 0.11);
+    --border-strong: 1px solid rgba(var(--ink-rgb), 0.18);
 }

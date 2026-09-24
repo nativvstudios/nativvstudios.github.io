@@ -39,13 +39,13 @@
 .form-textarea:focus {
     outline: none;
     border-color: var(--slate-accent);
-    box-shadow: 0 0 0 3px rgba(194, 134, 107, 0.15);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.18);
 }
 .form-input.is-error {
     border-color: var(--slate-danger);
 }
 .form-input.is-error:focus {
-    box-shadow: 0 0 0 3px rgba(184, 92, 92, 0.15);
+    box-shadow: 0 0 0 3px rgba(var(--danger-rgb), 0.18);
 }
 
 .form-textarea {
@@ -55,7 +55,7 @@
 
 .form-select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23BFC7C6'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23A9A6BD'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     padding-right: 2.25rem;
@@ -103,7 +103,7 @@
     width: 6px;
     height: 10px;
     margin: 2px auto;
-    border: solid var(--slate-void);
+    border: solid var(--on-accent);
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
@@ -112,7 +112,7 @@
     height: 8px;
     border: none;
     border-radius: var(--radius-full);
-    background: var(--slate-void);
+    background: var(--on-accent);
     margin: 5px auto;
     transform: none;
 }
@@ -155,5 +155,5 @@
 }
 .toggle input:checked + .toggle-track::after {
     transform: translateX(20px);
-    background: var(--slate-void);
+    background: var(--on-accent);
 }

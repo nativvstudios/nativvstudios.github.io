@@ -3,21 +3,27 @@
   {% include head.html %}
   <body>
     {% include dayNightObj.html %}
-    <main class="container py-8" style="max-width:900px;">
+    <main class="container post-container">
       {% include header.html %}
       {% include navbar.html %}
-      <section class="card-glass p-8 rounded-xl">
-        <div class="mb-6">
-          <h2 class="font-display text-3xl mb-2">{{page.title}}</h2>
-          <small class="text-muted">{{page.date | date_to_string}}</small>
-          <div class="flex flex-wrap gap-2 mt-4">
+      <article class="card-glass post-article">
+        <header class="post-header">
+          <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+            <span class="meta-sep" aria-hidden="true">/</span>
+            <span>{{ content | strip_html | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+          </div>
+          <h1 class="post-title">{{ page.title }}</h1>
+          {% if page.categories.size > 0 %}
+          <div class="flex flex-wrap gap-2">
             {% for c in page.categories %}
-            <a href="#!" class="badge badge-default category">{{c}}</a>
+            <a href="#!" class="badge badge-default category">{{ c }}</a>
             {% endfor %}
           </div>
-        </div>
-        <div class="post-content">{{content}}</div>
-      </section>
+          {% endif %}
+        </header>
+        <div class="post-content">{{ content }}</div>
+      </article>
       {% include footer.html %}
     </main>
     {% include category-modal.html%}

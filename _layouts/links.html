@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-  <div id="gradient">
-    {% include dayNightObj.html %}
   <body>
+    {% include dayNightObj.html %}
     <main class="container container-sm">
       {% include header.html %}
       {% include navbar.html %}
 
       <section class="links-grid mt-8">
         {% for i in site.data.author.linklist %}
-        <a href="{{i.url}}" class="card link-card p-6 transition" style="--hover-color: {{ i.color }}">
-          <h2 class="font-display text-center">{{ i.title }}</h2>
+        <a href="{{ i.url }}" class="card link-card transition" style="--hover-color: {{ i.color }}"{% unless i.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>
+          <span class="link-card-text">
+            <span class="link-card-title">{{ i.title }}</span>
+            <span class="link-card-url">{{ i.url | remove: 'https://' | remove: 'http://' | remove: 'mailto:' }}</span>
+          </span>
+          <span class="link-card-arrow" aria-hidden="true">&#8599;</span>
         </a>
         {% endfor %}
       </section>
@@ -19,5 +22,4 @@
     </main>
     {% include category-modal.html%}
   </body>
-  </div>
 </html>

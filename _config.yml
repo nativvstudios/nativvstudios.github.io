@@ -52,6 +52,7 @@ linklist:
 
 portfolio:
   - item: Gielinor Dailies
+    type: "Web app + RuneLite plugin"
     description: "Gielinor Dailies is a daily co-pilot for Old School RuneScape. Plan smarter, play better — track your characters, manage daily tasks, access calculators, guides, and tools all in one place. Includes a RuneLite plugin for in-game task tracking."
     url: "https://www.gielinordailies.com"
     slides:
@@ -63,6 +64,7 @@ portfolio:
       - image: "assets/uploads/gielinor-plugin.png"
 
   - item: Noctis
+    type: "Jekyll theme"
     description: "Noctis is a minimalist, dark-themed Jekyll theme with responsive design, tag and category support, light/dark mode toggle, and multiple color schemes. The theme powering nativvstudios.com."
     url: "https://github.com/nativvstudios/Noctis"
     slides:
@@ -71,6 +73,7 @@ portfolio:
       - image: "assets/uploads/noctis-showcase.gif"
 
   - item: Zen Search
+    type: "Chrome extension"
     description: "Zen Search is a minimalist Chrome extension that replaces your new tab with a clean dark homepage featuring a clock, pinned shortcuts, and instant search. Includes a Spotlight-style overlay (Ctrl+Shift+Space) to search tabs, history, and the web without leaving your current page."
     url: "https://github.com/nativvstudios/Zen-search"
     slides:
@@ -81,6 +84,7 @@ portfolio:
       - image: "assets/uploads/zensearch-settings.png"
 
   - item: nUtilities
+    type: "Unity editor tools"
     description: "A collection of Unity Editor utilities to boost your productivity. Features nSearch (fuzzy search), Scene Organizer, Favorites bookmarking, and Hierarchy Organizer to streamline your Unity workflow."
     url: "https://github.com/nativvstudios/com.nutilities.editor"
     slides:
@@ -88,6 +92,7 @@ portfolio:
       - image: "assets/uploads/nsearch.gif"
 
   - item: From Ether
+    type: "2D pixel art RPG"
     description: "From Ether is a captivating story-driven 2D pixel art RPG where you discover your origins from the mythical element of creation, Ether. Guided by the Ether, you realize your destined role in this timeline: to overcome the encroaching evil. Unravel the mysteries of your existence and fulfill your purpose in a beautifully crafted world, blending compelling narrative and nostalgic visuals."
     url: ""
     slides:

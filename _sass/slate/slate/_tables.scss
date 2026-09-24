@@ -35,7 +35,7 @@ table.table {
     transition: background var(--duration-fast) var(--ease-out);
 }
 .table tbody tr:hover {
-    background: rgba(211, 218, 217, 0.03);
+    background: rgba(var(--ink-rgb), 0.03);
 }
 .table tbody tr:last-child td {
     border-bottom: none;

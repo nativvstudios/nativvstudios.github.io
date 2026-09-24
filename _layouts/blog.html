@@ -1,46 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-  <div id="gradient">
-    {% include dayNightObj.html %}
   <body>
+    {% include dayNightObj.html %}
     <main class="container container-sm">
       {% include header.html %}
       {% include bio.html %}
 
       <section class="article-grid mt-8">
         {% for post in site.posts %}
-        <article class="card-glass p-6 transition animate-fade-in">
-          <h2 class="article-title">
-            <a href="{{site.baseurl}}{{post.url}}"> {{post.title | markdownify}} </a>
-          </h2>
-          <small class="text-muted">{{post.date | date_to_string}}</small>
-          {% if post.description or post.excerpt %}
-          <p class="text-muted mt-2" style="font-size: 0.85em; line-height: 1.5;">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
-          {% endif %}
-          <div class="flex flex-wrap gap-2 mt-2">
-            {% for c in post.categories %}
-            <a href="#!" data-base-url="{{site.baseurl}}" class="badge badge-default category">{{c}}</a>
-            {% endfor %}
-          </div>
-        </article>
-        {%endfor%}
+          {% include post-card.html post=post %}
+        {% endfor %}
       </section>
       {% include footer.html %}
     </main>
     {% include category-modal.html%}
-  </body>
 
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
-</div>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

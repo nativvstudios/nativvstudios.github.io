@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--space-4) var(--space-6);
-    background: rgba(42, 40, 49, 0.8);
+    background: var(--surface-glass);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: var(--border-subtle);
@@ -41,7 +41,7 @@
 .navbar-links a:hover,
 .navbar-links a.active {
     color: var(--slate-pearl);
-    background: rgba(211, 218, 217, 0.06);
+    background: rgba(var(--ink-rgb), 0.06);
 }
 
 /* Tabs */

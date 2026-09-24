@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-  <div id="gradient">
-    {% include dayNightObj.html %}
   <body>
+    {% include dayNightObj.html %}
     <main class="container container-sm">
       {% include header.html %}
       {% include bio.html %}
 
       <section class="mt-8">
-        <h2 class="font-display text-center mb-6">Top Podcasts we listen to on Spotify!</h2>
+        <h2 class="section-heading">Top Podcasts we listen to on Spotify!</h2>
         <div class="life-grid">
           {% for i in site.data.author.artists %}
           <a href="{{ i.url }}" class="life-card">
@@ -24,25 +23,11 @@
 
       <section class="article-grid mt-8">
         {% for post in site.categories.life %}
-        <article class="card-glass p-6 transition animate-fade-in">
-          <h2 class="article-title">
-            <a href="{{site.baseurl}}{{post.url}}">{{post.title | markdownify}}</a>
-          </h2>
-          <small class="text-muted">{{post.date | date_to_string}}</small>
-          {% if post.description or post.excerpt %}
-          <p class="text-muted mt-2" style="font-size: 0.85em; line-height: 1.5;">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
-          {% endif %}
-          <div class="flex flex-wrap gap-2 mt-2">
-            {% for c in post.categories %}
-            <a href="#!" data-base-url="{{site.baseurl}}" class="badge badge-default category">{{c}}</a>
-            {% endfor %}
-          </div>
-        </article>
+          {% include post-card.html post=post %}
         {% endfor %}
       </section>
       {% include footer.html %}
     </main>
     {% include category-modal.html%}
   </body>
-  </div>
 </html>

@@ -1,0 +1,22 @@
+{% assign card_post = include.post %}
+<article class="card-glass post-card animate-fade-in">
+  <div class="post-meta">
+    <time datetime="{{ card_post.date | date_to_xmlschema }}">{{ card_post.date | date_to_string }}</time>
+    <span class="meta-sep" aria-hidden="true">/</span>
+    <span>{{ card_post.content | strip_html | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+  </div>
+  <h2 class="article-title">
+    <a href="{{ site.baseurl }}{{ card_post.url }}">{{ card_post.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a>
+  </h2>
+  {% if card_post.description or card_post.excerpt %}
+  <p class="post-card-excerpt">{{ card_post.description | default: card_post.excerpt | strip_html | truncatewords: 30 }}</p>
+  {% endif %}
+  {% if card_post.categories.size > 0 %}
+  <div class="post-card-tags">
+    {% for c in card_post.categories %}
+    <a href="#!" data-base-url="{{ site.baseurl }}" class="badge badge-default category">{{ c }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <span class="post-card-arrow" aria-hidden="true">&#8599;</span>
+</article>

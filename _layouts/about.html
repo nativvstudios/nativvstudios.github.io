@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-  <div id="gradient">
-    {% include dayNightObj.html %}
   <body>
+    {% include dayNightObj.html %}
     <main class="container container-sm">
       {% include header.html %}
       {% include bio.html %}
 
       <section class="article-grid mt-8">
         <article class="card-glass p-6 text-center">
-          <h2 class="font-display text-2xl mb-4">About Us!</h2>
-          <p class="text-muted text-lg mb-6">This page is under construction. Check back soon!</p>
+          <h2 class="text-2xl mb-4">About Us!</h2>
+          <p class="text-muted text-lg mb-6 mx-auto">This page is under construction. Check back soon!</p>
           <img src="/assets/uploads/nativvsplash.png" alt="Nativv Studios" class="rounded-xl" style="max-width:100%;" />
         </article>
       </section>
@@ -19,5 +18,4 @@
     </main>
     {% include category-modal.html%}
   </body>
-  </div>
 </html>
